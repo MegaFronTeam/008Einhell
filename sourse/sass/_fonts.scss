@@ -1,16 +1,16 @@
 
 $default-font: "OpenSans";
 $header-font: "OpenSansCondensed";
-$file-formats: woff2;
+$file-format: woff2;
 $addr: '../fonts/';
 
 // If font from googlefont, next lines remove
 
-@include font-face ($default-font, $addr + "OpenSansRegular", 400, $file-formats);
-@include font-face ($default-font, $addr + "OpenSansBold", bold, $file-formats);
-@include font-face ($default-font, $addr + "OpenSansLight", 300, $file-formats);
-@include font-face ($default-font, $addr + "OpenSansSemiBold", 600, $file-formats);
-@include font-face ($header-font, $addr + "OpenSans_CondensedBold", 700, $file-formats);
+@include font-face ($default-font, $addr + "OpenSansRegular", 400, $file-formats:$file-format);
+@include font-face ($default-font, $addr + "OpenSansBold", bold, $file-formats:$file-format);
+@include font-face ($default-font, $addr + "OpenSansLight", 300, $file-formats:$file-format);
+@include font-face ($default-font, $addr + "OpenSansSemiBold", 600, $file-formats:$file-format);
+@include font-face ($header-font, $addr + "OpenSans_CondensedBold", 700, $file-formats:$file-format);
 
 // font-weight helper: 
 // 100 Thin

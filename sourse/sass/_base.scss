@@ -307,9 +307,9 @@ ul {
 .swiper-button-hand {
 	width: var(--swiperArrowSize);
 	height: var(--swiperArrowSize);
-	border-radius: 50%;
+	// border-radius: 50%;
 	background-color: var(--swiperBgDef);
-	border: 2px solid var(--swiperBorderColorDef);
+	border: none;
 	color: var(--swiperColorDef);
 	@include bgs; 
 	outline: none !important;
@@ -320,15 +320,28 @@ ul {
 	box-shadow: 0 15px 60px rgba(0, 0, 0, 0.1);
 	@include mt;
 	user-select: none;
+	filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.40));
 
 	&:hover {
-		background-color: var(--swiperBgDefHover);
-		border-color: var(--swiperBorderColorDefHover);
-		color: var(--swiperColorDefHover);
+		// background-color: var(--swiperBgDefHover);
+		// border-color: var(--swiperBorderColorDefHover);
+		// color: var(--swiperColorDefHover);
+		.icon {
+			stroke: $primary;
+		}
 	}
 
 	.icon {
-		font-size: rem(12);
+		position: relative;
+		right: 3px;
+		font-size: rem(13);
+		width: auto !important;
+		height: 13px;
+		fill: none;
+		stroke: $gray-900;
+		stroke-linecap: round;
+		stroke-width: 1.5;
+		@include mt;
 	}
 
 	&::after {
@@ -336,10 +349,11 @@ ul {
 	} 
 	&-next {
 		right: var(--swiperArrowPosition);
+		transform: rotate(180deg);
 	}
-
+	
 	&-prev {
-		left: var(--swiperArrowPosition);
+		left: var(--swiperArrowPosition);	
 	}
 }
 
@@ -546,9 +560,8 @@ iframe {
 	margin-right: auto;
 }
 
-.container{
-	&::before{
-		content: "Foo " + Bar;
-	}
-	font: 20px/24px fantasy {weight: bold;}
+
+.btn-primary {
+	--bs-btn-hover-bg: #{$crimson};
+	--bs-btn-active-bg: #{$crimson};
 }

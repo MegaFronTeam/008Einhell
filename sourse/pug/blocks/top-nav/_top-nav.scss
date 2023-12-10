@@ -1,12 +1,11 @@
 .top-nav {
 	// --sPT: #{rem()};
-	// --sPB: #{rem()};
+	padding-bottom: rem(10);
 	// --sTPB: #{rem()};
 	&__row{
 		// --bs-gutter-x: #{rem()};
 		// @include media-breakpoint-up(md) {
 			--bs-gutter-y: var(--bs-gutter-x);
-			font-family: $default-font;
 		// }
 
 	}

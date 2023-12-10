@@ -1,11 +1,39 @@
 mixin headerBlock()
 	// start headerBlock
 	+b.headerBlock.section#headerBlock&attributes(attributes)
+		+e.img-slider--js.swiper
+			.swiper-wrapper
+				.swiper-slide
+					+e.cover
+						+img('img/hero.jpg')
+				.swiper-slide
+					+e.cover
+						+img('img/hero.jpg')
+				.swiper-slide
+					+e.cover
+						+img('img/hero.jpg')
+				.swiper-slide
+					+e.cover
+						+img('img/hero.jpg')
 		.container
-			+b.section-title.text-center
-				h2 headerBlock ds dfsdfdsfsd
-				+icon('telegram')
-				+iconC('telegram')
-			.row
-						
+			+e.caption-container
+				+e.caption-slider--js.swiper
+					.swiper-wrapper
+						.swiper-slide
+								+e.caption-slide
+									+e.caption-border
+									+e.caption Винтовёрт аккумуляторный импульсный PXC TE-CI 18 Li Brushless-Solo
+						.swiper-slide
+								+e.caption-slide
+									+e.caption-border
+									+e.caption Держатель для молотка KWB с неподвижной скобой, нейлон
+						.swiper-slide
+								+e.caption-slide
+									+e.caption-border
+									+e.caption Винтовёрт аккумуляторный импульсный PXC TE-CI 18 Li Brushless-Solo
+						.swiper-slide
+								+e.caption-slide
+									+e.caption-border
+									+e.caption Держатель для молотка KWB с неподвижной скобой, нейлон
+				+arrow
 	// end headerBlock

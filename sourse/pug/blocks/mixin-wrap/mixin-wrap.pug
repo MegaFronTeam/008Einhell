@@ -13,9 +13,9 @@ include components/ddgroup.pug
 
 mixin arrow()
 	.swiper-button-hand.swiper-button-hand-prev.swiper-button-prev
-		+icon('chevron-left')
+		+icon('left')
 	.swiper-button-hand.swiper-button-hand-next.swiper-button-next
-		+icon('chevron-right')
+		+icon('left')
 //- /arrow for swiper-slider
 
 mixin ie11()
@@ -34,8 +34,8 @@ mixin addblock()
 mixin search()
 	+b.search-block
 		form
-			input(type="text" placeholder="Поиск по номеру или названию запчасти" inputmode='search')
-			button 
+			input(type="text" placeholder="Найти..." inputmode='search')
+			button.btn.btn-primary
 				+icon("search")
 
 mixin page-head(t,...items)

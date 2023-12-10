@@ -81,28 +81,36 @@
 
 .search-block{
 	position: relative;
+	form {
+		display: flex;
+		align-items: center;
+	}
 	input{
 		font-size: 14px;
 		width: 100%;
-		border: none !important;
+		padding: rem(8) rem(20);
+		margin-right: rem(5);
+		border-radius: 2px;
+		border: 1px solid $gray-200;
 		outline: none !important;
-		padding-left: rem(30);
-		padding-top: rem(14);
-		padding-bottom: rem(14);
+		&:focus {
+			border-color: $primary;
+		}
 	}
 	.icon{
-		font-size: rem(20);
+		font-size: rem(24);
 		border: none !important;
+		fill: $white;
 	}
 	button{
-		position: absolute;
-		left: 0;
-		top: 0;
-		height: 100%;
+		padding: 0;
+		width: rem(39);
+		height: rem(39);
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		background: none !important;
+		background: $primary;
+		border-radius: 2px;
 		border: none !important;
 	}
 }
