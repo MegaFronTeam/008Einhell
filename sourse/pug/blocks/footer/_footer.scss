@@ -10,6 +10,7 @@
 		--bs-gutter-y: var(--bs-gutter-x);
 	}
 	&__container {
+		position: relative;
 		padding-block: rem(42);
 		padding-inline: rem(20);
 		margin-bottom: rem(30);
@@ -19,6 +20,15 @@
 		background-size: cover;
 		@include media-breakpoint-up(md) {
 			margin-bottom: rem(61);
+		}
+		&::after {
+			position: absolute;
+			top: 100%;
+			left: 0;
+			content: '';
+			height: rem(10);
+			width: 20%;
+			background-color: $primary;
 		}
 	}
 	&__logo {
