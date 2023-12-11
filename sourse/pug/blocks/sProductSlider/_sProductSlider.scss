@@ -1,0 +1,366 @@
+// start .sProductSlider
+.sProductSlider {
+	--sPT: #{rem(80)};
+	--sPB: #{rem(89)};
+
+	// --sTPB: #{rem()};
+	&--grey {
+		background-color: $gray-100;
+	}
+
+	&__row {
+		// --bs-gutter-x: #{rem()};
+		// --bs-gutter-y: #{rem()};
+	}
+
+	&__top {
+		display: flex;
+		align-items: center;
+		margin-bottom: rem(20);
+
+		&.accent {
+			.section-title {
+				position: relative;
+
+				h2 {
+					background: $gray-800;
+				}
+
+				&::before {
+					position: absolute;
+					top: 0;
+					left: 0;
+					display: block;
+					content: '';
+					height: 100%;
+					width: rem(5);
+					background-color: $primary;
+				}
+			}
+		}
+
+		&.primary {
+			h2 {
+				background: $primary;
+			}
+		}
+	}
+
+	.section-title {
+		margin-bottom: 0;
+		margin-right: rem(16);
+		padding-left: rem(5);
+
+		@include media-breakpoint-up(sm) {
+			margin-right: rem(37);
+		}
+
+		h2 {
+			margin-bottom: 0;
+			padding: rem(8) rem(15);
+			font-size: rem(20);
+			font-weight: 700;
+			text-transform: uppercase;
+			color: $white;
+
+			@include media-breakpoint-up(sm) {
+				padding: rem(10) rem(20);
+				font-size: rem(24);
+			}
+		}
+	}
+
+	&__top-link {
+		font-size: rem(14);
+		color: $gray-700;
+		font-weight: 300;
+
+		@include media-breakpoint-up(sm) {
+			font-size: rem(16);
+		}
+
+		&:hover {
+			color: $primary;
+
+			.icon {
+				stroke: $primary;
+			}
+		}
+
+		.icon {
+			fill: none;
+			stroke: $gray-700;
+			@include mt;
+		}
+	}
+
+	&__slider {
+		padding: rem(20) rem(20) rem(30);
+		margin: rem(-20) rem(-20) rem(-30);
+	}
+
+	&__item {
+		position: relative;
+	}
+
+	.swiper-slide {
+		height: auto;
+	}
+
+	&__card {
+		position: relative;
+		height: 100%;
+
+		&:hover {
+			&::before {
+				box-shadow: 0px 8px 15px 0px rgba(0, 0, 0, 0.15);
+				transform: scale(1.05);
+			}
+		}
+
+		&::before {
+			position: absolute;
+			content: '';
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			border-radius: 2px;
+			border: 1px solid $gray-200;
+			background: $white;
+			z-index: -1;
+			@include mt;
+		}
+	}
+
+	&__img-wrap {
+		@include block(186, 352);
+		margin: rem(20) rem(20) rem(10);
+
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+
+	&__text {
+		padding: rem(15);
+
+		@include media-breakpoint-up(sm) {
+			padding: rem(15) rem(30);
+		}
+	}
+
+	&__card-title {
+		margin-bottom: rem(10);
+		color: $body-color;
+		font-weight: 700;
+		line-height: 130%;
+		-webkit-line-clamp: 3;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+
+	&__card-number {
+		margin-bottom: rem(10);
+		color: $gray-500;
+		font-size: rem(14);
+		font-weight: 300;
+	}
+
+	&__descr {
+		color: $body-color;
+		font-size: rem(14);
+		font-weight: 300;
+		line-height: 130%;
+
+		p {
+			margin-bottom: rem(5);
+		}
+
+		ul {
+			padding: 0;
+			margin-left: 20px;
+		}
+
+		li {
+			&::marker {
+				font-size: 8px;
+			}
+		}
+	}
+
+	.swiper-button-hand {
+		@include media-breakpoint-down(sm) {
+			display: none;
+		}
+	}
+
+	.swiper-pagination {
+		@include media-breakpoint-up(sm) {
+			display: none;
+		}
+	}
+
+	@include media-breakpoint-up(xl) {}
+
+	@include media-breakpoint-up(lg) {}
+
+	@include media-breakpoint-up(md) {}
+
+	@include media-breakpoint-up(sm) {}
+
+	@include media-breakpoint-between(md, xl) {}
+
+	@include media-breakpoint-only(xl) {}
+
+	@include media-breakpoint-down(xl) {}
+}
+
+// end.sProductSlider
+
+.bg-slider {
+	--caption-width: 90%;
+	position: relative;
+	@include media-breakpoint-up(sm) {
+		--caption-width: 482px;
+	}
+	&__swiper {
+		max-width: 1920px;
+	}
+
+	// .container {
+	// 	position: relative;
+	// }
+	&__img-wrap {
+		@include block(1, 1.5);
+		max-width: 1920px;
+		width: 100%;
+		min-height: 300px;
+		@include media-breakpoint-up(sm) {
+			@include block(1, 2);
+		}
+
+		@include media-breakpoint-up(md) {
+			@include block(620, 1920);
+		}
+
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__caption {
+		position: absolute;
+		bottom: rem(40);
+		left: 50%;
+		width: var(--caption-width);
+		z-index: 1;
+		transform: translateX(-50%);
+
+		@include media-breakpoint-up(xl) {
+			left: calc((50% + 68px));
+			transform: none;
+		}
+
+		img {
+			margin-bottom: 10px;
+			max-width: 90px;
+			max-height: 90px;
+			object-fit: contain;
+			@include media-breakpoint-up(sm) {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&__text {
+		display: flex;
+		flex-direction: column-reverse;
+		align-items: center;
+		padding: rem(10);
+		border-radius: 2px 2px 2px 0px;
+		background: rgba(255, 255, 255, 0.80);
+		@include media-breakpoint-up(sm) {
+			padding: rem(20) rem(40);
+			flex-direction: row;
+		}
+	}
+
+	&__title {
+		margin-right: rem(20);
+		color: $gray-900;
+		font-family: $header-font;
+		font-size: rem(20);
+		font-weight: 700;
+		line-height: 110%;
+		-webkit-line-clamp: 2;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+		text-align: center;
+		@include media-breakpoint-up(sm) {
+			text-align: left;
+		}
+		span {
+			display: block;
+			color: $body-color;
+			font-family: $default-font;
+			font-size: rem(16);
+			font-weight: 300;
+			line-height: 130%;
+		}
+	}
+
+	&__btn {
+		padding: rem(13) rem(19);
+		font-size: rem(14);
+		font-weight: 600;
+		text-transform: uppercase;
+		border-radius: 0px 0px 2px 2px;
+	}
+
+	.swiper-button-hand-prev {
+		position: absolute;
+		display: none;
+		top: auto;
+		bottom: rem(125);
+		left: calc((50% - (var(--caption-width) / 2) - 20px));
+		@include media-breakpoint-up(sm) {
+			display: flex;
+		}
+		@include media-breakpoint-up(xl) {
+			left: calc((50% + 48px));
+		}
+	}
+
+	.swiper-button-hand-next {
+		position: absolute;
+		display: none;
+		top: auto;
+		bottom: rem(125);
+		left: calc((50% + (var(--caption-width) / 2) - 20px));
+		right: auto;
+		@include media-breakpoint-up(sm) {
+			display: flex;
+		}
+		@include media-breakpoint-up(xl) {
+			left: calc(var(--caption-width) + 48px + 50%);
+		}
+	}
+	.swiper-pagination {
+		@include media-breakpoint-up(sm) {
+			display: none;
+		}
+	}
+}

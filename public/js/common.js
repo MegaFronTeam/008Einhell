@@ -72,6 +72,52 @@ function eventHandler() {
 		},
 	});
 
+	const productSliders = document.querySelectorAll('.sProductSlider__item');
+	if (productSliders) {
+		productSliders.forEach((wrap) => {
+			let slider = wrap.querySelector('.swiper');
+			const prodSwiper = new Swiper(slider, {
+				slidesPerView: 1,
+				breakpoints: {
+					576: {
+						slidesPerView: 2,
+					},
+					992: {
+						slidesPerView: 3,
+					},
+				},
+				spaceBetween: 20,
+				navigation: {
+					nextEl: wrap.querySelector(".swiper-button-next"),
+					prevEl: wrap.querySelector(".swiper-button-prev"),
+				},
+				pagination: {
+					el:  wrap.querySelector('.swiper-pagination'),
+					type: 'bullets',
+					clickable: true,
+				},
+			});
+		});
+	}
+	
+	const bgSlider = document.querySelector('.bg-slider__swiper--js');
+	console.log(bgSlider)
+	if (bgSlider) {
+		new Swiper(bgSlider,{
+			slidesPerView: 1,
+			loop: true,
+			navigation: {
+				nextEl: bgSlider.querySelector(".swiper-button-next"),
+				prevEl: bgSlider.querySelector(".swiper-button-prev"),
+			},
+			pagination: {
+				el:  bgSlider.querySelector('.swiper-pagination'),
+				type: 'bullets',
+				clickable: true,
+			},
+		});
+	}
+
 
 	new Swiper('.breadcrumb-slider--js', {
 		slidesPerView: 'auto',

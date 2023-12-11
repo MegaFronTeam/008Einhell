@@ -1,25 +1,102 @@
 .footer {
-		
+	
 	margin-top: auto;
 // --sPT: #{rem()};
 	// --sPB: #{rem()};
 	// --sTPB: #{rem()};
-	&__row{
-		// --bs-gutter-x: #{rem()};
+	background-color: $gray-800;
+	&__row{		
+		align-items: center;
 		--bs-gutter-y: var(--bs-gutter-x);
-
 	}
-	.section-title{
-		
+	&__container {
+		padding-block: rem(42);
+		padding-inline: rem(20);
+		margin-bottom: rem(30);
+		background-color: $gray-200;
+		background-image: url('../img/footer-bg.png');
+		background-repeat: no-repeat;
+		background-size: cover;
+		@include media-breakpoint-up(md) {
+			margin-bottom: rem(61);
+		}
 	}
-	&__col{
-
+	&__logo {
+		display: inline-block;
+		width: 100%;
+		@include media-breakpoint-up(xl) {
+			text-align: center;
+		}
+		img {
+			max-width: rem(222);
+		}
 	}
-	&__item{
-
+	&__text-col {
 	}
-	&__slide{
-		height: auto;
+	&__title {
+		margin-bottom: rem(10);
+		font-family: $header-font;
+		font-size: rem(20);
+		font-weight: 700;
+		line-height: 110%;
+	}
+	p {
+		margin-bottom: 0;
+		font-size: rem(14);
+		font-weight: 300;
+		line-height: 130%;
+		@include media-breakpoint-up(xl) {
+			max-width: rem(507);
+		}
+	}
+	&__nav-col {
+		display: flex;
+		flex-direction: column;
+		@include media-breakpoint-up(sm) {
+			flex-direction: row;
+		}
+		@include media-breakpoint-up(xl) {
+			display: block;
+			padding-right: rem(80);
+		}
+	}
+	nav {		
+		&:not(:last-of-type) {
+			margin-right: rem(30);
+			@include media-breakpoint-up(xl) {
+				margin-right: 0;
+				margin-bottom: rem(24);
+			}
+		}
+		ul {
+			margin-bottom: 0;
+		}
+		li {
+			position: relative;
+			display: flex;
+			align-items: flex-start;
+			list-style-type: none;
+			&::before {
+				content: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.66699 4.6665L10.0003 8.33317L6.66699 11.9998' stroke='%23D50C1F' stroke-width='0.666667' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+			}
+		}
+		a {
+			color: $body-color;
+			font-size:rem(14);
+			font-weight: 300;
+			&:hover {
+				color: $primary;
+			}
+		}
+	}
+	&__copyright {
+		color: $gray-500;
+		text-align: right;
+		font-size:rem(12);
+		font-weight: 400;
+		line-height: 130%;
+		letter-spacing: 0.36px;
+		text-transform: uppercase;
 	}
 // 
 @include media-breakpoint-up(xl) {}
