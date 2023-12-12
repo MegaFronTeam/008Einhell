@@ -50,3 +50,8 @@ mixin parts(elem)
 	script.
 		addBlock(`#{elem}`)
 	div(id=`${elem}Wrap`)
+
+mixin compareBtn(title)
+	+b.compare-btn.btn.BUTTON
+		span: +icon('compare')
+		= title

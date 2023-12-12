@@ -1,0 +1,128 @@
+mixin tr(...tds)
+	tr
+		for td in tds
+			td!= td
+mixin sCard(data)
+	// start sCard
+	+b.SECTION.sCard.section#sCard&attributes(attributes)
+		.container
+			+e.row.row
+				.col-lg-6
+					+e.images
+						+e.main-slider.swiper
+							.swiper-wrapper
+								.swiper-slide: +e.img-wrap: +img("img/main-card-1.png")
+								.swiper-slide: +e.img-wrap: +img("img/main-card-1.png")
+								.swiper-slide: +e.img-wrap: +img("img/main-card-1.png")
+								.swiper-slide: +e.img-wrap: +img("img/main-card-1.png")
+								.swiper-slide: +e.img-wrap: +img("img/main-card-1.png")
+								.swiper-slide: +e.img-wrap: +img("img/main-card-1.png")
+								.swiper-slide: +e.img-wrap: +img("img/main-card-1.png")
+						+e.thumbs-slider.swiper
+							.swiper-wrapper
+								.swiper-slide: +e.img-wrap: +img("img/sm-card-1.png")
+								.swiper-slide: +e.img-wrap: +img("img/sm-card-2.png")
+								.swiper-slide: +e.img-wrap: +img("img/sm-card-3.png")
+								.swiper-slide: +e.img-wrap: +img("img/sm-card-4.png")
+								.swiper-slide: +e.img-wrap: +img("img/sm-card-5.png")
+								.swiper-slide: +e.img-wrap: +img("img/sm-card-4.png")
+								.swiper-slide: +e.img-wrap: +img("img/sm-card-5.png")
+				.col-lg-6
+					+e.info
+						h1 Дрель аккумуляторная PXC TE-CD 18 Li Brushless-Solo
+						+e.number Артикул: 4513850
+						+img('img/label-1.jpg')
+						ul
+							li Представитель семейства Power X-Change
+							li Бесщеточный мотор - больше мощности и длительности работы
+							li Высококачественный зажимной патрон 13 мм
+							li Две передачи - для уверенного вкручивания шурупов и быстрого сверления
+							li Функция быстрой остановки
+							li Эргономичная рукоятка с покрытием Softgrip
+							li Дополнительная ручка уменьшает физическую нагрузку на пользователя
+							li LED подсвета рабочей области
+							li Поставляется без батареи и зарядного устройства (приобретаются отдельно)
+						+compareBtn('добавить в сравнение')
+			+e.details.tabs
+				+e.details-caption.tabs__caption.swiper.freemode-slider--js
+					.swiper-wrapper
+						+e.details-btn.tabs__btn.swiper-slide.active Описание
+						+e.details-btn.tabs__btn.swiper-slide Характеристики
+						+e.details-btn.tabs__btn.swiper-slide документы
+						+e.details-btn.tabs__btn.swiper-slide совместимая оснастка
+				.tabs__content.active
+					+e.details-item
+						+e.details-title Описание продукта
+						p Аккумуляторная дрель EINHELL&nbsp;TE-CD 18&nbsp;Li Brushless&mdash;Solo сочетает в&nbsp;себе высокую производительность и&nbsp;длительный срок службы. Бесщеточный двигатель с&nbsp;двумя переключаемыми передачами обеспечивает мощное завинчивание и&nbsp;быстрое сверление. Функция быстрой остановки позволяет четко контролировать рабочий процесс, а&nbsp;с&nbsp;помощью высококачественного металлического быстрозажимного патрона 13&nbsp;мм оснастка легко меняется одной рукой. Для работы в&nbsp;плохо освещенных местах предусмотрена яркая LED-подсветка. Эргономичный дизайн с&nbsp;вставками Softgrip обеспечивает надежную фиксацию и&nbsp;удобную работу, а&nbsp;дополнительная ручка помогает уменьшить физическую нагрузку. Батареи и&nbsp;зарядное устройство не&nbsp;входят в&nbsp;комплект поставки и&nbsp;их&nbsp;можно приобрести отдельно.
+					+e.details-item
+						+e.details-title Производительность
+						+e.capacity-table
+							table.table.table-striped.table-borderless 
+								tbody
+									+tr('Ёмкость аккумулятора','1.5 А⋅ч','2.0 А⋅ч','2.5 А⋅ч','3.0 А⋅ч','4.0 А⋅ч','5.2 А⋅ч','6.0 А⋅ч')
+									+tr('Количество шурупов 6 x 60 мм, ввинченных в мягкую древесину','265&nbsp;шт.','350&nbsp;шт.','440&nbsp;шт.','530&nbsp;шт.','700&nbsp;шт.','920&nbsp;шт.','1060&nbsp;шт.')
+				.tabs__content
+					+e.table-row.row
+						.col-lg-6
+							+e.details-title Технические характеристики
+							table.table.table-striped.table-borderless 
+								tbody
+									+tr('Количество скоростей','2')
+									+tr('Число оборотов (скорость 1)','0-500 мин-1')
+									+tr('Число оборотов (скорость 2)','0-1800 мин-1')
+									+tr('Число ступеней крутящего момента','20')
+									+tr('Патрон','13 мм | одномуфтовый')
+						.col-lg-6
+							+e.details-title Логистические данные
+							table.table.table-striped.table-borderless 
+								tbody
+									+tr('Вес изделия','1.21 кг')
+									+tr('Вес в упаковке','1.73 кг')
+									+tr('Размер упаковки','253 x 78 x 213 мм')
+									+tr('Количество в транспортной упаковке','5 штук')
+									+tr('Вес транспортной упаковки','8 кг')
+									+tr('Размер транспортной упаковки','440 x 305 x 245 мм')
+									+tr('Кратность в контейнере (20"/40"/40"HC)','4180 | 8740 | 10260')
+				+e.docs.tabs__content
+					+e.details-title Сопроводительная документация
+					table.table.table-striped.table-borderless
+						tbody
+							tr
+								td Карточка товара
+								td
+									+e.download-link(href="#")
+										+icon('download-t')
+										| Скачать
+							tr
+								td Инструкция
+								td
+									+e.download-link(href="#")
+										+icon('download-t')
+										| Скачать
+							tr
+								td Сервисная раскладка
+								td
+									+e.download-link(href="#")
+										+icon('download-t')
+										| Скачать
+				.tabs__content
+					+e.rig-row.row
+						mixin rig(img,title,info,number)
+							.col-md-6.col-lg-4.col-xxl-3
+								+e.rig(href="#")
+									+e.rig-img: +img(`img/rig-${img}.png`)
+									+e.rig-text
+										+e.rig-title= title
+										+e.rig-info= info
+										+e.rig-nimber Артикул: #{number}
+						+rig('1','Аккумулятор','PXC 18V 4,0Ah','4511396')
+						+rig('2','Аккумулятор','PXC Plus 18V 5,2Ah','4511437')
+						+rig('3','Устройство зарядное','PXC Power X-Charger 3A','4512011')
+						+rig('4','Стартовый набор','PXC Starter Kit 18V 2,0Ah','4512040')
+						+rig('4','Стартовый набор','PXC Starter Kit 18V 3,0Ah','4512041')
+						+rig('5','Стартовый набор','PXC Starter Kit 18V 4,0Ah','4512042')
+						+rig('6','Устройство зарядное','PXC Power X-Boostcharger 6A','4512064')
+						+rig('7','Стартовый набор','PXC Power X-Twincharger 2×3A','4512069')
+						+rig('8','Аккумулятор','PXC 18V 2,0Ah','4511395')
+						+rig('9','Аккумулятор','PXC Plus 18V 3,0Ah','4511501')
+	// end sCard

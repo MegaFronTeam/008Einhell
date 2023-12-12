@@ -46,31 +46,33 @@ function eventHandler() {
 
 	// Header Block Sliders
 	const headerBlockNavWrap = document.querySelector('.headerBlock__caption-container');
-	const headerCaptionSlider = new Swiper(".headerBlock__caption-slider--js", {
-		slidesPerView: 1,
-		breakpoints: {
-			576: {
-				slidesPerView: 2,
-				spaceBetween: 20,
+	if (headerBlockNavWrap) {
+		const headerCaptionSlider = new Swiper(".headerBlock__caption-slider--js", {
+			slidesPerView: 1,
+			breakpoints: {
+				576: {
+					slidesPerView: 2,
+					spaceBetween: 20,
+				},
 			},
-		},
-		freeMode: true,
-		watchSlidesProgress: true,
-	});
-	const headerImgSlider = new Swiper(".headerBlock__img-slider--js", {
-		spaceBetween: 10,
-		navigation: {
-			nextEl: headerBlockNavWrap.querySelector(".swiper-button-next"),
-			prevEl: headerBlockNavWrap.querySelector(".swiper-button-prev"),
-		},
-		thumbs: {
-			swiper: headerCaptionSlider,
-		},
-		loop: true,
-		autoplay: {
-			delay: 5000,
-		},
-	});
+			freeMode: true,
+			watchSlidesProgress: true,
+		});
+		const headerImgSlider = new Swiper(".headerBlock__img-slider--js", {
+			spaceBetween: 10,
+			navigation: {
+				nextEl: headerBlockNavWrap.querySelector(".swiper-button-next"),
+				prevEl: headerBlockNavWrap.querySelector(".swiper-button-prev"),
+			},
+			thumbs: {
+				swiper: headerCaptionSlider,
+			},
+			loop: true,
+			autoplay: {
+				delay: 5000,
+			},
+		});
+	}
 
 	const productSliders = document.querySelectorAll('.sProductSlider__item');
 	if (productSliders) {
@@ -119,11 +121,32 @@ function eventHandler() {
 	}
 
 
-	new Swiper('.breadcrumb-slider--js', {
+	const thumbsSlider = new Swiper(".sCard__thumbs-slider", {
+		spaceBetween: 15,
+		slidesPerView: 'auto',
+		freeMode: true,
+		watchSlidesProgress: true,
+	});
+	var mainSlider = new Swiper(".sCard__main-slider", {
+		spaceBetween: 10,
+		thumbs: {
+			swiper: thumbsSlider,
+		},
+	});
+
+	new Swiper('.freemode-slider--js', {
 		slidesPerView: 'auto',
 		freeMode: true,
 		watchOverflow: true
 	});
+
+
+
+	// new Swiper('.breadcrumb-slider--js', {
+	// 	slidesPerView: 'auto',
+	// 	freeMode: true,
+	// 	watchOverflow: true
+	// });
 
 	const swiper4 = new Swiper('.sBanners__slider--js', { // если не используешь методы swiper  - можно обращаться без нее к Swiper
 		// slidesPerView: 5,
