@@ -3,6 +3,7 @@
 
 		// text-align: center;
 		@include roww(20px);
+		margin-left: 0;
 		// flex-wrap: wrap;
 		display: flex;
 	}
@@ -13,7 +14,7 @@
 	max-width: 100%;
 	li{
 		padding: 0;
-		flex-basis: 10%;
+		flex-basis: min-content;
 		// margin-left: 0;
 		// margin-right: 0;
 	}
@@ -40,7 +41,7 @@
 			@include mt;
 		}
 		@include media-breakpoint-up(xl) {
-			padding: rem(15) rem(10);
+			padding: rem(13) rem(13);
 			font-size: rem(16);
 		}
 		&.active,

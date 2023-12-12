@@ -38,13 +38,13 @@ mixin search()
 			button.btn.btn-primary
 				+icon("search")
 
-mixin page-head(t,...items)
-	+b.page-head
-		- let l = items.length
-		.container
-			+breadcrumb('Главная',...items)
-
-			h1= t
+mixin page-head(header,subtitle,...items)
+	.container
+		+breadcrumb('Главная',...items)
+		+b.page-head
+			if subtitle
+				span= subtitle
+			h1= header
 
 mixin parts(elem)
 	script.

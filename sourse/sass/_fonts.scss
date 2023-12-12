@@ -11,6 +11,7 @@ $addr: '../fonts/';
 @include font-face ($default-font, $addr + "OpenSansLight", 300, $file-formats:$file-format);
 @include font-face ($default-font, $addr + "OpenSansSemiBold", 600, $file-formats:$file-format);
 @include font-face ($header-font, $addr + "OpenSans_CondensedBold", 700, $file-formats:$file-format);
+@include font-face ($header-font, $addr + "OpenSans_CondensedRegular", 400, $file-formats:$file-format);
 
 // font-weight helper: 
 // 100 Thin

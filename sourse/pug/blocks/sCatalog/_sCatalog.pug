@@ -11,31 +11,45 @@ mixin product-item(i, t, p ,pr)
 			+e.btn(href='#')
 	// /.product-item
 
+mixin checkboxFilter(...items)
+	+e.checkbox-row
+		for item in items
+			+in-c("checkbox", item)
+
+mixin catalogItem(img,title)
+	+e.item(href="#")&attributes(attributes)
+		+e.item-img: +img(`img/${img}.jpg`)
+		+e.item-title= title
+
+
 mixin sCatalog(data)
 	// start sCatalog
 	+b.sCatalog.section&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sCatalog
-				p Выкупаем проблемные автомобили в день обращения
+			if block
+				block
+			else
+				+b.section-title.text-center
+					h2 sCatalog
+					p Выкупаем проблемные автомобили в день обращения
 
-			+e.row.row
-				- const wrapClass="col-3"
-				+e.col(class= wrapClass)
-					+product-item(`1`,``,``,``) 
-				+e.col(class= wrapClass)
-					+product-item(`2`,``,``,``) 
-				+e.col(class= wrapClass)
-					+product-item(`3`,``,``,``) 
-				+e.col(class= wrapClass)
-					+product-item(`4`,``,``,``) 
-				+e.col(class= wrapClass)
-					+product-item(`5`,``,``,``) 
-				+e.col(class= wrapClass)
-					+product-item(`6`,``,``,``) 
-				+e.col(class= wrapClass)
-					+product-item(`7`,``,``,``) 
-				+e.col(class= wrapClass)
-					+product-item(`8`,``,``,``) 
+				+e.row.row
+					- const wrapClass="col-3"
+					+e.col(class= wrapClass)
+						+product-item(`1`,``,``,``) 
+					+e.col(class= wrapClass)
+						+product-item(`2`,``,``,``) 
+					+e.col(class= wrapClass)
+						+product-item(`3`,``,``,``) 
+					+e.col(class= wrapClass)
+						+product-item(`4`,``,``,``) 
+					+e.col(class= wrapClass)
+						+product-item(`5`,``,``,``) 
+					+e.col(class= wrapClass)
+						+product-item(`6`,``,``,``) 
+					+e.col(class= wrapClass)
+						+product-item(`7`,``,``,``) 
+					+e.col(class= wrapClass)
+						+product-item(`8`,``,``,``) 
 
 	// end sCatalog

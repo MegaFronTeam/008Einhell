@@ -86,7 +86,7 @@ function eventHandler() {
 						slidesPerView: 3,
 					},
 				},
-				spaceBetween: 20,
+				spaceBetween: 21,
 				navigation: {
 					nextEl: wrap.querySelector(".swiper-button-next"),
 					prevEl: wrap.querySelector(".swiper-button-prev"),
