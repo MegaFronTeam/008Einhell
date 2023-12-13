@@ -141,16 +141,16 @@ function eventHandler() {
 
 	$('.sCatalog__filter-btn--js').on('click', function() {
 		$('.filter').addClass('active');
-		$('body').addClass('fixed');
+		$('body').addClass('fixed2');
 	});
 	$('.filter-close').on('click', function() {
 		$('.filter').removeClass('active');
-		$('body').removeClass('fixed');
+		$('body').removeClass('fixed2');
 	});
 	window.addEventListener('resize', () => {
 		if (window.matchMedia('(min-width: 992px)').matches) {
 			$('.filter').removeClass('active');
-			$('body').removeClass('fixed');
+			$('body').removeClass('fixed2');
 		};
 	}, { passive: true });
 

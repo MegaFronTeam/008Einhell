@@ -55,3 +55,21 @@ mixin compareBtn(title)
 	+b.compare-btn.btn.BUTTON
 		span: +icon('compare')
 		= title
+
+mixin compareList(...items)
+	+e.items-list.custom-scroll.UL
+		for item in items
+			+e.item(href="#")
+				+e.img-wrap: +img(`img/catalog-item-${item.img}.jpg`)
+				+e.item-title= item.title
+
+mixin comparedDD(counter)
+	+b.compare-block
+		+e.btn.btn(href="#")
+			+icon('compare')
+			span Сравнение
+			if counter
+				+e.counter= counter
+		+e.dropdown
+			+compareList({img: '1', title: 'Дрель ударная аккумуляторная PXC TC-ID 18 Li-Solo'},{img: '2', title: 'Дрель аккумуляторная PXC TE-CD 18/2 Li-Solo'},{img: '3', title: 'Дрель-шуруповёрт аккумуляторнаяTC-CD 12 Li'},{img: '4', title: 'Дрель-шуруповерт аккумуляторнаяTE-CD 18 Li Brushless + Starter Kit 5.2'},{img: '1', title: 'Дрель ударная аккумуляторная PXC TC-ID 18 Li-Solo'})
+			+e.dropdown-btn.btn.btn-primary(href="#") сравнить товары

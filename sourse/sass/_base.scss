@@ -25,6 +25,7 @@ html{
 
 body {
 	&[class*="fixed"],
+	&[class*="fixed2"],
 	&.fancybox-active{
 		.header{ 
 			padding-right: var(--spacing-end);

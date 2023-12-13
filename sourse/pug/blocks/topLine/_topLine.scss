@@ -31,34 +31,6 @@
 			display: inline-block;
 		}
 	}
-	&__compare {
-		font-size: rem(15);
-		font-weight: 300;
-		color: $gray-500;
-		span {
-			display: none;
-			@include media-breakpoint-up(lg) {
-				display: inline-block;
-			}
-		}
-		@include media-breakpoint-up(xl) {
-			font-size: rem(16);
-		}
-		&:hover {
-			color: $primary;
-			.icon {
-				fill: $primary;
-			}
-		}
-		.icon {
-			fill: $gray-500;
-			font-size: rem(22);
-			@include mt;
-			@include media-breakpoint-up(lg) {				
-				margin-right: rem(10);
-			}
-		}
-	}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}
