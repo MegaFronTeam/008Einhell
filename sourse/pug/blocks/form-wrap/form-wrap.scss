@@ -32,6 +32,17 @@
 .form-check {
 }
 .form-check-input {
+	width: rem(18);
+	height: rem(18);
+	--bs-border-width: 2px;
+	--bs-border-color: #C8C8C8;
+	@include mt;
+	&:hover {
+		border-color: $primary;
+	}
+}
+.form-check-input[type=checkbox] {
+	border-radius: 2px
 }
 .form-check-label {
 }

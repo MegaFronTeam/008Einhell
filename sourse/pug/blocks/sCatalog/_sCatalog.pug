@@ -1,26 +1,29 @@
-mixin product-item(i, t, p ,pr)
-	+b.ARTICLE.product-item
-		+e.img-wrap(href="#")
-			//- если надо картинку по центру  вывести использовать обертку .img-wrap-center  - если нет- убираем
-			.img-wrap-center 
-				+img(`img/prod-${i}.jpg`)
-		+e.caption
-			+e.title!= t
-			+e.text!= p
-			+e.price!= pr
-			+e.btn(href='#')
-	// /.product-item
-
 mixin checkboxFilter(...items)
 	+e.checkbox-row
 		for item in items
 			+in-c("checkbox", item)
+
+mixin checkboxGroup(...items)
+	.filter__checkbox-group
+		for item in items
+			.filter__checkbox-wrap
+				+in-c("checkbox", item.name)
+					span.filter__checkbox-text.form-check-label= item.name
+					span.filter__checkbox-count= item.number
 
 mixin catalogItem(img,title)
 	+e.item(href="#")&attributes(attributes)
 		+e.item-img: +img(`img/${img}.jpg`)
 		+e.item-title= title
 
+mixin catalogCard(img,title,number)
+	.col-sm-6.col-md-4
+		+b.card-item(href="#")&attributes(attributes)
+			+e.img-wrap: +img(`img/${img}.png`)
+			+e.title= title
+			+e.number Артикул: #{number}
+			+e.compare
+				+compareBtn('сравнить')
 
 mixin sCatalog(data)
 	// start sCatalog
@@ -29,27 +32,49 @@ mixin sCatalog(data)
 			if block
 				block
 			else
-				+b.section-title.text-center
-					h2 sCatalog
-					p Выкупаем проблемные автомобили в день обращения
-
 				+e.row.row
-					- const wrapClass="col-3"
-					+e.col(class= wrapClass)
-						+product-item(`1`,``,``,``) 
-					+e.col(class= wrapClass)
-						+product-item(`2`,``,``,``) 
-					+e.col(class= wrapClass)
-						+product-item(`3`,``,``,``) 
-					+e.col(class= wrapClass)
-						+product-item(`4`,``,``,``) 
-					+e.col(class= wrapClass)
-						+product-item(`5`,``,``,``) 
-					+e.col(class= wrapClass)
-						+product-item(`6`,``,``,``) 
-					+e.col(class= wrapClass)
-						+product-item(`7`,``,``,``) 
-					+e.col(class= wrapClass)
-						+product-item(`8`,``,``,``) 
+					+e.filter-col.col-lg-3
+						+b.filter
+							.filter-close.btn.d-lg-none.BUTTON
+								+icon('close')
+							+e.title.d-lg-none.text-center Фильтр
+							+e.section.UL
+								li: a(href="#").active Дрели
+								li: a(href="#") Перфораторы
+								li: a(href="#") Шуруповёрты
+								li: a(href="#") Машины шлифовальные
+								li: a(href="#") Машины шлифовальные угловые
+								li: a(href="#") Машины шлифовальные для стен и потолка
+								li: a(href="#") Лобзики
+								li: a(href="#") Пилы дисковые
+								li: a(href="#") Пилы сабельные
+								li: a(href="#") Мешалки
+								li: a(href="#") Электрорубанки
+								li: a(href="#") Реноваторы
+								li: a(href="#") Машины фрезерные
+							+ddGroup
+								+ddGroupItem('Ёмкость аккумулятора (А/ч)', 'active')
+									+checkboxGroup({name: '-',number:'2'},{name: '2.0',number:'5'},{name: '4.0',number:'11'})
+								+ddGroupItem('Макс. крутящий момент (Нм)')
+									+checkboxGroup({name: '11',number:'2'},{name: '30',number:'2'},{name: '32',number:'26'},{name: '38',number:'3'})
+								+ddGroupItem('Макс. крутящий момент (Нм)')
+									+checkboxGroup({name: '11',number:'2'},{name: '30',number:'2'},{name: '32',number:'26'},{name: '38',number:'3'})
+					.col-lg-9
+						+e.filter-btn--js.btn.btn-primary.d-lg-none.BUTTON Фильтр
+						+e.card-row.row
+							+catalogCard('card-item-1','Дрель ударная аккумуляторная PXC TC-ID 18 Li-Solo','4513960')
+							+catalogCard('card-item-2','Дрель аккумуляторная PXC TE-CD 18/2 Li-Solo','4513833')
+							+catalogCard('card-item-3','Дрель аккумуляторнаяPXC','4513887')
+							+catalogCard('card-item-4','Дрель-шуруповёрт аккумуляторнаяPXC TE-CD 18/40 Li +69 (1x2,5Ah)','4513955')
+							+catalogCard('card-item-5','Дрель-шуруповёрт аккумуляторнаяPXC TE-CD 18/40 Li BL (2x2.0Ah)','4513995')
+							+catalogCard('card-item-6','Дрель-шуруповёрт аккумуляторнаяTC-CD 12 Li','4513206')
+							+catalogCard('card-item-7','Дрель аккумуляторнаяTC-CD 18-2 Li (1x1,5Ah)','4513846')
+							+catalogCard('card-item-8','Дрель аккумуляторнаяPXC TE-CD 18 Li Brushless-Solo','4513850')
+							+catalogCard('card-item-9','Дрель-шуруповерт аккумуляторнаяTE-CD 18 Li Brushless + Starter Kit 5.2','4513850SET')
+						+sContent.sContent--catalog
+							+b.section-title
+								h2 Заголовок SEO текста
+							p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.
+
 
 	// end sCatalog

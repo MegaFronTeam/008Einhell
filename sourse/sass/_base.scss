@@ -31,6 +31,9 @@ body {
 		}
 		margin-right: var(--spacing-end);
 	}
+	&.fixed {
+		overflow: hidden;
+	}
 	// min-width: 575px; 
 	// -webkit-font-smoothing: antialiased;
 	// position: relative;
