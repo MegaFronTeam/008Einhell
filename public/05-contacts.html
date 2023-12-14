@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title>Contacts</title>
+		<meta name="description" content="о чем страница">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,  shrink-to-fit=no, viewport-fit=cover">
+		<link type="image/ico" href="img/favicon.ico" rel="shortcut icon"><meta name="format-detection" content="telephone=no"> 
+		<link href="libs/swiper/swiper-bundle.min.css" rel="stylesheet"/>
+		<link href="libs/@fancyapps/ui/fancybox/fancybox.css" rel="stylesheet"/>
+		<link rel="preload" href="fonts/OpenSansRegular.woff2" as="font" type="font/woff2" crossorigin="crossorigin"/>
+		<link rel="preload" href="fonts/OpenSansBold.woff2" as="font" type="font/woff2" crossorigin="crossorigin"/>
+		<link rel="preload" href="fonts/OpenSansLight.woff2" as="font" type="font/woff2" crossorigin="crossorigin"/>
+		<link rel="preload" href="fonts/OpenSansSemiBold.woff2" as="font" type="font/woff2" crossorigin="crossorigin"/>
+		<link rel="preload" href="fonts/OpenSans_CondensedBold.woff2" as="font" type="font/woff2" crossorigin="crossorigin"/>
+		<link href="css/custom-bootstrap.min.css" rel="stylesheet"/>
+		<link href="css/main.min.css" rel="stylesheet"/>
+		<script>
+			function addBlock(elem) {
+				fetch(`parts/${elem}.html`)
+					.then(response => response.text())
+					.then( text => {
+						const wrap = document.querySelector(`#${elem}Wrap`);
+						wrap.insertAdjacentHTML('afterend', text);
+						wrap.previousElementSibling.remove()
+						wrap.remove();
+					});
+			}
+		</script>
+	</head>
+	<body class="main-page">
+		<div class="main-wrapper">
+			<script>addBlock(`header`)</script>
+			<div id="headerWrap"></div>
+			<main>
+				<div class="container">
+					<nav class="swiper breadcrumb-slider--js" aria-label="breadcrumb">
+						<ol class="breadcrumb swiper-wrapper" itemscope="itemscope" itemtype="http://schema.org/BreadcrumbList">
+							<li class="breadcrumb-item swiper-slide" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Главная</span>
+									<meta itemprop="position" content="1"/></a></li>
+							<li class="breadcrumb-item active swiper-slide" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="#" itemprop="item"><span itemprop="name">Контакты</span>
+									<meta itemprop="position" content="2"/></a></li>
+						</ol>
+					</nav>
+				</div>
+				<!-- start sContact-->
+				<section class="sContact section" id="sContact">
+					<div class="container">
+						<div class="section-title text-center">
+							<h2>sContact</h2>
+						</div>
+						<div class="sContact__row row">
+						</div>
+						<div class="sContact__cards cards">
+							<div class="sContact__card">
+								<div class="sContact__title card-title">Адрес организации
+								</div>
+								<div class="sContact__desciption">
+									<ul class="list">
+										<li class="item">ООО «Айнхелль»</li>
+										<li class="item">Российская Федерация</li>
+										<li class="item">197022, Санкт-Петербург г, вн.тер.г. муниципальный округ Аптекарский остров, ул. Профессора Попова, д. 23, литер Д, пом. 27Н, офис 310</li>
+										<li class="item">(на территории БЦ Бизнес-мегаполис "Гайот")</li>
+									</ul>
+								</div>
+							</div>
+							<div class="sContact__card">
+								<div class="sContact__title card-title">Телефон горячей линии
+								</div>
+								<div class="sContact__desciption">
+									<ul class="list list-box">
+										<li class="item detail-wrapper">
+											<svg class="icon">
+												<use xlink:href="img/svg/sprite.svg#phone"></use>
+											</svg>
+											<p>+7 (800) 775-51-55</p>
+										</li>
+										<li class="item detail-wrapper">
+											<svg class="icon">
+												<use xlink:href="img/svg/sprite.svg#time"></use>
+											</svg>
+											<p>c 9:00 до 17:30</p>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="sContact__card">
+								<div class="sContact__title card-title">Факс
+								</div>
+								<div class="sContact__desciption">
+									<ul class="list list-box">
+										<li class="item detail-wrapper">
+											<svg class="icon">
+												<use xlink:href="img/svg/sprite.svg#fax"></use>
+											</svg>
+											<p>+7 (812) 448-83-49</p>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="sContact__card">
+								<div class="sContact__title card-title">Email
+								</div>
+								<div class="sContact__desciption">
+									<ul class="list list-box">
+										<li class="item detail-wrapper">
+											<svg class="icon">
+												<use xlink:href="img/svg/sprite.svg#email"></use>
+											</svg>
+											<p>welcome@einhell-russia.ru</p>
+										</li>
+										<li class="item detail-wrapper">
+											<svg class="icon">
+												<use xlink:href="img/svg/sprite.svg#email"></use>
+											</svg>
+											<p>service@einhell-russia.ru (сервисная служба)</p>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="wrapper">
+								<div class="sContact__card" id="market-card">
+									<div class="sContact__title card-title">Отдел маркетинга
+									</div>
+									<div class="sContact__desciption">
+										<ul class="list list-box">
+											<li class="item detail-wrapper contact-us">«Мы нацелены на широкий медийный охват торговой марки Einhell в России, поэтому с радостью ознакомимся с любыми Вашими предложениями!»</li>
+											<li class="item detail-wrapper">
+												<svg class="icon">
+													<use xlink:href="img/svg/sprite.svg#email"></use>
+												</svg>
+												<p>welcome@einhell-russia.ru</p>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="sContact__card" id="last-card">
+									<div class="sContact__title card-title">Декларация об осуществлении деятельности на территории г. Санкт-Петербурга
+									</div>
+									<div class="sContact__desciption">
+										<ul class="list list-box">
+											<li class="item detail-wrapper"><a class="link" href="#">
+													<svg class="icon">
+														<use xlink:href="img/svg/sprite.svg#open"></use>
+													</svg>
+													<p>Открыть</p></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="sContact__qr-wrapper">
+							<div class="red-box"></div><img class="img" src="img/qr.png"/>
+						</div>
+					</div>
+				</section>
+				<!-- end sContact-->
+			</main>
+			<script>addBlock(`footer`)</script>
+			<div id="footerWrap"></div>
+		</div>
+		<script src="libs/jquery/jquery.min.js"></script>
+		<script src="libs/@fancyapps/ui/fancybox/fancybox.umd.js"> </script>
+		<script src="libs/swiper/swiper-bundle.min.js"> </script>
+		<script src="libs/inputmask/inputmask.min.js"> </script>
+		<script src="js/JSCCommon.js"></script>
+		<script src="js/common.js"></script>
+	</body>
+</html>
