@@ -61,13 +61,15 @@
 										</button>
 									</form>
 								</div>
-								<div class="sDistributor__view">Посмотреть:
-									<a class="sDistributor__view-link" href="#">
+								<div class="sDistributor__view">
+									<div class="sDistributor__view-label">Посмотреть:
+									</div>
+									<a class="sDistributor__view-label active" href="#">
 										<svg class="icon icon-pin ">
 											<use xlink:href="img/svg/sprite.svg#pin"></use>
 										</svg>На карте
 									</a>
-									<a class="sDistributor__view-link" href="#">
+									<a class="sDistributor__view-label" href="#">
 										<svg class="icon icon-list ">
 											<use xlink:href="img/svg/sprite.svg#list"></use>
 										</svg>Списком
@@ -79,7 +81,102 @@
 						</div>
 					</div>
 					<div class="sDistributor__map-wrap">
-						<div class="container"></div>
+						<div id="map">
+							<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;amp;apikey=09afbf5f-475d-4f23-bb68-eb2d6371a737" type="text/javascript"></script>
+							<script>"use strict";
+function eventHandler() {
+	var myMap;
+	ymaps.ready(init);
+	
+	function init () {
+		let coords = [],
+				sContactItems = document.querySelectorAll('.sDistributor__item');
+		
+		sContactItems.forEach((item) => coords.push(JSON.parse(item.dataset.coords)));
+
+		myMap = new ymaps.Map('map', {
+				center: coords[0],
+				zoom: 14
+		}, {
+				searchControlProvider: 'yandex#search'
+		});
+		let myPlacemark = new ymaps.Placemark(coords[0], {}, {
+			iconLayout: 'default#image',
+			iconImageHref: 'img/pin-msp.png',
+			iconImageSize: [48, 77],
+			iconImageOffset: [-24, -38]
+		});
+		myMap.geoObjects.add(myPlacemark);
+
+		for (let i = 0; i < sContactItems.length; i++) {
+			sContactItems[i].addEventListener('click', () => {
+				sContactItems.forEach((item) => item.classList.remove('active'));
+				sContactItems[i].classList.add('active');
+
+				myMap.setCenter(coords[i]);
+				myPlacemark.geometry.setCoordinates(coords[i]);
+			});
+		}
+	};
+};
+
+if (document.readyState !== 'loading') {
+	eventHandler();
+} else {
+	document.addEventListener('DOMContentLoaded', eventHandler);
+}
+							</script>
+						</div>
+						<div class="container">
+							<div class="sDistributor__item">
+								<div class="sDistributor__item-top">15.4 км
+									<button class="sDistributor__close-btn btn btn-primary">
+										<svg class="icon icon-close ">
+											<use xlink:href="img/svg/sprite.svg#close"></use>
+										</svg>
+									</button>
+								</div>
+								<div class="sDistributor__item-text">
+									<address>
+										<div class="sDistributor__item-city">Москва
+										</div>
+										<div class="sDistributor__item-address">ООО «Олливер»
+										</div>
+										<div class="sDistributor__item-address">Каширское шоссе, д. 16
+										</div>
+									</address>
+									<div class="sDistributor__details">
+										<svg class="icon icon-metro ">
+											<use xlink:href="img/svg/sprite.svg#metro"></use>
+										</svg>м. Каширская
+									</div>
+									<div class="sDistributor__info">
+										<div class="sDistributor__info-term">Режим работы
+										</div>
+										<div class="sDistributor__info-def">10:00 - 19:00
+										</div>
+									</div>
+									<div class="sDistributor__info">
+										<div class="sDistributor__info-term">Режим работы
+										</div>
+										<a class="sDistributor__info-def" href="tel:number">8 (925) 088-81-018
+										</a>
+										<a class="sDistributor__info-def" href="tel:number">(495) 109-40-07
+										</a>
+									</div>
+									<a class="sDistributor__details" href="#">
+										<svg class="icon icon-web ">
+											<use xlink:href="img/svg/sprite.svg#web"></use>
+										</svg>Перейти на сайт
+									</a>
+									<button class="sDistributor__item-btn btn btn-primary">Построить маршрут
+										<svg class="icon icon-route ">
+											<use xlink:href="img/svg/sprite.svg#route"></use>
+										</svg>
+									</button>
+								</div>
+							</div>
+						</div>
 					</div>
 				</section>
 				<!-- end sDistributor-->
