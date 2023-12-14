@@ -5,8 +5,7 @@
 	&__row{
 		// --bs-gutter-x: #{rem()};
 		// @include media-breakpoint-up(md) {
-			--bs-gutter-y: var(--bs-gutter-x);
-			font-family: $default-font;
+			--bs-gutter-y: var(--bs-gutter-x); 
 		// }
 
 	}
