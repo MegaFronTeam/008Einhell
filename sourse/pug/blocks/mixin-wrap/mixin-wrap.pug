@@ -13,9 +13,9 @@ include components/ddgroup.pug
 
 mixin arrow()
 	.swiper-button-hand.swiper-button-hand-prev.swiper-button-prev
-		+icon('chevron-left')
+		+icon('left')
 	.swiper-button-hand.swiper-button-hand-next.swiper-button-next
-		+icon('chevron-right')
+		+icon('left')
 //- /arrow for swiper-slider
 
 mixin ie11()
@@ -31,22 +31,47 @@ mixin addblock()
 
 
 
-mixin search()
+mixin search(title,placeholder)
 	+b.search-block
 		form
-			input(type="text" placeholder="Поиск по номеру или названию запчасти" inputmode='search')
-			button 
+			if title
+				+e.title= title
+			input(type="text" placeholder= placeholder inputmode='search')
+			button.btn.btn-primary
 				+icon("search")
 
-mixin page-head(t,...items)
-	+b.page-head
-		- let l = items.length
-		.container
-			+breadcrumb('Главная',...items)
-
-			h1= t
+mixin page-head(header,subtitle,...items)
+	.container
+		+breadcrumb('Главная',...items)
+		+b.page-head
+			if subtitle
+				span= subtitle
+			h1= header
 
 mixin parts(elem)
 	script.
 		addBlock(`#{elem}`)
 	div(id=`${elem}Wrap`)
+
+mixin compareBtn(title)
+	+b.compare-btn.btn.BUTTON
+		span: +icon('compare')
+		= title
+
+mixin compareList(...items)
+	+e.items-list.custom-scroll.UL
+		for item in items
+			+e.item(href="#")
+				+e.img-wrap: +img(`img/catalog-item-${item.img}.jpg`)
+				+e.item-title= item.title
+
+mixin comparedDD(counter)
+	+b.compare-block
+		+e.btn.btn(href="#")
+			+icon('compare')
+			span Сравнение
+			if counter
+				+e.counter= counter
+		+e.dropdown
+			+compareList({img: '1', title: 'Дрель ударная аккумуляторная PXC TC-ID 18 Li-Solo'},{img: '2', title: 'Дрель аккумуляторная PXC TE-CD 18/2 Li-Solo'},{img: '3', title: 'Дрель-шуруповёрт аккумуляторнаяTC-CD 12 Li'},{img: '4', title: 'Дрель-шуруповерт аккумуляторнаяTE-CD 18 Li Brushless + Starter Kit 5.2'},{img: '1', title: 'Дрель ударная аккумуляторная PXC TC-ID 18 Li-Solo'})
+			+e.dropdown-btn.btn.btn-primary(href="#") сравнить товары

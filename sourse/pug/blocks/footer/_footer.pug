@@ -1,9 +1,23 @@
 mixin footer()
 	+b.FOOTER.footer.section
 		.container
-			.row
-				.col
-					
-				.col Footer
-				.col
-				.col-auto
+			+e.container
+				+e.row.row
+					.col.col-xl-3
+						+e.logo(href="#")
+							+img('img/footer-logo.png')
+					+e.text-col.col-12.col-xl.order-last.order-xl-0
+						+e.title Einhell — нет ничего невозможного!
+						p От&nbsp;аккумуляторных шуруповёртов до&nbsp;электрических газонокосилок: Einhell Germany AG&nbsp;разрабатывает и&nbsp;реализует самые современные инструменты для любителей делать своими руками, садоводов-любителей и&nbsp;мастеров. Наш широкий ассортимент продукции охватывает весь спектр применений в&nbsp;саду и&nbsp;доме, а&nbsp;также в&nbsp;гараже и&nbsp;мастерской. В&nbsp;дополнение к&nbsp;надёжности продукции, качественному сервису и&nbsp;оптимальному соотношению цены и&nbsp;качества, бренд Einhell олицетворяет свободу, простоту, безопасность и&nbsp;радость при реализации ваших проектов.
+					+e.nav-col.col-auto
+						+e.nav.NAV
+							ul
+								li: a(href="#") Карьера
+								li: a(href="#") О компании
+								li: a(href="#") Контакты
+						+e.nav.NAV
+							ul
+								li: a(href="#") Каталог Садовый инструмент EN
+								li: a(href="#") Каталог Электроинструмент EN
+								li: a(href="#") Политика конфиденциальности
+			+e.copyright © 2023 Einhell Germany AG Russian Subsidiary

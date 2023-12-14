@@ -1,0 +1,191 @@
+// start .sPublications
+.sPublications {
+	--sPT: #{rem(40)};
+	--sPB: #{rem(40)};
+	// --sTPB: #{rem()};
+	@include media-breakpoint-up(md) {
+		--sPT: #{rem(80)};
+		--sPB: #{rem(80)};
+	}
+	&__row{
+		// --bs-gutter-x: #{rem()};
+		// --bs-gutter-y: #{rem()};
+	}
+	&__top {
+		background-color: $gray-100;
+	}
+	&__title-row {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		margin-bottom: rem(44);
+	}
+	.section-title{
+		margin-bottom: 0;
+		margin-right: rem(75);
+		padding: rem(10) rem(20);
+		border-radius: 2px;
+		background: $gray-800;
+		h2 {
+			margin-bottom: 0;
+			color: $white;
+			font-size: rem(20);
+			font-weight: 700;
+			text-transform: uppercase;
+			@include media-breakpoint-up(md) {
+				font-size: rem(24);
+			}
+		}
+	}
+	&__top-link {
+		padding-block: rem(8);
+		color: $body-color;
+		font-weight: 300;
+		&:hover {
+			color: $primary;
+			.icon {
+				stroke: $primary;
+			}
+		}
+		.icon {
+			fill: none;
+			stroke: $body-color;
+			@include mt;
+		}
+	}
+	&__container {
+		display: grid;
+		gap: rem(20);
+		grid-template-columns: 100%;
+		@include media-breakpoint-up(md) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@include media-breakpoint-up(lg) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+		@include media-breakpoint-up(xl) {
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+
+	&__item {
+		@include block(1,1);
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		&:hover {
+			&:before {
+				background-color: rgba(255, 255, 255, 0.20);
+			}
+		}
+		&::before {
+			position: absolute;
+			content: '';
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			@include mt;
+			z-index: -1;
+		}
+		img {
+			position: absolute;
+			content: '';
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			z-index: -2;
+		}
+		&:nth-child(9n+1) {
+			grid-row: span 2;
+			@include media-breakpoint-up(md) {
+				grid-column: span 2;
+			}
+			.sPublications__text-wrap {
+				position: relative;
+				margin-bottom: rem(60);
+				align-self: flex-start;
+				overflow: visible;
+				&::after {
+					position: absolute;
+					display: inline-block;
+					content: '';
+					top: 100%;
+					left: 0;
+					height: rem(10);
+					width: 40%;
+					background-color: $primary;
+					z-index: 5;
+				}
+			}
+			.sPublications__title {
+				font-size: rem(24);
+				text-transform: uppercase;
+			}
+			.sPublications__descr {
+				font-size: rem(16);
+				font-weight: 400;
+			}
+		}
+	}
+	&__text-wrap {
+		padding: rem(14);
+		min-height: rem(77);
+		background-color: rgba(255, 255, 255, 0.80);
+	}
+	&__text {
+		position: relative;
+		-webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+		&--catalog {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: rem(10) rem(14);
+			min-height: 0;
+			background-color: rgba(255, 255, 255, 0.80);
+		}
+	}
+	&__title {
+		color: $gray-900;
+		font-family: $header-font;
+		font-size: rem(20);
+		font-weight: 700;
+		line-height: 130%;
+	}
+	&__descr {
+		color: $gray-900;
+		font-size: rem(14);
+		font-weight: 300;
+		line-height: 130%;
+	}
+	&__pdf {
+		padding: rem(2) rem(10);
+		color: $white;
+		font-size: rem(14);
+		font-weight: 700;
+		text-transform: uppercase;
+		background-color: $primary;
+		border-radius: $border-radius;
+	}
+	&__size {
+		padding: rem(2) rem(10);
+		color: $white;
+		font-size: rem(14);
+		font-weight: 300;
+		background-color: $gray-800;
+		border-radius: $border-radius;
+	}
+
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.sPublications

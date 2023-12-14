@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title>Product Page</title>
+		<meta name="description" content="о чем страница">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,  shrink-to-fit=no, viewport-fit=cover">
+		<link type="image/ico" href="img/favicon.ico" rel="shortcut icon"><meta name="format-detection" content="telephone=no"> 
+		<link href="libs/swiper/swiper-bundle.min.css" rel="stylesheet"/>
+		<link href="libs/@fancyapps/ui/fancybox/fancybox.css" rel="stylesheet"/>
+		<link rel="preload" href="fonts/OpenSansRegular.woff2" as="font" type="font/woff2" crossorigin="crossorigin"/>
+		<link rel="preload" href="fonts/OpenSansBold.woff2" as="font" type="font/woff2" crossorigin="crossorigin"/>
+		<link rel="preload" href="fonts/OpenSansLight.woff2" as="font" type="font/woff2" crossorigin="crossorigin"/>
+		<link rel="preload" href="fonts/OpenSansSemiBold.woff2" as="font" type="font/woff2" crossorigin="crossorigin"/>
+		<link rel="preload" href="fonts/OpenSans_CondensedBold.woff2" as="font" type="font/woff2" crossorigin="crossorigin"/>
+		<link href="css/custom-bootstrap.min.css" rel="stylesheet"/>
+		<link href="css/main.min.css" rel="stylesheet"/>
+		<script>
+			function addBlock(elem) {
+				fetch(`parts/${elem}.html`)
+					.then(response => response.text())
+					.then( text => {
+						const wrap = document.querySelector(`#${elem}Wrap`);
+						wrap.insertAdjacentHTML('afterend', text);
+						wrap.previousElementSibling.remove()
+						wrap.remove();
+					});
+			}
+		</script>
+	</head>
+	<body class="main-page">
+		<div class="main-wrapper">
+			<script>addBlock(`header`)</script>
+			<div id="headerWrap"></div>
+			<main>
+				<div class="container">
+					<nav class="swiper breadcrumb-slider--js" aria-label="breadcrumb">
+						<ol class="breadcrumb swiper-wrapper" itemscope="itemscope" itemtype="http://schema.org/BreadcrumbList">
+							<li class="breadcrumb-item swiper-slide" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Главная</span>
+									<meta itemprop="position" content="1"/></a></li>
+							<li class="breadcrumb-item swiper-slide" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="#" itemprop="item"><span itemprop="name">Инструменты</span>
+									<meta itemprop="position" content="2"/></a></li>
+							<li class="breadcrumb-item swiper-slide" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="#" itemprop="item"><span itemprop="name">Ручной электроинструмент</span>
+									<meta itemprop="position" content="3"/></a></li>
+							<li class="breadcrumb-item active swiper-slide" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="#" itemprop="item"><span itemprop="name">Дрель</span>
+									<meta itemprop="position" content="4"/></a></li>
+						</ol>
+					</nav>
+				</div>
+				<!-- start sCard-->
+				<section class="sCard section" id="sCard">
+					<div class="container">
+						<div class="sCard__row row">
+							<div class="col-lg-6">
+								<div class="sCard__images">
+									<div class="sCard__main-slider swiper">
+										<div class="swiper-wrapper">
+											<div class="swiper-slide">
+												<div class="sCard__img-wrap"><img src="img/main-card-1.png" alt="" loading="lazy"/>
+												</div>
+											</div>
+											<div class="swiper-slide">
+												<div class="sCard__img-wrap"><img src="img/main-card-1.png" alt="" loading="lazy"/>
+												</div>
+											</div>
+											<div class="swiper-slide">
+												<div class="sCard__img-wrap"><img src="img/main-card-1.png" alt="" loading="lazy"/>
+												</div>
+											</div>
+											<div class="swiper-slide">
+												<div class="sCard__img-wrap"><img src="img/main-card-1.png" alt="" loading="lazy"/>
+												</div>
+											</div>
+											<div class="swiper-slide">
+												<div class="sCard__img-wrap"><img src="img/main-card-1.png" alt="" loading="lazy"/>
+												</div>
+											</div>
+											<div class="swiper-slide">
+												<div class="sCard__img-wrap"><img src="img/main-card-1.png" alt="" loading="lazy"/>
+												</div>
+											</div>
+											<div class="swiper-slide">
+												<div class="sCard__img-wrap"><img src="img/main-card-1.png" alt="" loading="lazy"/>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="sCard__thumbs-slider swiper">
+										<div class="swiper-wrapper">
+											<div class="swiper-slide">
+												<div class="sCard__img-wrap"><img src="img/sm-card-1.png" alt="" loading="lazy"/>
+												</div>
+											</div>
+											<div class="swiper-slide">
+												<div class="sCard__img-wrap"><img src="img/sm-card-2.png" alt="" loading="lazy"/>
+												</div>
+											</div>
+											<div class="swiper-slide">
+												<div class="sCard__img-wrap"><img src="img/sm-card-3.png" alt="" loading="lazy"/>
+												</div>
+											</div>
+											<div class="swiper-slide">
+												<div class="sCard__img-wrap"><img src="img/sm-card-4.png" alt="" loading="lazy"/>
+												</div>
+											</div>
+											<div class="swiper-slide">
+												<div class="sCard__img-wrap"><img src="img/sm-card-5.png" alt="" loading="lazy"/>
+												</div>
+											</div>
+											<div class="swiper-slide">
+												<div class="sCard__img-wrap"><img src="img/sm-card-4.png" alt="" loading="lazy"/>
+												</div>
+											</div>
+											<div class="swiper-slide">
+												<div class="sCard__img-wrap"><img src="img/sm-card-5.png" alt="" loading="lazy"/>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6">
+								<div class="sCard__info">
+									<h1>Дрель аккумуляторная PXC TE-CD 18 Li Brushless-Solo</h1>
+									<div class="sCard__number">Артикул: 4513850
+									</div><img src="img/label-1.jpg" alt="" loading="lazy"/>
+									<ul>
+										<li>Представитель семейства Power X-Change</li>
+										<li>Бесщеточный мотор - больше мощности и длительности работы</li>
+										<li>Высококачественный зажимной патрон 13 мм</li>
+										<li>Две передачи - для уверенного вкручивания шурупов и быстрого сверления</li>
+										<li>Функция быстрой остановки</li>
+										<li>Эргономичная рукоятка с покрытием Softgrip</li>
+										<li>Дополнительная ручка уменьшает физическую нагрузку на пользователя</li>
+										<li>LED подсвета рабочей области</li>
+										<li>Поставляется без батареи и зарядного устройства (приобретаются отдельно)</li>
+									</ul>
+									<button class="compare-btn btn"><span>
+											<svg class="icon icon-compare ">
+												<use xlink:href="img/svg/sprite.svg#compare"></use>
+											</svg></span>добавить в сравнение
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="sCard__details tabs">
+							<div class="sCard__details-caption tabs__caption swiper freemode-slider freemode-slider--js">
+								<div class="swiper-wrapper">
+									<div class="sCard__details-btn tabs__btn swiper-slide active">Описание
+									</div>
+									<div class="sCard__details-btn tabs__btn swiper-slide">Характеристики
+									</div>
+									<div class="sCard__details-btn tabs__btn swiper-slide">документы
+									</div>
+									<div class="sCard__details-btn tabs__btn swiper-slide">совместимая оснастка
+									</div>
+								</div>
+							</div>
+							<div class="tabs__content active">
+								<div class="sCard__details-item">
+									<div class="sCard__details-title">Описание продукта
+									</div>
+									<p>Аккумуляторная дрель EINHELL&nbsp;TE-CD 18&nbsp;Li Brushless&mdash;Solo сочетает в&nbsp;себе высокую производительность и&nbsp;длительный срок службы. Бесщеточный двигатель с&nbsp;двумя переключаемыми передачами обеспечивает мощное завинчивание и&nbsp;быстрое сверление. Функция быстрой остановки позволяет четко контролировать рабочий процесс, а&nbsp;с&nbsp;помощью высококачественного металлического быстрозажимного патрона 13&nbsp;мм оснастка легко меняется одной рукой. Для работы в&nbsp;плохо освещенных местах предусмотрена яркая LED-подсветка. Эргономичный дизайн с&nbsp;вставками Softgrip обеспечивает надежную фиксацию и&nbsp;удобную работу, а&nbsp;дополнительная ручка помогает уменьшить физическую нагрузку. Батареи и&nbsp;зарядное устройство не&nbsp;входят в&nbsp;комплект поставки и&nbsp;их&nbsp;можно приобрести отдельно.</p>
+								</div>
+								<div class="sCard__details-item">
+									<div class="sCard__details-title">Производительность
+									</div>
+									<div class="sCard__capacity-table">
+										<table class="table table-striped table-borderless"> 
+											<tbody>
+												<tr>
+													<td>Ёмкость аккумулятора</td>
+													<td>1.5 А⋅ч</td>
+													<td>2.0 А⋅ч</td>
+													<td>2.5 А⋅ч</td>
+													<td>3.0 А⋅ч</td>
+													<td>4.0 А⋅ч</td>
+													<td>5.2 А⋅ч</td>
+													<td>6.0 А⋅ч</td>
+												</tr>
+												<tr>
+													<td>Количество шурупов 6 x 60 мм, ввинченных в мягкую древесину</td>
+													<td>265&nbsp;шт.</td>
+													<td>350&nbsp;шт.</td>
+													<td>440&nbsp;шт.</td>
+													<td>530&nbsp;шт.</td>
+													<td>700&nbsp;шт.</td>
+													<td>920&nbsp;шт.</td>
+													<td>1060&nbsp;шт.</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+							<div class="tabs__content">
+								<div class="sCard__table-row row">
+									<div class="col-lg-6">
+										<div class="sCard__details-title">Технические характеристики
+										</div>
+										<table class="table table-striped table-borderless"> 
+											<tbody>
+												<tr>
+													<td>Количество скоростей</td>
+													<td>2</td>
+												</tr>
+												<tr>
+													<td>Число оборотов (скорость 1)</td>
+													<td>0-500 мин-1</td>
+												</tr>
+												<tr>
+													<td>Число оборотов (скорость 2)</td>
+													<td>0-1800 мин-1</td>
+												</tr>
+												<tr>
+													<td>Число ступеней крутящего момента</td>
+													<td>20</td>
+												</tr>
+												<tr>
+													<td>Патрон</td>
+													<td>13 мм | одномуфтовый</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<div class="col-lg-6">
+										<div class="sCard__details-title">Логистические данные
+										</div>
+										<table class="table table-striped table-borderless"> 
+											<tbody>
+												<tr>
+													<td>Вес изделия</td>
+													<td>1.21 кг</td>
+												</tr>
+												<tr>
+													<td>Вес в упаковке</td>
+													<td>1.73 кг</td>
+												</tr>
+												<tr>
+													<td>Размер упаковки</td>
+													<td>253 x 78 x 213 мм</td>
+												</tr>
+												<tr>
+													<td>Количество в транспортной упаковке</td>
+													<td>5 штук</td>
+												</tr>
+												<tr>
+													<td>Вес транспортной упаковки</td>
+													<td>8 кг</td>
+												</tr>
+												<tr>
+													<td>Размер транспортной упаковки</td>
+													<td>440 x 305 x 245 мм</td>
+												</tr>
+												<tr>
+													<td>Кратность в контейнере (20"/40"/40"HC)</td>
+													<td>4180 | 8740 | 10260</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+							<div class="sCard__docs tabs__content">
+								<div class="sCard__details-title">Сопроводительная документация
+								</div>
+								<table class="table table-striped table-borderless">
+									<tbody>
+										<tr>
+											<td>Карточка товара</td>
+											<td>
+												<a class="sCard__download-link" href="#">
+													<svg class="icon icon-download-t ">
+														<use xlink:href="img/svg/sprite.svg#download-t"></use>
+													</svg>Скачать
+												</a>
+											</td>
+										</tr>
+										<tr>
+											<td>Инструкция</td>
+											<td>
+												<a class="sCard__download-link" href="#">
+													<svg class="icon icon-download-t ">
+														<use xlink:href="img/svg/sprite.svg#download-t"></use>
+													</svg>Скачать
+												</a>
+											</td>
+										</tr>
+										<tr>
+											<td>Сервисная раскладка</td>
+											<td>
+												<a class="sCard__download-link" href="#">
+													<svg class="icon icon-download-t ">
+														<use xlink:href="img/svg/sprite.svg#download-t"></use>
+													</svg>Скачать
+												</a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="tabs__content">
+								<div class="sCard__rig-row row">
+									<div class="col-md-6 col-lg-4 col-xxl-3">
+										<a class="sCard__rig" href="#">
+											<div class="sCard__rig-img"><img src="img/rig-1.png" alt="" loading="lazy"/>
+											</div>
+											<div class="sCard__rig-text">
+												<div class="sCard__rig-title">Аккумулятор
+												</div>
+												<div class="sCard__rig-info">PXC 18V 4,0Ah
+												</div>
+												<div class="sCard__rig-nimber">Артикул: 4511396
+												</div>
+											</div>
+										</a>
+									</div>
+									<div class="col-md-6 col-lg-4 col-xxl-3">
+										<a class="sCard__rig" href="#">
+											<div class="sCard__rig-img"><img src="img/rig-2.png" alt="" loading="lazy"/>
+											</div>
+											<div class="sCard__rig-text">
+												<div class="sCard__rig-title">Аккумулятор
+												</div>
+												<div class="sCard__rig-info">PXC Plus 18V 5,2Ah
+												</div>
+												<div class="sCard__rig-nimber">Артикул: 4511437
+												</div>
+											</div>
+										</a>
+									</div>
+									<div class="col-md-6 col-lg-4 col-xxl-3">
+										<a class="sCard__rig" href="#">
+											<div class="sCard__rig-img"><img src="img/rig-3.png" alt="" loading="lazy"/>
+											</div>
+											<div class="sCard__rig-text">
+												<div class="sCard__rig-title">Устройство зарядное
+												</div>
+												<div class="sCard__rig-info">PXC Power X-Charger 3A
+												</div>
+												<div class="sCard__rig-nimber">Артикул: 4512011
+												</div>
+											</div>
+										</a>
+									</div>
+									<div class="col-md-6 col-lg-4 col-xxl-3">
+										<a class="sCard__rig" href="#">
+											<div class="sCard__rig-img"><img src="img/rig-4.png" alt="" loading="lazy"/>
+											</div>
+											<div class="sCard__rig-text">
+												<div class="sCard__rig-title">Стартовый набор
+												</div>
+												<div class="sCard__rig-info">PXC Starter Kit 18V 2,0Ah
+												</div>
+												<div class="sCard__rig-nimber">Артикул: 4512040
+												</div>
+											</div>
+										</a>
+									</div>
+									<div class="col-md-6 col-lg-4 col-xxl-3">
+										<a class="sCard__rig" href="#">
+											<div class="sCard__rig-img"><img src="img/rig-4.png" alt="" loading="lazy"/>
+											</div>
+											<div class="sCard__rig-text">
+												<div class="sCard__rig-title">Стартовый набор
+												</div>
+												<div class="sCard__rig-info">PXC Starter Kit 18V 3,0Ah
+												</div>
+												<div class="sCard__rig-nimber">Артикул: 4512041
+												</div>
+											</div>
+										</a>
+									</div>
+									<div class="col-md-6 col-lg-4 col-xxl-3">
+										<a class="sCard__rig" href="#">
+											<div class="sCard__rig-img"><img src="img/rig-5.png" alt="" loading="lazy"/>
+											</div>
+											<div class="sCard__rig-text">
+												<div class="sCard__rig-title">Стартовый набор
+												</div>
+												<div class="sCard__rig-info">PXC Starter Kit 18V 4,0Ah
+												</div>
+												<div class="sCard__rig-nimber">Артикул: 4512042
+												</div>
+											</div>
+										</a>
+									</div>
+									<div class="col-md-6 col-lg-4 col-xxl-3">
+										<a class="sCard__rig" href="#">
+											<div class="sCard__rig-img"><img src="img/rig-6.png" alt="" loading="lazy"/>
+											</div>
+											<div class="sCard__rig-text">
+												<div class="sCard__rig-title">Устройство зарядное
+												</div>
+												<div class="sCard__rig-info">PXC Power X-Boostcharger 6A
+												</div>
+												<div class="sCard__rig-nimber">Артикул: 4512064
+												</div>
+											</div>
+										</a>
+									</div>
+									<div class="col-md-6 col-lg-4 col-xxl-3">
+										<a class="sCard__rig" href="#">
+											<div class="sCard__rig-img"><img src="img/rig-7.png" alt="" loading="lazy"/>
+											</div>
+											<div class="sCard__rig-text">
+												<div class="sCard__rig-title">Стартовый набор
+												</div>
+												<div class="sCard__rig-info">PXC Power X-Twincharger 2×3A
+												</div>
+												<div class="sCard__rig-nimber">Артикул: 4512069
+												</div>
+											</div>
+										</a>
+									</div>
+									<div class="col-md-6 col-lg-4 col-xxl-3">
+										<a class="sCard__rig" href="#">
+											<div class="sCard__rig-img"><img src="img/rig-8.png" alt="" loading="lazy"/>
+											</div>
+											<div class="sCard__rig-text">
+												<div class="sCard__rig-title">Аккумулятор
+												</div>
+												<div class="sCard__rig-info">PXC 18V 2,0Ah
+												</div>
+												<div class="sCard__rig-nimber">Артикул: 4511395
+												</div>
+											</div>
+										</a>
+									</div>
+									<div class="col-md-6 col-lg-4 col-xxl-3">
+										<a class="sCard__rig" href="#">
+											<div class="sCard__rig-img"><img src="img/rig-9.png" alt="" loading="lazy"/>
+											</div>
+											<div class="sCard__rig-text">
+												<div class="sCard__rig-title">Аккумулятор
+												</div>
+												<div class="sCard__rig-info">PXC Plus 18V 3,0Ah
+												</div>
+												<div class="sCard__rig-nimber">Артикул: 4511501
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- end sCard-->
+			</main>
+			<script>addBlock(`footer`)</script>
+			<div id="footerWrap"></div>
+		</div>
+		<script src="libs/jquery/jquery.min.js"></script>
+		<script src="libs/@fancyapps/ui/fancybox/fancybox.umd.js"> </script>
+		<script src="libs/swiper/swiper-bundle.min.js"> </script>
+		<script src="libs/inputmask/inputmask.min.js"> </script>
+		<script src="js/JSCCommon.js"></script>
+		<script src="js/common.js"></script>
+	</body>
+</html>

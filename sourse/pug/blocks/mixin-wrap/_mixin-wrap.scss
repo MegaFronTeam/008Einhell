@@ -81,33 +81,205 @@
 
 .search-block{
 	position: relative;
+	form {
+		display: flex;
+		align-items: center;
+	}
 	input{
 		font-size: 14px;
 		width: 100%;
-		border: none !important;
+		padding: rem(8) rem(20);
+		margin-right: rem(5);
+		border-radius: 2px;
+		border: 1px solid $gray-200;
 		outline: none !important;
-		padding-left: rem(30);
-		padding-top: rem(14);
-		padding-bottom: rem(14);
+		&:focus {
+			border-color: $primary;
+		}
 	}
 	.icon{
-		font-size: rem(20);
+		font-size: rem(24);
 		border: none !important;
+		fill: $white;
 	}
 	button{
-		position: absolute;
-		left: 0;
-		top: 0;
-		height: 100%;
+		padding: 0;
+		width: rem(39);
+		height: rem(39);
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		background: none !important;
+		background: $primary;
+		border-radius: 2px;
 		border: none !important;
 	}
 }
-
+.breadcrumb {
+	flex-wrap: nowrap;
+}
 .breadcrumb-item{
 	width: auto;
-	margin-right: rem(32);
+	color: $body-color;
+	letter-spacing: 0.36px;
+	text-transform: uppercase;
+}
+.breadcrumb a {
+	color: inherit;
+}
+.breadcrumb-item+.breadcrumb-item:before {
+	content:url("data:image/svg+xml,%3Csvg width='6' height='10' viewBox='0 0 6 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 9L5 5L1 1' stroke='%23D50C1F' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+.compare-btn {
+	display: flex;
+	align-items: center;
+	padding: 0;
+	color: $primary;
+	font-weight: 600;
+	text-transform: uppercase;
+	--bs-btn-active-color: #{$crimson};
+	--bs-btn-active-border-color: transparent;
+	&:hover{
+		color: $crimson;
+		span {
+			background-color: $crimson;
+		}
+	}
+	span {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: rem(38);
+		height: rem(38);
+		margin-right: rem(10);
+		background-color: $primary;
+		border-radius: 50%;
+		@include mt;
+		.icon {
+			fill: $white;
+		}
+	}
+}
+
+.compare-block {
+	position: relative;
+	&__btn {
+		display: flex;
+		font-size: rem(15);
+		font-weight: 300;
+		color: $gray-500;
+		outline: none;
+		&:hover {
+			&+.compare-block__dropdown {
+				@include media-breakpoint-up(lg) {
+					visibility: visible;
+					opacity: 1;
+					pointer-events: all;
+				}
+			}
+		}
+		span {
+			display: none;
+			font-size: rem(14);
+			@include media-breakpoint-up(lg) {
+				display: inline-block;
+				margin-right: rem(5);
+			}
+			@include media-breakpoint-up(xl) {
+				font-size: rem(15);
+			}
+		}
+		@include media-breakpoint-up(xl) {
+			font-size: rem(16);
+		}
+		&:hover {
+			color: $primary;
+			.icon {
+				fill: $primary;
+			}
+		}
+		.icon {
+			margin-right: rem(5);
+			fill: $gray-500;
+			font-size: rem(22);
+			@include mt;
+			flex-shrink: 0;
+			@include media-breakpoint-up(xl) {				
+				margin-right: rem(10);
+			}
+		}
+	}
+	&__counter {
+		display: flex;
+		flex-shrink: 0;
+		align-items: center;
+		justify-content: center;
+		width: rem(22);
+		height: rem(22);
+		background-color: $primary;
+		color: $white;
+		border-radius: 50%;
+		font-size: rem(12);
+		// font-family: $header-font;
+		text-transform: uppercase;
+		line-height: 1;
+		font-weight: 600;
+	}
+	&__dropdown {
+		position: absolute;
+		visibility: hidden;
+		opacity: 0;
+		pointer-events: none;
+		right: 0;
+		top: 100%;
+		padding: rem(20);
+		width: rem(358);
+		border-radius: 2px;
+		background-color: $white;
+		box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.30);
+		z-index: 10;
+		@include mt;
+		@include media-breakpoint-up(lg) {
+			&:hover {
+				visibility: visible;
+				opacity: 1;
+				pointer-events: all;
+			}
+		}
+	}
+	&__items-list {
+		margin-bottom: rem(30);
+		list-style-type: none;
+		max-height: rem(360);
+		overflow-y: auto;
+	}
+	&__item {
+		display: grid;
+		grid-template-columns: rem(80) auto;
+		column-gap: rem(10);
+		align-items: center;
+		padding-block: rem(10);
+	}
+	&__img-wrap {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		img {
+			max-width: 100%;
+			max-height: 100%;
+		}
+	}
+	&__item-title {
+		color: $body-color;
+		font-size: rem(14);
+		font-weight: 300;
+		line-height: 130%;
+	}
+	&__dropdown-btn {
+		padding-inline: rem(10);
+		width: 100%;
+		font-size:rem(14);
+		font-weight: 600;
+		text-transform: uppercase;
+	}
 }

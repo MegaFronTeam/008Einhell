@@ -1,0 +1,44 @@
+//- mixin distributorItem(distance,city,address,schedule,metro,...tels)
+//- 	+e.item
+//- 		+e.close-btn.btn.btn-primary.BUTTON
+//- 			+icon('close')
+//- 		+e.item-top #{distance} км
+//- 		+e.item-text
+//- 			+e.item-city= city
+//- 			address= address 
+//- 			+e.details: 
+//- 				+icon('metro') 
+//- 				| distance
+//- 			+e.defenition
+//- 				span Режим работы
+//- 				| #{schedule}
+//- 			+e.defenition
+//- 				span Режим работы
+//- 					for number in tels
+//- 						| #{number}
+//- 			+e.details: 
+//- 				+icon('web') 
+//- 				| Перейти на сайт
+//- 			+e.btn.btn.btn-primary.BUTTON Построить маршрут
+//- 				+icon('')
+
+
+mixin sDistributor(data)
+	// start sDistributor
+	+b.SECTION.sDistributor.section#sDistributor&attributes(attributes)
+		+e.top
+			.container
+				+e.top-container
+					+search('Найти ближайший сервисный центр','Выберите город...')
+					+e.view Посмотреть:
+						+e.view-link(href="#")
+							+icon('pin')
+							| На карте
+						+e.view-link(href="#")
+							+icon('list')
+							| Списком
+					+e.img-wrap: +img(`img/duration.png`)
+		+e.map-wrap
+			.container
+				//- +distributorItem('15.4','Москва','ООО «Олливер» Каширское шоссе, д. 16','м. Каширская','10:00 - 19:00','8 (925) 088-81-018', '(495) 109-40-07')
+	// end sDistributor

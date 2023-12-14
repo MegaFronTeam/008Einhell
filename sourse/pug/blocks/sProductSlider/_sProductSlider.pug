@@ -1,0 +1,66 @@
+mixin sliderCard(img="card-1",title="Дрель-шуруповёрт аккумуляторнаяPXC TE-CD 18/40 Li +69 (1x2,5 Ah)",number='4513955')
+	+e.card(href="#")
+		+e.img-wrap
+			+img(`img/${img}.jpg`)
+		+e.text
+			+e.card-title= title
+			+e.card-number Артикул: #{number}
+			+e.descr
+				if block
+					block
+				else
+				p Аккумуляторная дрель входит в&nbsp;семейство Power X-Change и&nbsp;имеет прочный двухскоростной редуктор.
+				ul
+					li Съемный аккумулятор 2,5 А&sdot;ч, 18&nbsp;В
+					li Вес&nbsp;1.55&nbsp;кг
+					li Крутящий момент 40&nbsp;Н&middot;м
+					li Число оборотов 0&divide;1500 мин-1
+					li Кейс и&nbsp;69&nbsp;предметов оснастки
+
+mixin sProductSlider(title,btnClass)
+	// start sProductSlider
+	+b.SECTION.sProductSlider.section&attributes(attributes)
+		.container
+			+e.top(class= btnClass)
+				+b.section-title
+					h2= title
+				+e.top-link(href="#") Смотреть все
+					+icon('arrow')
+			+e.item
+				+e.slider.swiper
+					.swiper-wrapper
+						.swiper-slide: +sliderCard
+						.swiper-slide: +sliderCard
+						.swiper-slide: +sliderCard
+						.swiper-slide: +sliderCard
+						.swiper-slide: +sliderCard
+						.swiper-slide: +sliderCard
+					.swiper-pagination
+				+arrow
+	// end sProductSlider
+
+mixin fullWidthSlider(img="bg-slider")
+	+b.SECTION.bg-slider&attributes(attributes)
+		+e.swiper--js.swiper
+			.swiper-wrapper
+				.swiper-slide
+					+e.img-wrap
+						+img(`img/${img}.jpg`)
+					+e.caption
+						+e.text
+							+e.title Einhell — Золотой Партнёр <span>Футбольного клуба «Бавария» Мюнхен</span>
+							+img('img/caption-img.jpg')
+						+e.btn.btn.btn-primary(href="#") узнать больше
+				.swiper-slide
+					+e.img-wrap
+						+img(`img/${img}.jpg`)
+					+e.caption
+						+e.text
+							+e.title Einhell — Золотой Партнёр <span>Футбольного клуба «Бавария» Мюнхен</span>
+							+img('img/caption-img.jpg')
+						+e.btn.btn.btn-primary(href="#") узнать больше
+			.swiper-pagination
+			+arrow
+
+
+

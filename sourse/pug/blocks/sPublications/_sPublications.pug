@@ -1,0 +1,35 @@
+mixin article(img,title,descr,catalog)
+	+e.item(href="#")
+		+img(`img/${img}.jpg`)
+		if catalog
+			+e.text--catalog
+				+e.pdf pdf
+					+icon('download')
+				+e.size Размер файла - 12 Мб
+		else
+			+e.text-wrap
+				+e.text
+					+e.title= title
+					+e.descr= descr
+
+mixin sPublications(data)
+	// start sPublications
+	+b.SECTION.sPublications.section#sPublications&attributes(attributes)
+		+e.top
+			+e.title-row.container
+				+b.section-title
+					h2 Тематические статьи и каталоги продукции
+				+e.top-link(href="#") Смотреть все
+					+icon('arrow')
+		.container
+			+e.container
+				+article('public-1','инструмент на все случаи жизни','Вся информация о строительстве')
+				+article('public-2','Газонокосилки','Какая газонокосилка мне подходит?')
+				+article('public-3','','','catalog')
+				+article('public-4','Энергоэффективные пылесосы')
+				+article('public-5','Выбор сменного аккумулятора','Советы по выбору аккумулятора')
+				+article('public-6','','','catalog')
+				+article('public-7','Универсальные пылесосы','Вся информация о пылесосах')
+				+article('public-8','Аксессуары','Легко и практично')
+				+article('public-9','Сад и огород','Мощный и надежный')
+	// end sPublications

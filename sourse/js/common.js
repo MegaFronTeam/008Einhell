@@ -44,11 +44,131 @@ function eventHandler() {
 		},
 	}
 
-	new Swiper('.breadcrumb-slider--js', {
+	// Header Block Sliders
+	const headerBlockNavWrap = document.querySelector('.headerBlock__caption-container');
+	if (headerBlockNavWrap) {
+		const headerCaptionSlider = new Swiper(".headerBlock__caption-slider--js", {
+			slidesPerView: 1,
+			breakpoints: {
+				576: {
+					slidesPerView: 2,
+					spaceBetween: 20,
+				},
+			},
+			freeMode: true,
+			watchSlidesProgress: true,
+		});
+		const headerImgSlider = new Swiper(".headerBlock__img-slider--js", {
+			spaceBetween: 10,
+			navigation: {
+				nextEl: headerBlockNavWrap.querySelector(".swiper-button-next"),
+				prevEl: headerBlockNavWrap.querySelector(".swiper-button-prev"),
+			},
+			thumbs: {
+				swiper: headerCaptionSlider,
+			},
+			loop: true,
+			autoplay: {
+				delay: 5000,
+			},
+		});
+	}
+
+	const productSliders = document.querySelectorAll('.sProductSlider__item');
+	if (productSliders) {
+		productSliders.forEach((wrap) => {
+			let slider = wrap.querySelector('.swiper');
+			const prodSwiper = new Swiper(slider, {
+				slidesPerView: 1,
+				breakpoints: {
+					576: {
+						slidesPerView: 2,
+					},
+					992: {
+						slidesPerView: 3,
+					},
+				},
+				spaceBetween: 21,
+				navigation: {
+					nextEl: wrap.querySelector(".swiper-button-next"),
+					prevEl: wrap.querySelector(".swiper-button-prev"),
+				},
+				pagination: {
+					el:  wrap.querySelector('.swiper-pagination'),
+					type: 'bullets',
+					clickable: true,
+				},
+			});
+		});
+	}
+	
+	const bgSlider = document.querySelector('.bg-slider__swiper--js');
+	if (bgSlider) {
+		new Swiper(bgSlider,{
+			slidesPerView: 1,
+			loop: true,
+			navigation: {
+				nextEl: bgSlider.querySelector(".swiper-button-next"),
+				prevEl: bgSlider.querySelector(".swiper-button-prev"),
+			},
+			pagination: {
+				el:  bgSlider.querySelector('.swiper-pagination'),
+				type: 'bullets',
+				clickable: true,
+			},
+		});
+	}
+
+	const thumbsSwiper = document.querySelector(".sCard__thumbs-slider");
+	const thumbsSlider = new Swiper(".sCard__thumbs-slider", {
+		spaceBetween: 15,
+		slidesPerView: 'auto',
+		freeMode: true,
+		watchSlidesProgress: true,
+		on: {
+			reachEnd: function () {
+				thumbsSwiper.classList.add('riched');
+			},
+			slideChange: function() {
+				thumbsSwiper.classList.remove('riched');
+			}
+		}
+	});
+	var mainSlider = new Swiper(".sCard__main-slider", {
+		spaceBetween: 10,
+		thumbs: {
+			swiper: thumbsSlider,
+		},
+	});
+
+	new Swiper('.freemode-slider--js', {
 		slidesPerView: 'auto',
 		freeMode: true,
 		watchOverflow: true
 	});
+
+	$('.sCatalog__filter-btn--js').on('click', function() {
+		$('.filter').addClass('active');
+		$('body').addClass('fixed2');
+	});
+	$('.filter-close').on('click', function() {
+		$('.filter').removeClass('active');
+		$('body').removeClass('fixed2');
+	});
+	window.addEventListener('resize', () => {
+		if (window.matchMedia('(min-width: 992px)').matches) {
+			$('.filter').removeClass('active');
+			$('body').removeClass('fixed2');
+		};
+	}, { passive: true });
+
+
+
+	// new Swiper('.breadcrumb-slider--js', {
+	// 	slidesPerView: 'auto',
+	// 	freeMode: true,
+	// 	watchOverflow: true
+	// });
 
 	const swiper4 = new Swiper('.sBanners__slider--js', { // если не используешь методы swiper  - можно обращаться без нее к Swiper
 		// slidesPerView: 5,

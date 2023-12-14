@@ -2,8 +2,16 @@ mixin topLine()
 	// start topLine
 	+b.topLine.section#topLine&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 topLine
-				
-			.row
+			+e.row.row
+				.col
+					+e.logo(href="#")
+						+img('img/logo.png')
+						+e.logo-caption.SPAN Официальный сайт представительства в России
+				.order-last.order-lg-0.col-lg-4
+					+search(false, 'Найти...')
+				.col-auto.col-lg-2
+					+comparedDD('20')
+				.col-auto.d-lg-none.d-flex.justify-content-end
+					+menu-toggle()
+
 	// end topLine

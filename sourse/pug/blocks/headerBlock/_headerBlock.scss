@@ -1,12 +1,116 @@
 // start .headerBlock
 .headerBlock {
-	// --sPT: #{rem()};
-	// --sPB: #{rem()};
+@keyframes slider-border {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	}
+}
+
+	--sPT: #{rem(0)};
+	--sPB: #{rem(0)};
+	position: relative;
 	// --sTPB: #{rem()}; 
-	min-height: 100vh;
-	min-height: calc(var(--vh, 1vh) * 100);
-	
-	
+	// min-height: 100vh;
+	// min-height: calc(var(--vh, 1vh) * 100);
+	&__img-slider {
+		max-width: 1920px;
+	}
+	&__cover {
+		@include block(1,1);
+		max-width: 1920px;
+		width: 100%;
+		@include media-breakpoint-up(sm) {
+			@include block(1,2);
+		}
+		// @include media-breakpoint-up(md) {
+		// 	@include block(550,1920);
+		// }
+		@include media-breakpoint-up(lg) {
+			@include block(550,1920);
+		}
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	&__caption-container {
+		position: relative;
+		margin-top: rem(-150);
+		margin-left: auto;
+		padding: rem(20) rem(40);
+		width: 100%;
+		height: rem(125);
+		border-radius: 2px;
+		background: rgba(255, 255, 255, 0.80);
+		z-index: 10;
+		@include media-breakpoint-up(sm) {
+			width: rem(514);
+		}
+		@include media-breakpoint-up(md) {
+			margin-left: rem(41);
+		}
+	}
+	&__caption-slider {
+		height: 100%;
+	}
+	&__caption-slide {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 100%;
+	}
+	&__caption-border {
+		position: relative;
+		width: 100%;
+		height: rem(4);
+		background-color: $gray-500;
+		border-radius: 2px;
+		&::before {
+			position: absolute;
+			content: '';
+			top: 0;
+			left: 0;
+			width:0;
+			height: rem(4);
+			background-color: $primary;
+			border-radius: 2px;
+		}
+	}
+	&__caption {
+		color: $gray-500;
+		font-size: rem(14);
+		font-weight: 700;
+		line-height: 130%;
+		-webkit-line-clamp: 4;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+		transition: color .3s ease;
+	}
+	.swiper-slide-thumb-active {
+		.headerBlock__caption-border {
+			background-color: $gray-800;
+		}
+		.headerBlock__caption-border::before {
+			animation:slider-border 5.3s;
+			animation-timing-function: linear;
+		}
+		.headerBlock__caption {
+			color: $gray-900;
+		}
+	}
+	.swiper-button-hand {
+		@include media-breakpoint-down(sm) {
+			display: none;
+		}
+	}
 	&__row{
 		// --bs-gutter-x: #{rem()};
 		--bs-gutter-y: var(--bs-gutter-x);

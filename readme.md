@@ -1,2 +1,4 @@
-1. <https://megafronteam.github.io/RepoName/public/>
-2. <https://megafronteam.github.io/RepoName/public/00-modal.html>
+1. <https://megafronteam.github.io/008Einhell/public/>
+1. <https://megafronteam.github.io/008Einhell/public/02-catalog-1>
+1. <https://megafronteam.github.io/008Einhell/public/02-catalog-2>
+1. <https://megafronteam.github.io/008Einhell/public/03-product-card>
