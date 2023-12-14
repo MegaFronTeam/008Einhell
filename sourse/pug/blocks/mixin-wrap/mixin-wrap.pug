@@ -31,10 +31,12 @@ mixin addblock()
 
 
 
-mixin search()
+mixin search(title,placeholder)
 	+b.search-block
 		form
-			input(type="text" placeholder="Найти..." inputmode='search')
+			if title
+				+e.title= title
+			input(type="text" placeholder= placeholder inputmode='search')
 			button.btn.btn-primary
 				+icon("search")
 

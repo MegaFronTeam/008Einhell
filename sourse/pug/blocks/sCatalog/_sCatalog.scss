@@ -69,14 +69,7 @@
 		}
 		&--lg {
 			.sCatalog__item-img {
-				@include media-breakpoint-up(md) {
-					@include block(155,372);
-				}
-			}
-			.sCatalog__item-title {
-				// @include media-breakpoint-down(md) {
-				// 	margin-top: auto;
-				// }
+				@include block(155,372);
 			}
 		}
 		&::before {
@@ -269,12 +262,14 @@
 		color: $gray-500;
 	}
 }
+
 .card-item {
 	position: relative;
 	display: flex;
 	flex-direction: column;
 	padding: rem(16);
 	height: 100%;
+	@include mt;
 	@include media-breakpoint-up(lg) {
 		padding: rem(20);
 	}

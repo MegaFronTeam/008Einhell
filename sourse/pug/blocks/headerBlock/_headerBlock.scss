@@ -19,13 +19,16 @@
 		max-width: 1920px;
 	}
 	&__cover {
-		@include block(1,1.5);
+		@include block(1,1);
 		max-width: 1920px;
 		width: 100%;
 		@include media-breakpoint-up(sm) {
 			@include block(1,2);
 		}
-		@include media-breakpoint-up(md) {
+		// @include media-breakpoint-up(md) {
+		// 	@include block(550,1920);
+		// }
+		@include media-breakpoint-up(lg) {
 			@include block(550,1920);
 		}
 		img {

@@ -14,7 +14,7 @@ block variables
 
 block title
 	- let  title= index.head.title
-	title= title
+	title= 'Catalog — Section'
 block pagecontent
 	//- +mob-mnu()
 	
@@ -25,17 +25,17 @@ block pagecontent
 		+sCatalog(data)
 			+checkboxFilter('Аккумуляторная платформа 3,6 В','Аккумуляторная платформа 12 В','Аккумуляторная платформа 18 В','Аккумуляторная платформа 2X18 В (36 В)')
 			+e.row.row
-				.col-6.col-xl-4: +catalogItem('catalog-item-1','Аккумуляторы и зарядные устройства').sCatalog__item--lg
-				.col-6.col-md-3.col-xl-2: +catalogItem('catalog-item-2','Дрели-шуруповерты')
-				.col-6.col-md-3.col-xl-2: +catalogItem('catalog-item-3','Аккумуляторные ударные винтоверты, гайковерты')
-				.col-6.col-md-3.col-xl-2: +catalogItem('catalog-item-4','Аккумуляторные угловые шлифовальные машины')
-				.col-6.col-md-3.col-xl-2: +catalogItem('catalog-item-5','Аккумуляторные перфораторы')
-				.col-6.col-md-3.col-xl-2: +catalogItem('catalog-item-6','Аккумуляторные лобзики')
-				.col-6.col-md-3.col-xl-2: +catalogItem('catalog-item-7','Аккумуляторные циркулярные пилы')
-				.col-6.col-md-3.col-xl-2: +catalogItem('catalog-item-8','Аккумуляторные сабельные ножовки')
-				.col-6.col-md-3.col-xl-2: +catalogItem('catalog-item-9','Аккумуляторные торцевые пилы')
-				.col-6.col-md-3.col-xl-2: +catalogItem('catalog-item-10','Аккумуляторные шлифовальные машины')
-				.col-6.col-md-3.col-xl-2: +catalogItem('catalog-item-11','Аккумуляторные шлифователи стен')
+				.col-md-8.col-lg-6.col-xl-4: +catalogItem('catalog-item-1','Аккумуляторы и зарядные устройства').sCatalog__item--lg
+				.col-6.col-md-4.col-lg-3.col-xl-2: +catalogItem('catalog-item-3','Аккумуляторные ударные винтоверты, гайковерты')
+				.col-6.col-md-4.col-lg-3.col-xl-2: +catalogItem('catalog-item-2','Дрели-шуруповерты')
+				.col-6.col-md-4.col-lg-3.col-xl-2: +catalogItem('catalog-item-4','Аккумуляторные угловые шлифовальные машины')
+				.col-6.col-md-4.col-lg-3.col-xl-2: +catalogItem('catalog-item-5','Аккумуляторные перфораторы')
+				.col-6.col-md-4.col-lg-3.col-xl-2: +catalogItem('catalog-item-6','Аккумуляторные лобзики')
+				.col-6.col-md-4.col-lg-3.col-xl-2: +catalogItem('catalog-item-7','Аккумуляторные циркулярные пилы')
+				.col-6.col-md-4.col-lg-3.col-xl-2: +catalogItem('catalog-item-8','Аккумуляторные сабельные ножовки')
+				.col-6.col-md-4.col-lg-3.col-xl-2: +catalogItem('catalog-item-9','Аккумуляторные торцевые пилы')
+				.col-6.col-md-4.col-lg-3.col-xl-2: +catalogItem('catalog-item-10','Аккумуляторные шлифовальные машины')
+				.col-6.col-md-4.col-lg-3.col-xl-2: +catalogItem('catalog-item-11','Аккумуляторные шлифователи стен')
 		+sContent.sContent--catalog
 			+b.section-title
 				h2 Заголовок SEO текста

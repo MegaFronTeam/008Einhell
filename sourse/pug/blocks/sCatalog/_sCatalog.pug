@@ -18,9 +18,10 @@ mixin catalogItem(img,title)
 
 mixin catalogCard(img,title,number)
 	.col-sm-6.col-md-4
-		+b.card-item(href="#")&attributes(attributes)
-			+e.img-wrap: +img(`img/${img}.png`)
-			+e.title= title
+		+b.card-item&attributes(attributes)
+			+e.card-link(href="#")
+				+e.img-wrap: +img(`img/${img}.png`)
+				+e.title= title
 			+e.number Артикул: #{number}
 			+e.compare
 				+compareBtn('сравнить')

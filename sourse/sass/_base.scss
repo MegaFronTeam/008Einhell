@@ -479,7 +479,7 @@ iframe {
 .custom-scroll {
 	/* ===== Scrollbar CSS ===== */
   /* Firefox */
-	--bs-primary: #DEDEDE;
+	--bs-primary: #98989B;
  
   & {
     scrollbar-width: auto;
@@ -492,7 +492,7 @@ iframe {
   }
 
   &::-webkit-scrollbar-track {
-    background: transparent;
+    background: #D6D6D6;
   }
 
   &::-webkit-scrollbar-thumb {
@@ -593,18 +593,19 @@ h1 {
 		line-height: 130%;
 		text-transform: uppercase;
 		background-color: $gray-800;
+		border-left: 5px solid $primary;
 		@include media-breakpoint-up(lg) {
 			font-size: rem(24);
 		}
-		&::before {
-			position: absolute;
-			top: 0;
-			right: 100%;
-			content: '';
-			display: inline-block;
-			width: 5px;
-			height: 100%;
-			background-color: $primary;
-		}
+		// &::before {
+		// 	position: absolute;
+		// 	top: 0;
+		// 	right: 100%;
+		// 	content: '';
+		// 	display: inline-block;
+		// 	width: 5px;
+		// 	height: 100%;
+		// 	background-color: $primary;
+		// }
 	}
 }

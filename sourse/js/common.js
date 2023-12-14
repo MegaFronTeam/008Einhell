@@ -119,12 +119,20 @@ function eventHandler() {
 		});
 	}
 
-
+	const thumbsSwiper = document.querySelector(".sCard__thumbs-slider");
 	const thumbsSlider = new Swiper(".sCard__thumbs-slider", {
 		spaceBetween: 15,
 		slidesPerView: 'auto',
 		freeMode: true,
 		watchSlidesProgress: true,
+		on: {
+			reachEnd: function () {
+				thumbsSwiper.classList.add('riched');
+			},
+			slideChange: function() {
+				thumbsSwiper.classList.remove('riched');
+			}
+		}
 	});
 	var mainSlider = new Swiper(".sCard__main-slider", {
 		spaceBetween: 10,
