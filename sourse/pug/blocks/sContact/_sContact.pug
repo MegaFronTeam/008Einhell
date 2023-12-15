@@ -3,11 +3,15 @@ mixin sContact()
 	+b.SECTION.sContact.section#sContact&attributes(attributes)
 		+e.wrapper
 			.container.wrapper-container
-				.title-wrapper
-					h2.title Контактная информация
-					p.descr Реквизиты и адрес организации
-				+b.picture-bg
-					img.img(src='img/contacts.png')
+				.row
+					.box
+						.title-wrapper
+							h2.title Контактная информация
+							p.descr Реквизиты и адрес организации
+					.col-lg.picture-wrap
+						.bg-wrap
+							+b.picture-bg
+								img.img(src='img/contacts.png')
 		.container.cards-container
 			+e.cards.cards
 				+e.card
