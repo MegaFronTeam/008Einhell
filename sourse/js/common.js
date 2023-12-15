@@ -147,20 +147,37 @@ function eventHandler() {
 		watchOverflow: true
 	});
 
-	$('.sCatalog__filter-btn--js').on('click', function() {
-		$('.filter').addClass('active');
-		$('body').addClass('fixed2');
-	});
-	$('.filter-close').on('click', function() {
-		$('.filter').removeClass('active');
-		$('body').removeClass('fixed2');
-	});
-	window.addEventListener('resize', () => {
-		if (window.matchMedia('(min-width: 992px)').matches) {
-			$('.filter').removeClass('active');
-			$('body').removeClass('fixed2');
-		};
-	}, { passive: true });
+
+	// Catalog filter opening
+
+	const filter = document.querySelector(".filter")
+	if (filter) {
+		const openFilterBtn = document.querySelector(".sCatalog__filter-btn--js")
+		const closeFilterBtn = document.querySelector(".filter-close")
+		const body = document.querySelector(".main-page")
+		
+		openFilterBtn.addEventListener('click', function(event) {
+			filter.classList.add('active');
+			body.classList.add('fixed2');
+		});
+		closeFilterBtn.addEventListener('click', function(event) {
+			filter.classList.remove('active');
+			body.classList.remove('fixed2');
+		});
+		document.addEventListener('click', function(event){
+			const target = event.target;
+			if (!target.closest('.filter') && !target.closest('.sCatalog__filter-btn--js')) {
+				filter.classList.remove('active');
+				body.classList.remove('fixed2');
+			}
+		})
+		window.addEventListener('resize', () => {
+			if (window.matchMedia('(min-width: 992px)').matches) {
+				$('.filter').removeClass('active');
+				$('body').removeClass('fixed2');
+			};
+		}, { passive: true });
+	}
 
 
 

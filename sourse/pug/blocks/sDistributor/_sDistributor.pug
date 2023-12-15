@@ -1,26 +1,28 @@
-//- mixin distributorItem(distance,city,address,schedule,metro,...tels)
-//- 	+e.item
-//- 		+e.close-btn.btn.btn-primary.BUTTON
-//- 			+icon('close')
-//- 		+e.item-top #{distance} км
-//- 		+e.item-text
-//- 			+e.item-city= city
-//- 			address= address 
-//- 			+e.details: 
-//- 				+icon('metro') 
-//- 				| distance
-//- 			+e.defenition
-//- 				span Режим работы
-//- 				| #{schedule}
-//- 			+e.defenition
-//- 				span Режим работы
-//- 					for number in tels
-//- 						| #{number}
-//- 			+e.details: 
-//- 				+icon('web') 
-//- 				| Перейти на сайт
-//- 			+e.btn.btn.btn-primary.BUTTON Построить маршрут
-//- 				+icon('')
+mixin distributorItem(distance,city,mall,address,metro,schedule,...tels)
+	+e.item
+		+e.item-top #{distance} км
+			+e.close-btn.btn.btn-primary.BUTTON
+				+icon('close')
+		+e.item-text
+			address
+				+e.item-city= city
+				+e.item-address= mall
+				+e.item-address= address 
+			+e.details
+				+icon('metro') 
+				| #{metro}
+			+e.info
+				+e.info-term Режим работы
+				+e.info-def= schedule
+			+e.info
+				+e.info-term Режим работы
+				for number in tels
+					+e.info-def(href=`tel:number`)= number
+			+e.details(href="#")
+				+icon('web')
+				| Перейти на сайт
+			+e.item-btn.btn.btn-primary.BUTTON Построить маршрут
+				+icon('route')
 
 
 mixin sDistributor(data)
@@ -30,15 +32,20 @@ mixin sDistributor(data)
 			.container
 				+e.top-container
 					+search('Найти ближайший сервисный центр','Выберите город...')
-					+e.view Посмотреть:
-						+e.view-link(href="#")
+					+e.view
+						+e.view-label Посмотреть:
+						+e.view-label.active(href="#")
 							+icon('pin')
 							| На карте
-						+e.view-link(href="#")
+						+e.view-label(href="#")
 							+icon('list')
 							| Списком
 					+e.img-wrap: +img(`img/duration.png`)
 		+e.map-wrap
+			#map
+					script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=09afbf5f-475d-4f23-bb68-eb2d6371a737" type="text/javascript")
+					script
+						include _sDistributor.js
 			.container
-				//- +distributorItem('15.4','Москва','ООО «Олливер» Каширское шоссе, д. 16','м. Каширская','10:00 - 19:00','8 (925) 088-81-018', '(495) 109-40-07')
+				+distributorItem('15.4','Москва','ООО «Олливер»', 'Каширское шоссе, д. 16','м. Каширская','10:00 - 19:00','8 (925) 088-81-018', '(495) 109-40-07')
 	// end sDistributor
