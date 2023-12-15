@@ -1,16 +1,20 @@
 mixin sContact()
 	// start sContact
 	+b.SECTION.sContact.section#sContact&attributes(attributes)
-		.container
-			+b.section-title.text-center
-				h2 sContact
-			+e.row.row
+		+e.wrapper
+			.container.wrapper-container
+				.title-wrapper
+					h2.title Контактная информация
+					p.descr Реквизиты и адрес организации
+				+b.picture-bg
+					img.img(src='img/contacts.png')
+		.container.cards-container
 			+e.cards.cards
 				+e.card
 					+e.title.card-title Адрес организации
 					+e.desciption
 						ul.list
-							li.item ООО «Айнхелль»
+							li.item.item_no-mb ООО «Айнхелль»
 							li.item Российская Федерация
 							li.item 197022, Санкт-Петербург г, вн.тер.г. муниципальный округ Аптекарский остров, ул. Профессора Попова, д. 23, литер Д, пом. 27Н, офис 310
 							li.item (на территории БЦ Бизнес-мегаполис "Гайот")
@@ -19,9 +23,10 @@ mixin sContact()
 					+e.desciption
 						ul.list.list-box
 							li.item.detail-wrapper
-								svg.icon
-									use(xlink:href='img/svg/sprite.svg#phone')
-								p +7 (800) 775-51-55
+								a(href='tel:+7(800)775-51-55')
+									svg.icon
+										use(xlink:href='img/svg/sprite.svg#phone')
+									p +7 (800) 775-51-55
 							li.item.detail-wrapper
 								svg.icon
 									use(xlink:href='img/svg/sprite.svg#time')
@@ -31,40 +36,46 @@ mixin sContact()
 					+e.desciption
 						ul.list.list-box
 							li.item.detail-wrapper
-								svg.icon
-									use(xlink:href='img/svg/sprite.svg#fax')
-								p +7 (812) 448-83-49
+								a(href='tel:+7(800)775-51-55')
+									svg.icon
+										use(xlink:href='img/svg/sprite.svg#fax')
+									p +7 (812) 448-83-49
 				+e.card
 					+e.title.card-title Email
 					+e.desciption
 						ul.list.list-box
 							li.item.detail-wrapper
-								svg.icon
-									use(xlink:href='img/svg/sprite.svg#email')
-								p welcome@einhell-russia.ru
-							li.item.detail-wrapper
-								svg.icon
-									use(xlink:href='img/svg/sprite.svg#email')
-								p service@einhell-russia.ru (сервисная служба)
-				.wrapper
-					+e.card#market-card
-						+e.title.card-title Отдел маркетинга
-						+e.desciption
-							ul.list.list-box
-								li.item.detail-wrapper.contact-us «Мы нацелены на широкий медийный охват торговой марки Einhell в России, поэтому с радостью ознакомимся с любыми Вашими предложениями!»
-								li.item.detail-wrapper
+								a(href='mailto:welcome@einhell-russia.ru')
 									svg.icon
 										use(xlink:href='img/svg/sprite.svg#email')
 									p welcome@einhell-russia.ru
-					+e.card#last-card
-						+e.title.card-title Декларация об осуществлении деятельности на территории г. Санкт-Петербурга
-						+e.desciption
-							ul.list.list-box
-								li.item.detail-wrapper
-									a.link(href="#")
-										svg.icon
-											use(xlink:href='img/svg/sprite.svg#open')
-										p Открыть
+							li.item.detail-wrapper
+								a(href='mailto:service@einhell-russia.ru')
+									svg.icon
+										use(xlink:href='img/svg/sprite.svg#email')
+									p
+										| service@einhell-russia.ru (
+										span.span_red сервисная служба
+										| )
+				+e.card
+					+e.title.card-title Отдел маркетинга
+					+e.desciption
+						ul.list.list-box
+							li.item.detail-wrapper.contact-us «Мы нацелены на широкий медийный охват торговой марки Einhell в России, поэтому с радостью ознакомимся с любыми Вашими предложениями!»
+							li.item.detail-wrapper
+								a(href='mailto:welcome@einhell-russia.ru')
+									svg.icon
+										use(xlink:href='img/svg/sprite.svg#email')
+									p welcome@einhell-russia.ru
+				+e.card
+					+e.title.card-title Декларация об осуществлении деятельности на территории г. Санкт-Петербурга
+					+e.desciption
+						ul.list.list-box
+							li.item.detail-wrapper
+								a.link(href="#")
+									svg.icon
+										use(xlink:href='img/svg/sprite.svg#open')
+									p Открыть
 			+e.qr-wrapper
 				.red-box
 				img.img(src='img/qr.png')

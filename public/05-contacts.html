@@ -46,19 +46,24 @@
 				</div>
 				<!-- start sContact-->
 				<section class="sContact section" id="sContact">
-					<div class="container">
-						<div class="section-title text-center">
-							<h2>sContact</h2>
+					<div class="sContact__wrapper">
+						<div class="container wrapper-container">
+							<div class="title-wrapper">
+								<h2 class="title">Контактная информация</h2>
+								<p class="descr">Реквизиты и адрес организации</p>
+							</div>
+							<div class="picture-bg"><img class="img" src="img/contacts.png"/>
+							</div>
 						</div>
-						<div class="sContact__row row">
-						</div>
+					</div>
+					<div class="container cards-container">
 						<div class="sContact__cards cards">
 							<div class="sContact__card">
 								<div class="sContact__title card-title">Адрес организации
 								</div>
 								<div class="sContact__desciption">
 									<ul class="list">
-										<li class="item">ООО «Айнхелль»</li>
+										<li class="item item_no-mb">ООО «Айнхелль»</li>
 										<li class="item">Российская Федерация</li>
 										<li class="item">197022, Санкт-Петербург г, вн.тер.г. муниципальный округ Аптекарский остров, ул. Профессора Попова, д. 23, литер Д, пом. 27Н, офис 310</li>
 										<li class="item">(на территории БЦ Бизнес-мегаполис "Гайот")</li>
@@ -70,12 +75,11 @@
 								</div>
 								<div class="sContact__desciption">
 									<ul class="list list-box">
-										<li class="item detail-wrapper">
-											<svg class="icon">
-												<use xlink:href="img/svg/sprite.svg#phone"></use>
-											</svg>
-											<p>+7 (800) 775-51-55</p>
-										</li>
+										<li class="item detail-wrapper"><a href="tel:+7(800)775-51-55">
+												<svg class="icon">
+													<use xlink:href="img/svg/sprite.svg#phone"></use>
+												</svg>
+												<p>+7 (800) 775-51-55</p></a></li>
 										<li class="item detail-wrapper">
 											<svg class="icon">
 												<use xlink:href="img/svg/sprite.svg#time"></use>
@@ -90,12 +94,11 @@
 								</div>
 								<div class="sContact__desciption">
 									<ul class="list list-box">
-										<li class="item detail-wrapper">
-											<svg class="icon">
-												<use xlink:href="img/svg/sprite.svg#fax"></use>
-											</svg>
-											<p>+7 (812) 448-83-49</p>
-										</li>
+										<li class="item detail-wrapper"><a href="tel:+7(800)775-51-55">
+												<svg class="icon">
+													<use xlink:href="img/svg/sprite.svg#fax"></use>
+												</svg>
+												<p>+7 (812) 448-83-49</p></a></li>
 									</ul>
 								</div>
 							</div>
@@ -104,49 +107,44 @@
 								</div>
 								<div class="sContact__desciption">
 									<ul class="list list-box">
-										<li class="item detail-wrapper">
-											<svg class="icon">
-												<use xlink:href="img/svg/sprite.svg#email"></use>
-											</svg>
-											<p>welcome@einhell-russia.ru</p>
-										</li>
-										<li class="item detail-wrapper">
-											<svg class="icon">
-												<use xlink:href="img/svg/sprite.svg#email"></use>
-											</svg>
-											<p>service@einhell-russia.ru (сервисная служба)</p>
-										</li>
-									</ul>
-								</div>
-							</div>
-							<div class="wrapper">
-								<div class="sContact__card" id="market-card">
-									<div class="sContact__title card-title">Отдел маркетинга
-									</div>
-									<div class="sContact__desciption">
-										<ul class="list list-box">
-											<li class="item detail-wrapper contact-us">«Мы нацелены на широкий медийный охват торговой марки Einhell в России, поэтому с радостью ознакомимся с любыми Вашими предложениями!»</li>
-											<li class="item detail-wrapper">
+										<li class="item detail-wrapper"><a href="mailto:welcome@einhell-russia.ru">
 												<svg class="icon">
 													<use xlink:href="img/svg/sprite.svg#email"></use>
 												</svg>
-												<p>welcome@einhell-russia.ru</p>
-											</li>
-										</ul>
-									</div>
+												<p>welcome@einhell-russia.ru</p></a></li>
+										<li class="item detail-wrapper"><a href="mailto:service@einhell-russia.ru">
+												<svg class="icon">
+													<use xlink:href="img/svg/sprite.svg#email"></use>
+												</svg>
+												<p>service@einhell-russia.ru (<span class="span_red">сервисная служба</span>)</p></a></li>
+									</ul>
 								</div>
-								<div class="sContact__card" id="last-card">
-									<div class="sContact__title card-title">Декларация об осуществлении деятельности на территории г. Санкт-Петербурга
-									</div>
-									<div class="sContact__desciption">
-										<ul class="list list-box">
-											<li class="item detail-wrapper"><a class="link" href="#">
-													<svg class="icon">
-														<use xlink:href="img/svg/sprite.svg#open"></use>
-													</svg>
-													<p>Открыть</p></a></li>
-										</ul>
-									</div>
+							</div>
+							<div class="sContact__card">
+								<div class="sContact__title card-title">Отдел маркетинга
+								</div>
+								<div class="sContact__desciption">
+									<ul class="list list-box">
+										<li class="item detail-wrapper contact-us">«Мы нацелены на широкий медийный охват торговой марки Einhell в России, поэтому с радостью ознакомимся с любыми Вашими предложениями!»</li>
+										<li class="item detail-wrapper"><a href="mailto:welcome@einhell-russia.ru">
+												<svg class="icon">
+													<use xlink:href="img/svg/sprite.svg#email"></use>
+												</svg>
+												<p>welcome@einhell-russia.ru</p></a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="sContact__card">
+								<div class="sContact__title card-title">Декларация об осуществлении деятельности на территории г. Санкт-Петербурга
+								</div>
+								<div class="sContact__desciption">
+									<ul class="list list-box">
+										<li class="item detail-wrapper"><a class="link" href="#">
+												<svg class="icon">
+													<use xlink:href="img/svg/sprite.svg#open"></use>
+												</svg>
+												<p>Открыть</p></a></li>
+									</ul>
 								</div>
 							</div>
 						</div>
