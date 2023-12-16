@@ -1,0 +1,243 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "461",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "56.475797",
+          "84.988235"
+        ]
+      },
+      "properties": {
+        "balloonContentHeader": "Управление Роспотребнадзором (г. Томск)",
+        "balloonContentBody": "634021, г. Томск, пр. Фрунзе, д. 103А",
+        "clusterCaption": "Управление Роспотребнадзором (г. Томск)",
+        "hintContent": "Управление Роспотребнадзором (г. Томск)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "462",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "54.173495",
+          "37.633958"
+        ]
+      },
+      "properties": {
+        "balloonContentHeader": "Управление Роспотребнадзора (г. Тула)",
+        "balloonContentBody": "300045, г. Тула, ул. Оборонная, д. 114",
+        "clusterCaption": "Управление Роспотребнадзора (г. Тула)",
+        "hintContent": "Управление Роспотребнадзора (г. Тула)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "463",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "57.138619",
+          "65.575147"
+        ]
+      },
+      "properties": {
+        "balloonContentHeader": "Управление Роспотребнадзора (г. Тюмень)",
+        "balloonContentBody": "625026, г. Тюмень, ул. Рижская, д. 45А",
+        "clusterCaption": "Управление Роспотребнадзора (г. Тюмень)",
+        "hintContent": "Управление Роспотребнадзора (г. Тюмень)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "464",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "56.847754",
+          "53.260116"
+        ]
+      },
+      "properties": {
+        "balloonContentHeader": "Управление Роспотребнадзора (г. Ижевск)",
+        "balloonContentBody": "426000, г. Ижевск, ул. Ленина, д. 106",
+        "clusterCaption": "Управление Роспотребнадзора (г. Ижевск)",
+        "hintContent": "Управление Роспотребнадзора (г. Ижевск)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "465",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "54.319465",
+          "48.401452"
+        ]
+      },
+      "properties": {
+        "balloonContentHeader": "Управление Роспотребнадзора (г. Ульяновск)",
+        "balloonContentBody": "432063, г. Ульяновск, ул. Дмитрия Ульянова, д. 4",
+        "clusterCaption": "Управление Роспотребнадзора (г. Ульяновск)",
+        "hintContent": "Управление Роспотребнадзора (г. Ульяновск)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "466",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "48.506960",
+          "135.103663"
+        ]
+      },
+      "properties": {
+        "balloonContentHeader": "Управление Роспотребнадзора (г. Хабаровск)",
+        "balloonContentBody": "680009, г. Хабаровск, ул. Карла Маркса, д. 109Б",
+        "clusterCaption": "Управление Роспотребнадзора (г. Хабаровск)",
+        "hintContent": "Управление Роспотребнадзора (г. Хабаровск)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "467",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "48.506960",
+          "135.103663"
+        ]
+      },
+      "properties": {
+        "balloonContentHeader": "Управление Роспотребнадзора (Ханты-Мансийск)",
+        "balloonContentBody": "628012, г. Ханты-Мансийск, ул. Рознина, д. 72",
+        "clusterCaption": "Управление Роспотребнадзора (Ханты-Мансийск)",
+        "hintContent": "Управление Роспотребнадзора (Ханты-Мансийск)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "468",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "55.151338",
+          "61.399041"
+        ]
+      },
+      "properties": {
+        "balloonContentHeader": "Управление Роспотребнадзора (г. Челябинск)",
+        "balloonContentBody": "454092, г. Челябинск, ул. Елькина, д. 73",
+        "clusterCaption": "Управление Роспотребнадзора (г. Челябинск)",
+        "hintContent": "Управление Роспотребнадзора (г. Челябинск)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "469",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "43.286894",
+          "45.696733"
+        ]
+      },
+      "properties": {
+        "balloonContentHeader": "Управление Роспотребнадзора (г. Грозный)",
+        "balloonContentBody": "364038, г. Грозный, ул. Урицкого, 2а",
+        "clusterCaption": "Управление Роспотребнадзора (г. Грозный)",
+        "hintContent": "Управление Роспотребнадзора (г. Грозный)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "470",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "56.144757",
+          "47.235376"
+        ]
+      },
+      "properties": {
+        "balloonContentHeader": "Управление Роспотребнадзора (г. Чебоксары)",
+        "balloonContentBody": "428018, г. Чебоксары, Московский проспект, д. 3 д",
+        "clusterCaption": "Управление Роспотребнадзора (г. Чебоксары)",
+        "hintContent": "Управление Роспотребнадзора (г. Чебоксары)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "471",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "64.734731",
+          "177.523423"
+        ]
+      },
+      "properties": {
+        "balloonContentHeader": "Управление Роспотребнадзора (г. Анадырь)",
+        "balloonContentBody": "689000, Анадырь, ул. Ленина, 11",
+        "clusterCaption": "Управление Роспотребнадзора (г. Анадырь)",
+        "hintContent": "Управление Роспотребнадзора (г. Анадырь)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "472",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "66.531796",
+          "66.617445"
+        ]
+      },
+      "properties": {
+        "balloonContentHeader": "Управление Роспотребнадзора (г. Салехард)",
+        "balloonContentBody": "629000, г. Салехард, ул. Титова, д.10",
+        "clusterCaption": "Управление Роспотребнадзора (г. Салехард)",
+        "hintContent": "Управление Роспотребнадзора (г. Салехард)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "473",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "57.639246",
+          "39.868786"
+        ]
+      },
+      "properties": {
+        "balloonContentHeader": "Управление Роспотребнадзора (г. Ярославль)",
+        "balloonContentBody": "150003, г. Ярославль, ул. Войнова, д. 1",
+        "clusterCaption": "Управление Роспотребнадзора (г. Ярославль)",
+        "hintContent": "Управление Роспотребнадзора (г. Ярославль)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "474",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "44.960784",
+          "34.099833"
+        ]
+      },
+      "properties": {
+        "balloonContentHeader": "Управление Роспотребнадзора (г. Симферополь)",
+        "balloonContentBody": "295034, г. Симферополь, ул. Набережная, д. 67",
+        "clusterCaption": "Управление Роспотребнадзора (г. Симферополь)",
+        "hintContent": "Управление Роспотребнадзора (г. Симферополь)"
+      }
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+extends ../layout/main.pug
+
+include ../blocks/headerBlock/_headerBlock.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sDistributor/_sDistributor.pug
+
+block variables
+	- let  mainPage= 'main-page' 
+	- let  bg= null
+
+block title
+	- let  title= 'Dealership '
+	title= title
+block pagecontent
+	//- +mob-mnu()
+	
+	
+	+parts('header')
+	main
+		.container
+			+breadcrumb('Главная',title)
+		+sDistributor2
+	+parts('footer')
+block scripts
+	script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=2066e304-cee0-4ed2-9cb2-5f6521d5f96c") 
+	script
+		include ../blocks/sDistributor/_sDistributor.js
+	
+
+
+

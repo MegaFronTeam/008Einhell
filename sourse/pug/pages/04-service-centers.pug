@@ -10,7 +10,7 @@ block variables
 	- let  bg= null
 
 block title
-	- let  title= index.head.title
+	- let  title= 'Адреса сервисных центров'
 	title= title
 block pagecontent
 	//- +mob-mnu()
@@ -19,9 +19,13 @@ block pagecontent
 	+parts('header')
 	main
 		.container
-			+breadcrumb('Главная','Адреса сервисных центров')
+			+breadcrumb('Главная', title)
 		+sDistributor
 	+parts('footer')
+block scripts
+	script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=2066e304-cee0-4ed2-9cb2-5f6521d5f96c") 
+	script
+		include ../blocks/sDistributor/_sDistributor.js
 	
 
 

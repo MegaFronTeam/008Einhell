@@ -1,8 +1,11 @@
 mixin distributorItem(id,coords,distance,city,mall,address,metro,schedule,tel)
 	+e.item(data-coords=coords data-type=id)
 		+e.item-top #{distance} км
-			+e.close-btn.btn.btn-primary.BUTTON
-				+icon('close')
+			if block
+				block
+			else
+				+e.close-btn.btn.btn-primary.BUTTON
+					+icon('close')
 		+e.item-text
 			address
 				+e.item-city= city
@@ -27,11 +30,19 @@ mixin distributorItem(id,coords,distance,city,mall,address,metro,schedule,tel)
 
 mixin sDistributor(data)
 	// start sDistributor
-	+b.SECTION.sDistributor.section#sDistributor&attributes(attributes)
+	+b.sDistributor.section#sDistributor&attributes(attributes)
 		+e.top
 			.container
 				+e.top-container
-					+search('Найти ближайший сервисный центр','Выберите город...')
+					+b.search-block
+						form
+							+e.title.d-none.d-lg-block Найти ближайший сервисный центр
+							+e.input-wrap
+								input(type="text" placeholder='Выберите город..' inputmode='search')
+								+e.UL.search-result
+									
+							button.btn.btn-primary
+								+icon("search")
 					+e.view
 						+e.view-label Посмотреть:
 						+e.view-label.active(href="#")
@@ -43,11 +54,48 @@ mixin sDistributor(data)
 					+e.img-wrap: +img(`img/duration.png`)
 		+e.map-wrap
 			#map
-				script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=09afbf5f-475d-4f23-bb68-eb2d6371a737" type="text/javascript")
-				script
-					include _sDistributor.js
+			//- script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=2066e304-cee0-4ed2-9cb2-5f6521d5f96c") 
+			//- script
+			//- 	include _sDistributor.js
 			.container
 				+e.item-list
 					+distributorItem(items[0].id,items[0].coords,items[0].distance,items[0].city,items[0].mall, items[0].address,items[0].metro,items[0].schedule,items[0].tel[0], items[0].tel[1])
+				//- each item in items
+	// end sDistributor
+	
+
+mixin sDistributor2(data)
+	// start sDistributor
+	+b.sDistributor--dealership.section#sDistributor&attributes(attributes)
+		+e.top
+			.container
+				+e.top-container
+					+b.search-block
+						form
+							+e.title.d-none.d-lg-block Найти ближайший сервисный центр
+							+e.input-wrap
+								input(type="text" placeholder='Выберите город..' inputmode='search')
+								+e.UL.search-result
+									
+							button.btn.btn-primary
+								+icon("search")
+					+e.view
+						+e.view-label Посмотреть:
+						+e.view-label.active(href="#")
+							+icon('pin')
+							| На карте
+						+e.view-label(href="#")
+							+icon('list')
+							| Списком
+					+e.img-wrap: +img(`img/duration.png`)
+		+e.map-wrap
+			#map
+			//- script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=2066e304-cee0-4ed2-9cb2-5f6521d5f96c") 
+			//- script
+			//- 	include _sDistributor.js
+			.container
+				+e.item-list
+					- for (var x = 0; x < 3; x++)
+							+distributorItem(items[0].id,items[0].coords,items[0].distance,items[0].city,items[0].mall, items[0].address,items[0].metro,items[0].schedule,items[0].tel[0], items[0].tel[1]) 
 				//- each item in items
 	// end sDistributor

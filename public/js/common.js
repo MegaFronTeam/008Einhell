@@ -86,63 +86,63 @@ function eventHandler() {
 					disable: true
 				}
 			},
-			onResize:  function() {
+			onResize: function () {
 				console.log(this)
 				this.refresh;
 			}
-		});	
+		});
 		// floatCards.refresh()	
 	}
 
 
-// ymaps.modules.define('Panel', [
-// 	'util.augment',
-// 	'collection.Item'
-// ], function (provide, augment, item) {
-// 	var Panel = function (options) {
-// 			Panel.superclass.constructor.call(this, options);
-// 	};
+	// ymaps.modules.define('Panel', [
+	// 	'util.augment',
+	// 	'collection.Item'
+	// ], function (provide, augment, item) {
+	// 	var Panel = function (options) {
+	// 			Panel.superclass.constructor.call(this, options);
+	// 	};
 
-// 	augment(Panel, item, {
-// 			onAddToMap: function (map) {
-// 					Panel.superclass.onAddToMap.call(this, map);
-// 					this.getParent().getChildElement(this).then(this._onGetChildElement, this);
-// 					map.margin.addArea({
-// 							top: 0,
-// 							left: 0,
-// 							width: '250px',
-// 							height: '100%'
-// 					})
-// 			},
+	// 	augment(Panel, item, {
+	// 			onAddToMap: function (map) {
+	// 					Panel.superclass.onAddToMap.call(this, map);
+	// 					this.getParent().getChildElement(this).then(this._onGetChildElement, this);
+	// 					map.margin.addArea({
+	// 							top: 0,
+	// 							left: 0,
+	// 							width: '250px',
+	// 							height: '100%'
+	// 					})
+	// 			},
 
-// 			onRemoveFromMap: function (oldMap) {
-// 					if (this._$control) {
-// 							this._$control.remove();
-// 					}
-// 					Panel.superclass.onRemoveFromMap.call(this, oldMap);
-// 			},
+	// 			onRemoveFromMap: function (oldMap) {
+	// 					if (this._$control) {
+	// 							this._$control.remove();
+	// 					}
+	// 					Panel.superclass.onRemoveFromMap.call(this, oldMap);
+	// 			},
 
-// 			_onGetChildElement: function (parentDomContainer) {
-// 					// Создаем HTML-элемент с текстом.
-// 					// По-умолчанию HTML-элемент скрыт.
-// 					this._$control = $('<div class="customControl"><div class="content"></div><div class="closeButton"></div></div>').appendTo(parentDomContainer);
-// 					this._$content = $('.content');
-// 					// При клике по крестику будем скрывать панель.
-// 					$('.closeButton').on('click', this._onClose);
-// 			},
-// 			_onClose: function () {
-// 					$('.customControl').css('display', 'none');
-// 			},
-// 			// Метод задания контента панели.
-// 			setContent: function (text) {
-// 					// При задании контента будем показывать панель.
-// 					this._$control.css('display', 'flex');
-// 					this._$content.html(text);
-// 			}
-// 	});
+	// 			_onGetChildElement: function (parentDomContainer) {
+	// 					// Создаем HTML-элемент с текстом.
+	// 					// По-умолчанию HTML-элемент скрыт.
+	// 					this._$control = $('<div class="customControl"><div class="content"></div><div class="closeButton"></div></div>').appendTo(parentDomContainer);
+	// 					this._$content = $('.content');
+	// 					// При клике по крестику будем скрывать панель.
+	// 					$('.closeButton').on('click', this._onClose);
+	// 			},
+	// 			_onClose: function () {
+	// 					$('.customControl').css('display', 'none');
+	// 			},
+	// 			// Метод задания контента панели.
+	// 			setContent: function (text) {
+	// 					// При задании контента будем показывать панель.
+	// 					this._$control.css('display', 'flex');
+	// 					this._$content.html(text);
+	// 			}
+	// 	});
 
-// 	provide(Panel);
-// });
+	// 	provide(Panel);
+	// });
 
 	const compareWrap = document.querySelector('.sCompare__slider-wrap');
 	if (compareWrap) {
@@ -186,17 +186,17 @@ function eventHandler() {
 					prevEl: wrap.querySelector(".swiper-button-prev"),
 				},
 				pagination: {
-					el:  wrap.querySelector('.swiper-pagination'),
+					el: wrap.querySelector('.swiper-pagination'),
 					type: 'bullets',
 					clickable: true,
 				},
 			});
 		});
 	}
-	
+
 	const bgSlider = document.querySelector('.bg-slider__swiper--js');
 	if (bgSlider) {
-		new Swiper(bgSlider,{
+		new Swiper(bgSlider, {
 			slidesPerView: 1,
 			loop: true,
 			navigation: {
@@ -204,7 +204,7 @@ function eventHandler() {
 				prevEl: bgSlider.querySelector(".swiper-button-prev"),
 			},
 			pagination: {
-				el:  bgSlider.querySelector('.swiper-pagination'),
+				el: bgSlider.querySelector('.swiper-pagination'),
 				type: 'bullets',
 				clickable: true,
 			},
@@ -221,7 +221,7 @@ function eventHandler() {
 			reachEnd: function () {
 				thumbsSwiper.classList.add('riched');
 			},
-			slideChange: function() {
+			slideChange: function () {
 				thumbsSwiper.classList.remove('riched');
 			}
 		}
@@ -238,7 +238,7 @@ function eventHandler() {
 		freeMode: true,
 		watchOverflow: true
 	});
- 
+
 
 	// Catalog filter opening
 
@@ -247,16 +247,16 @@ function eventHandler() {
 		const openFilterBtn = document.querySelector(".sCatalog__filter-btn--js")
 		const closeFilterBtn = document.querySelector(".filter-close")
 		const body = document.querySelector(".main-page")
-		
-		openFilterBtn.addEventListener('click', function(event) {
+
+		openFilterBtn.addEventListener('click', function (event) {
 			filter.classList.add('active');
 			body.classList.add('fixed2');
 		});
-		closeFilterBtn.addEventListener('click', function(event) {
+		closeFilterBtn.addEventListener('click', function (event) {
 			filter.classList.remove('active');
 			body.classList.remove('fixed2');
 		});
-		document.addEventListener('click', function(event){
+		document.addEventListener('click', function (event) {
 			const target = event.target;
 			if (!target.closest('.filter') && !target.closest('.sCatalog__filter-btn--js')) {
 				filter.classList.remove('active');
@@ -271,7 +271,7 @@ function eventHandler() {
 		}, { passive: true });
 	}
 
-	
+
 
 	new Swiper('.breadcrumb-slider--js', {
 		slidesPerView: 'auto',
@@ -304,4 +304,68 @@ if (document.readyState !== 'loading') {
 // 		document.body.classList.add('loaded');
 // 		document.body.classList.remove('loaded_hiding');
 // 	}, 500);
+// }
+
+
+// function initMap() {
+
+// 	ymaps.ready(init); 
+// 	function init() {
+// 		let coords = [],
+// 			sDistributorItems = document.querySelectorAll('.sDistributor__item');
+
+// 		sDistributorItems.forEach((item) => coords.push(JSON.parse(item.dataset.coords)));
+
+
+// 		var myMap = new ymaps.Map('map', {
+// 			center: coords[0],
+// 			// zoom: 10,
+// 			controls: [],
+// 			// Чтобы метки начали кластеризоваться, выставляем опцию.
+// 			clusterize: true,
+// 			// ObjectManager принимает те же опции, что и кластеризатор.
+// 			gridSize: 34,
+// 			clusterDisableClickZoom: true
+// 		}),
+
+// 		objectManager = new ymaps.ObjectManager({
+// 			// Чтобы метки начали кластеризоваться, выставляем опцию.
+// 			clusterize: true,
+// 			// ObjectManager принимает те же опции, что и кластеризатор.
+// 			gridSize: 34,
+// 			clusterDisableClickZoom: true
+// 	});
+	
+
+// 		// Чтобы задать опции одиночным объектам и кластерам,
+// 		// обратимся к дочерним коллекциям ObjectManager.
+// 		objectManager.objects.options.set({
+// 			iconLayout: 'default#image',
+// 			iconImageHref: 'img/pin-map.png',
+// 			iconImageSize: [37, 46],
+// 			iconImageOffset: [-24, -38]
+// 		});
+// 		objectManager.clusters.options.set('preset', 'islands#greenClusterIcons');
+// 		myMap.geoObjects.add(objectManager);
+
+
+// 		let points = [];
+
+// 		$.ajax({
+// 			url: "data.json"
+// 		}).done(function (data) {
+// 			objectManager.add(data);
+// 			points.push(data.features)
+// 		});
+
+// 	};
+// };
+// for (let i = 0; i < sDistributorItems.length; i++) {
+// 	sDistributorItems[i].addEventListener('click', () => {
+// 		sDistributorItems.forEach((item) => item.classList.remove('active'));
+// 		sDistributorItems[i].classList.add('active');
+
+// 		myMap.setCenter(coords[i]);
+// 		myPlacemark.geometry.setCoordinates(coords[i]);
+// 	});
 // }

@@ -25,6 +25,7 @@
 		margin-bottom: rem(30);
 		@include media-breakpoint-up(md) {
 			margin-right: 7%;
+			width: auto;
 		}
 		@include media-breakpoint-up(xl) {
 			margin-bottom: 0;
@@ -50,10 +51,13 @@
 		}
 	}
 	.search-block input {
-		width: calc(100% - 45px);
+		// width: calc(100% - 45px);
 		border-radius: 2px;
 		border: 1px solid $gray-200;
 		color:$gray-500;
+		padding-top: rem(11);
+		padding-bottom: rem(11);
+		
 		font-size: rem(14);
 		font-weight: 300;
 		align-self: stretch;
@@ -136,17 +140,18 @@
 		}
 	}
 	&__item-list {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-end;
-		padding-block: rem(35);
+		// display: flex;
+		// flex-direction: column;
+		// align-items: flex-end;
+		// padding-block: rem(35);
 	}
 	&__item {
 		position: relative;
-		width: rem(295);
+		width: 100%;
 		border-radius: 2px;
 		background-color: $white;
 		box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.15);
+		margin-left: auto;
 	}
 	&__close-btn {
 		position: absolute;
@@ -233,6 +238,15 @@
 		}
 	}
 	
+	&__item-list{
+		max-height: 700px;
+		overflow-y: auto;
+		scroll-behavior: smooth;
+		margin-left: auto;
+		max-width: var(--list-w);
+		position: relative; 
+		z-index: 2;
+	}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}
@@ -241,3 +255,19 @@
 	@include media-breakpoint-only(xl) {}
 	@include media-breakpoint-down(xl) {}
 } // end.sDistributor
+.sDistributor--dealership{
+
+	#map{
+		max-width: calc(100%  - var(--list-w) - 50vw + var(--container-width) / 2);
+	}
+	.sDistributor{
+		
+		&__img-wrap{
+				max-height: calc(100% - 20px );
+				img{
+					max-height: 100%;
+					width: 89px;
+				}
+		}
+	}
+}
