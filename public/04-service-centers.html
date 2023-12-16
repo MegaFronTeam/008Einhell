@@ -110,15 +110,15 @@ function eventHandler() {
 			myMap.geoObjects.add(myPlacemark);
 		}
 
-		// for (let i = 0; i < sDistributorItems.length; i++) {
-		// 	sDistributorItems[i].addEventListener('click', () => {
-		// 		sDistributorItems.forEach((item) => item.classList.remove('active'));
-		// 		sDistributorItems[i].classList.add('active');
+		for (let i = 0; i < sDistributorItems.length; i++) {
+			sDistributorItems[i].addEventListener('click', () => {
+				sDistributorItems.forEach((item) => item.classList.remove('active'));
+				sDistributorItems[i].classList.add('active');
 
-		// 		myMap.setCenter(coords[i]);
-		// 		myPlacemark.geometry.setCoordinates(coords[i]);
-		// 	});
-		// }
+				myMap.setCenter(coords[i]);
+				myPlacemark.geometry.setCoordinates(coords[i]);
+			});
+		}
 	};
 };
 
