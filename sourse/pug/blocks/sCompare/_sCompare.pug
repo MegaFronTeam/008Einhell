@@ -1,0 +1,83 @@
+mixin tableItem(title,...items)
+	+e.table-title= title
+	for item in items
+		+e.table-info= item
+
+mixin compareCard(img,title,id)
+	+e.card(href="#" id= id)
+		+e.img-wrap: +img(`img/card-item-${img}.png`)
+		+e.title= title
+
+mixin sCompare(data)
+	// start sCompare
+	+b.SECTION.sCompare.section#sCompare&attributes(attributes)
+		.container
+			+e.slider-wrap
+				+b.compare-slider.swiper
+					.swiper-wrapper
+						.swiper-slide: +compareCard('1','Дрель ударная аккумуляторная PXC TC-ID 18 Li-Solo')
+						.swiper-slide: +compareCard('2','Дрель-шуруповёрт аккумуляторная PXC TE-CD 18/40 Li +69 (1x2,5Ah)')
+						.swiper-slide: +compareCard('3','Дрель-шуруповёрт аккумуляторная TC-CD 12 Li')
+						.swiper-slide: +compareCard('4','Дрель аккумуляторная PXC TE-CD 18 Li Brushless-Solo')
+						.swiper-slide: +compareCard('3','Дрель-шуруповёрт аккумуляторная TC-CD 12 Li')
+						.swiper-slide: +compareCard('4','Дрель аккумуляторная PXC TE-CD 18 Li Brushless-Solo')
+				+arrow()
+		+e.float-cards-wrap
+			.container
+				+e.table
+					+e.table-info: +compareCard('1','Дрель ударная аккумуляторная PXC TC-ID 18 Li-Solo')
+					+e.table-info: +compareCard('2','Дрель-шуруповёрт аккумуляторная PXC TE-CD 18/40 Li +69 (1x2,5Ah)')
+					+e.table-info: +compareCard('3','Дрель-шуруповёрт аккумуляторная TC-CD 12 Li')
+					+e.table-info: +compareCard('4','Дрель аккумуляторная PXC TE-CD 18 Li Brushless-Solo')
+		+e.table-container.container
+			+e.show
+				+in-c("checkbox",'Показать только различия')
+			+e.section
+				+e.section-title Информация о товаре
+				+e.table
+					+tableItem('Наименование','Дрель ударная аккумуляторная','Дрель-шуруповёрт аккумуляторная','Дрель-шуруповёрт аккумуляторная','Дрель ударная аккумуляторная')
+					+tableItem('Модель','PXC TC-ID 18 Li-Solo','PXC TE-CD 18/40 Li +69 (1x2,5Ah)','TC-CD 12 Li','PXC TE-CD 18 Li Brushless-Solo')
+					+tableItem('Артикул','4513833','4518845','4513246','4510133')
+					+tableItem('Вес (кг)','5 кг','8.5 кг','5 кг','7 кг')
+			+e.section
+				+e.section-title Технические данные
+				+e.table
+					+tableItem('Аккумулятор','1','2','1','1')
+					+tableItem('150','130','40','200')
+					+tableItem('Поставляется в ','Коробке','Кейсе','Коробке','Коробке')
+			+e.section
+				+e.section-title Технические данные
+				+e.table
+					+e.table-info
+						+img('img/label-2.jpg')
+						ul
+							li Съемный аккумулятор 2,5 А⋅ч, 18 В
+							li Вес 1.55 кг
+							li Крутящий момент 40 Н·м
+							li Число оборотов 0÷1500 мин-1
+							li Кейс и 69 предметов оснастки
+					+e.table-info
+						+img('img/label-2.jpg')
+						ul
+							li Съемный аккумулятор 2,5 А⋅ч, 18 В
+							li Вес 1.55 кг
+							li Крутящий момент 40 Н·м
+							li Число оборотов 0÷1500 мин-1
+							li Кейс и 69 предметов оснастки
+					+e.table-info
+						+img('img/label-1.jpg')
+						ul
+							li Съемный аккумулятор 2,5 А⋅ч, 18 В
+							li Вес 1.55 кг
+							li Крутящий момент 40 Н·м
+							li Число оборотов 0÷1500 мин-1
+							li Кейс и 69 предметов оснастки
+					+e.table-info
+						+img('img/label-2.jpg')
+						ul
+							li Съемный аккумулятор 2,5 А⋅ч, 18 В
+							li Вес 1.55 кг
+							li Крутящий момент 40 Н·м
+							li Число оборотов 0÷1500 мин-1
+							li Кейс и 69 предметов оснастки
+	// end sCompare 

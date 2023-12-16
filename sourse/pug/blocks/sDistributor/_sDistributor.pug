@@ -1,5 +1,5 @@
-mixin distributorItem(distance,city,mall,address,metro,schedule,...tels)
-	+e.item
+mixin distributorItem(id,coords,distance,city,mall,address,metro,schedule,tel)
+	+e.item(data-coords=coords data-type=id)
 		+e.item-top #{distance} км
 			+e.close-btn.btn.btn-primary.BUTTON
 				+icon('close')
@@ -9,15 +9,15 @@ mixin distributorItem(distance,city,mall,address,metro,schedule,...tels)
 				+e.item-address= mall
 				+e.item-address= address 
 			+e.details
-				+icon('metro') 
+				+icon('metro')
 				| #{metro}
 			+e.info
 				+e.info-term Режим работы
 				+e.info-def= schedule
 			+e.info
-				+e.info-term Режим работы
-				for number in tels
-					+e.info-def(href=`tel:number`)= number
+				+e.info-term Телефон
+					+e.info-def(href=`tel:tel`)= tel
+				//- for number in tels
 			+e.details(href="#")
 				+icon('web')
 				| Перейти на сайт
@@ -43,9 +43,11 @@ mixin sDistributor(data)
 					+e.img-wrap: +img(`img/duration.png`)
 		+e.map-wrap
 			#map
-					script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=09afbf5f-475d-4f23-bb68-eb2d6371a737" type="text/javascript")
-					script
-						include _sDistributor.js
+				script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=09afbf5f-475d-4f23-bb68-eb2d6371a737" type="text/javascript")
+				script
+					include _sDistributor.js
 			.container
-				+distributorItem('15.4','Москва','ООО «Олливер»', 'Каширское шоссе, д. 16','м. Каширская','10:00 - 19:00','8 (925) 088-81-018', '(495) 109-40-07')
+				+e.item-list
+					+distributorItem(items[0].id,items[0].coords,items[0].distance,items[0].city,items[0].mall, items[0].address,items[0].metro,items[0].schedule,items[0].tel[0], items[0].tel[1])
+				//- each item in items
 	// end sDistributor

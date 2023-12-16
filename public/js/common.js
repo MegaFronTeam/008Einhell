@@ -74,6 +74,98 @@ function eventHandler() {
 		});
 	}
 
+	const stickyBlock = document.querySelector(".sCompare__float-cards-wrap");
+	const tableContainer = document.querySelector(".sCompare__table-container");
+	if (tableContainer) {
+		let tableOffset = stickyBlock.offsetHeight;
+		tableContainer.style.marginTop = -tableOffset + 'px';
+		let floatCards = new hcSticky(stickyBlock, {
+			stickTo: '#sCompare',
+			responsive: {
+				768: {
+					disable: true
+				}
+			},
+			onResize:  function() {
+				console.log(this)
+				this.refresh;
+			}
+		});	
+		// floatCards.refresh()	
+	}
+
+
+// ymaps.modules.define('Panel', [
+// 	'util.augment',
+// 	'collection.Item'
+// ], function (provide, augment, item) {
+// 	var Panel = function (options) {
+// 			Panel.superclass.constructor.call(this, options);
+// 	};
+
+// 	augment(Panel, item, {
+// 			onAddToMap: function (map) {
+// 					Panel.superclass.onAddToMap.call(this, map);
+// 					this.getParent().getChildElement(this).then(this._onGetChildElement, this);
+// 					map.margin.addArea({
+// 							top: 0,
+// 							left: 0,
+// 							width: '250px',
+// 							height: '100%'
+// 					})
+// 			},
+
+// 			onRemoveFromMap: function (oldMap) {
+// 					if (this._$control) {
+// 							this._$control.remove();
+// 					}
+// 					Panel.superclass.onRemoveFromMap.call(this, oldMap);
+// 			},
+
+// 			_onGetChildElement: function (parentDomContainer) {
+// 					// Создаем HTML-элемент с текстом.
+// 					// По-умолчанию HTML-элемент скрыт.
+// 					this._$control = $('<div class="customControl"><div class="content"></div><div class="closeButton"></div></div>').appendTo(parentDomContainer);
+// 					this._$content = $('.content');
+// 					// При клике по крестику будем скрывать панель.
+// 					$('.closeButton').on('click', this._onClose);
+// 			},
+// 			_onClose: function () {
+// 					$('.customControl').css('display', 'none');
+// 			},
+// 			// Метод задания контента панели.
+// 			setContent: function (text) {
+// 					// При задании контента будем показывать панель.
+// 					this._$control.css('display', 'flex');
+// 					this._$content.html(text);
+// 			}
+// 	});
+
+// 	provide(Panel);
+// });
+
+	const compareWrap = document.querySelector('.sCompare__slider-wrap');
+	if (compareWrap) {
+		let compareSwiper = new Swiper(compareWrap.querySelector('.compare-slider'), {
+			slidesPerView: 2,
+			spaceBetween: 10,
+			breakpoints: {
+				768: {
+					slidesPerView: 3,
+					spaceBetween: 20,
+				},
+				992: {
+					slidesPerView: 4,
+				},
+			},
+			navigation: {
+				nextEl: compareWrap.querySelector(".swiper-button-next"),
+				prevEl: compareWrap.querySelector(".swiper-button-prev"),
+			},
+			watchSlidesProgress: true
+		});
+	}
+
 	const productSliders = document.querySelectorAll('.sProductSlider__item');
 	if (productSliders) {
 		productSliders.forEach((wrap) => {
@@ -146,7 +238,7 @@ function eventHandler() {
 		freeMode: true,
 		watchOverflow: true
 	});
-
+ 
 
 	// Catalog filter opening
 
@@ -179,13 +271,13 @@ function eventHandler() {
 		}, { passive: true });
 	}
 
+	
 
-
-	// new Swiper('.breadcrumb-slider--js', {
-	// 	slidesPerView: 'auto',
-	// 	freeMode: true,
-	// 	watchOverflow: true
-	// });
+	new Swiper('.breadcrumb-slider--js', {
+		slidesPerView: 'auto',
+		freeMode: true,
+		watchOverflow: true
+	});
 
 	const swiper4 = new Swiper('.sBanners__slider--js', { // если не используешь методы swiper  - можно обращаться без нее к Swiper
 		// slidesPerView: 5,

@@ -1,0 +1,27 @@
+extends ../layout/main.pug
+
+include ../blocks/headerBlock/_headerBlock.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sCompare/_sCompare.pug
+
+block variables
+	- let  mainPage= 'compare-page' 
+	- let  bg= null
+
+block title
+	- let  title= index.head.title
+	title= 'Compare'
+block pagecontent
+	//- +mob-mnu()
+	
+	
+	+parts('header')
+	main
+		+page-head('Сравнение товаров','','Сравнение товаров')
+		+sCompare
+	+parts('footer')
+	
+
+
+
