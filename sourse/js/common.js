@@ -24,12 +24,12 @@ function eventHandler() {
 
 
 	let defaultSl = {
-		spaceBetween: 0,
 		lazy: {
 			loadPrevNext: true,
 		},
 		watchOverflow: true,
 		loop: true,
+		spaceBetween: 0,
 		navigation: {
 			nextEl: '.swiper-button-next',
 			prevEl: '.swiper-button-prev',
@@ -290,6 +290,50 @@ function eventHandler() {
 		freeModeMomentum: true,
 
 	});
+	
+	
+	let compareSection = document.querySelector(".sCompare");
+	function comparePate() {
+		const swiper4 = new Swiper('.sCompare-slider-js', { 
+			slidesPerView: 2,
+			spaceBetween: 20,
+			breakpoints: {
+				768: {
+					slidesPerView: 3,
+				},
+				992: {
+					slidesPerView: 4,
+				},
+			},
+			navigation: {
+				nextEl: compareSection.querySelector('.swiper-button-next'),
+				prevEl: compareSection.querySelector('.swiper-button-prev'),
+			},
+		});
+		// get MaxHeight  
+
+		function getMaxHeight(a, b) {
+			compareSection.querySelectorAll(a).forEach((elA, index) => {  
+				let lineHeight = 0;
+				const slides  = compareSection.querySelectorAll(`.swiper-slide`);
+				slides.forEach(elB => { 
+					const line = elB.querySelectorAll(b)[index].offsetHeight; 
+					if(line > lineHeight) lineHeight = line;
+				});
+				elA.style.setProperty('--el-height', `${lineHeight}px`);  
+			})
+		}
+		window.addEventListener('resize', () => {
+			getMaxHeight('.sCompare__main-head', ".compare-card");
+			getMaxHeight('.sCompare__item--text', ".sCompare__item--result");
+		},{ passive: true })
+		getMaxHeight('.sCompare__main-head', ".compare-card");
+		getMaxHeight('.sCompare__item--text', ".sCompare__item--result");
+	}
+
+	if(compareSection) {
+		comparePate()
+	}
 
 };
 if (document.readyState !== 'loading') {

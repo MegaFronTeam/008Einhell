@@ -4,11 +4,11 @@ mixin tableItem(title,...items)
 		+e.table-info= item
 
 mixin compareCard(img,title,id)
-	+e.card(href="#" id= id)
+	+b.compare-card(href="#" id= id)
 		+e.img-wrap: +img(`img/card-item-${img}.png`)
 		+e.title= title
 
-mixin sCompare(data)
+mixin sCompare2(data)
 	// start sCompare
 	+b.SECTION.sCompare.section#sCompare&attributes(attributes)
 		.container
@@ -81,3 +81,84 @@ mixin sCompare(data)
 							li Число оборотов 0÷1500 мин-1
 							li Кейс и 69 предметов оснастки
 	// end sCompare 
+
+mixin sCompare(data)
+	// start sCompare
+	+b.SECTION.sCompare.section#sCompare&attributes(attributes)
+		.container
+			+e.row
+				+e.main-head
+					+e.title-col
+						+in-c('checkbox', 'Показать только различия')
+					+e.content
+						+e.group
+								+e.header Информация о товаре 
+								+e.item--title Наименование
+								+e.item--text &nbsp;
+								+e.item--title Модель
+								+e.item--text &nbsp;
+								+e.item--title Артикул
+								+e.item--text &nbsp;
+								+e.item--title Вес (кг)
+								+e.item--text &nbsp;
+						+e.group
+								+e.header Технические данные 
+								+e.item--title Аккумулятор
+								+e.item--text &nbsp;
+								+e.item--title Емкость аккумулятора (Ач)
+								+e.item--text &nbsp;
+								+e.item--title Зарядное устройство (мин)
+								+e.item--text &nbsp;
+								+e.item--title Поставляется в
+								+e.item--text &nbsp;
+						+e.group
+							+e.header Краткое описание
+							+e.item--result 
+				+e.slider-wrap
+					.swiper.sCompare-slider-js
+						.swiper-wrapper
+							+sCompareSlide('true', false, '')
+							+sCompareSlide()
+							+sCompareSlide()
+							+sCompareSlide()
+							+sCompareSlide()
+					+arrow('d-none d-md-flex')
+	// end sCompare
+
+mixin sCompareSlide(active, tag=false, code='JR3050T',name='Молоток отбойный легкий')
+	.swiper-slide
+		+compareCard(1,'Дрель ударная аккумуляторная PXC TC-ID 18 Li-Solo',id)
+		+e.content
+			if block
+				block
+			else
+				+e.group
+					+e.header &nbsp;
+					+e.item--title.--title-item &nbsp;
+					+e.item--result Дрель ударная аккумуляторная  Дрель ударная аккумуляторная
+					+e.item--title.--title-item &nbsp;
+					+e.item--result PXC TC-ID 18 Li-Solo 
+					+e.item--title.--title-item &nbsp;
+					+e.item--result 4513833
+					+e.item--title.--title-item &nbsp;
+					+e.item--result 5 кг
+				+e.group
+					+e.header &nbsp;
+					+e.item--title.--title-item &nbsp;
+					+e.item--result 1
+					+e.item--title.--title-item &nbsp;
+					+e.item--result 12.0
+					+e.item--title.--title-item &nbsp;
+					+e.item--result 150
+					+e.item--title.--title-item &nbsp;
+					+e.item--result Коробке
+				+e.group
+					+e.header &nbsp;
+					+e.item--result 
+						+img('img/label-2.jpg')
+						ul
+							li Съемный аккумулятор 2,5 А⋅ч, 18 В
+							li Вес 1.55 кг
+							li Крутящий момент 40 Н·м
+							li Число оборотов 0÷1500 мин-1
+							li Кейс и 69 предметов оснастки
