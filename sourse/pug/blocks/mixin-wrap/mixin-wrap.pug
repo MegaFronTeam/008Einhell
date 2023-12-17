@@ -11,10 +11,10 @@ include components/btn.pug
 
 include components/ddgroup.pug
 
-mixin arrow()
-	.swiper-button-hand.swiper-button-hand-prev.swiper-button-prev
+mixin arrow(cl)
+	.swiper-button-hand.swiper-button-hand-prev.swiper-button-prev(class= cl)
 		+icon('left')
-	.swiper-button-hand.swiper-button-hand-next.swiper-button-next
+	.swiper-button-hand.swiper-button-hand-next.swiper-button-next(class= cl)
 		+icon('left')
 //- /arrow for swiper-slider
 

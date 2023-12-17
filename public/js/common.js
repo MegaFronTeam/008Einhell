@@ -288,34 +288,56 @@ function eventHandler() {
 		touchRatio: 0.2,
 		slideToClickedSlide: true,
 		freeModeMomentum: true,
-
+		
 	});
 	
 	
 	let compareSection = document.querySelector(".sCompare");
+	const swiperCompare5 = new Swiper('.sCompare-slider-thumbs-js', { 
+		slidesPerView: 2,
+		spaceBetween: 10,
+		breakpoints: {
+			768: {
+				slidesPerView: 3,
+				spaceBetween: 20,
+			},
+			992: {
+				slidesPerView: 4,
+			},
+		},
+		navigation: {
+			nextEl: compareSection.querySelector('.swiper-button-next'),
+			prevEl: compareSection.querySelector('.swiper-button-prev'),
+		},
+	});
+	const swiperCompare4 = new Swiper('.sCompare-slider-js', { 
+		slidesPerView: 2,
+		spaceBetween: 10,
+		breakpoints: {
+			768: {
+				spaceBetween: 20,
+				slidesPerView: 3,
+			},
+			992: {
+				slidesPerView: 4,
+			},
+		},
+		navigation: {
+			nextEl: compareSection.querySelector('.swiper-button-next'),
+			prevEl: compareSection.querySelector('.swiper-button-prev'),
+		}, 
+	});
+
+	swiperCompare4.controller.control = swiperCompare5;
+	swiperCompare5.controller.control = swiperCompare4;
+	
 	function comparePate() {
-		const swiper4 = new Swiper('.sCompare-slider-js', { 
-			slidesPerView: 2,
-			spaceBetween: 20,
-			breakpoints: {
-				768: {
-					slidesPerView: 3,
-				},
-				992: {
-					slidesPerView: 4,
-				},
-			},
-			navigation: {
-				nextEl: compareSection.querySelector('.swiper-button-next'),
-				prevEl: compareSection.querySelector('.swiper-button-prev'),
-			},
-		});
 		// get MaxHeight  
 
 		function getMaxHeight(a, b) {
 			compareSection.querySelectorAll(a).forEach((elA, index) => {  
 				let lineHeight = 0;
-				const slides  = compareSection.querySelectorAll(`.swiper-slide`);
+				const slides  = compareSection.querySelectorAll(`.swiper-slide--main`);
 				slides.forEach(elB => { 
 					const line = elB.querySelectorAll(b)[index].offsetHeight; 
 					if(line > lineHeight) lineHeight = line;
@@ -329,6 +351,22 @@ function eventHandler() {
 		},{ passive: true })
 		getMaxHeight('.sCompare__main-head', ".compare-card");
 		getMaxHeight('.sCompare__item--text', ".sCompare__item--result");
+
+		let topHead = document.querySelector(".sCompare__main-head").getBoundingClientRect().top; 
+		function setFixed() {
+			// setTimeout(() => {
+			// 	topHead = document.querySelector(".sCompare__main-head").offsetTop; 
+			// }, 500);
+			let topNav = document.querySelector('.sCompare__fixed-line');
+			if (!topNav) return;
+			window.scrollY > topHead
+				? topNav.classList.add('fixed')
+				: topNav.classList.remove('fixed');
+		}
+		setFixed()
+		window.addEventListener('scroll', () => {
+			setFixed()
+		}, { passive: true })
 	}
 
 	if(compareSection) {

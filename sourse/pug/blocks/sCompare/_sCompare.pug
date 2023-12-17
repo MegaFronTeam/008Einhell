@@ -85,6 +85,22 @@ mixin sCompare2(data)
 mixin sCompare(data)
 	// start sCompare
 	+b.SECTION.sCompare.section#sCompare&attributes(attributes)
+		+e.fixed-line
+			.container
+				+e.slider-wrap
+					.swiper.sCompare-slider-thumbs-js
+						.swiper-wrapper
+							.swiper-slide
+								+compareCard(1,'Дрель ударная аккумуляторная PXC TC-ID 18 Li-Solo',id) 
+							.swiper-slide
+								+compareCard(1,'Дрель ударная аккумуляторная PXC TC-ID 18 Li-Solo',id) 
+							.swiper-slide
+								+compareCard(1,'Дрель ударная аккумуляторная PXC TC-ID 18 Li-Solo',id) 
+							.swiper-slide
+								+compareCard(1,'Дрель ударная аккумуляторная PXC TC-ID 18 Li-Solo',id) 
+							.swiper-slide
+								+compareCard(1,'Дрель ударная аккумуляторная PXC TC-ID 18 Li-Solo',id) 
+					+arrow('d-none d-md-flex')
 		.container
 			+e.row
 				+e.main-head
@@ -126,7 +142,7 @@ mixin sCompare(data)
 	// end sCompare
 
 mixin sCompareSlide(active, tag=false, code='JR3050T',name='Молоток отбойный легкий')
-	.swiper-slide
+	.swiper-slide.swiper-slide--main
 		+compareCard(1,'Дрель ударная аккумуляторная PXC TC-ID 18 Li-Solo',id)
 		+e.content
 			if block
