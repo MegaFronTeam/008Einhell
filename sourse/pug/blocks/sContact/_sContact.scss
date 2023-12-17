@@ -2,7 +2,7 @@
 	// start .sContact
 	.sContact {
 	--sPT: #{rem(0)};
-	$asideW: rem(550);
+	--asideW: #{rem(550)};
 	// --sPB: #{rem()};
 	// --sTPB: #{rem()};
 	&__row{
@@ -15,8 +15,8 @@
 		.wrapper-container {
 			position: relative;
 			.bg-wrap {
-				height: calc(100% - rem(2));
-				margin-right: calc(-50vw + 50% - $asideW*-1/2); // - var(--asideW)*-1/2
+				height: 100%;
+				margin-right: calc(-50vw + 50% - var(--asideW)*-1/2); // - var(--asideW)*-1/2
 			}
 			.picture-bg {
 				height: 100%;
@@ -32,7 +32,7 @@
 			}
 		}
 		.box {
-			width: $asideW;
+			width: var(--asideW);
 		}
 		.title-wrapper {
 			padding: rem(74) 0;
@@ -47,7 +47,7 @@
 			}
 		}
 	}
-	@include media-breakpoint-down(xl) {
+	/* @include media-breakpoint-down(xl) {
 		.picture-wrap {
 			position: absolute;
 			height: 100%;
@@ -57,7 +57,7 @@
 			width: 80vw;
 			z-index: 5;
 		}
-	}
+	} */
 	/* .section-title{
 		
 	}
