@@ -293,43 +293,9 @@ function eventHandler() {
 	
 	
 	let compareSection = document.querySelector(".sCompare");
-	const swiperCompare5 = new Swiper('.sCompare-slider-thumbs-js', { 
-		slidesPerView: 2,
-		spaceBetween: 10,
-		breakpoints: {
-			768: {
-				slidesPerView: 3,
-				spaceBetween: 20,
-			},
-			992: {
-				slidesPerView: 4,
-			},
-		},
-		navigation: {
-			nextEl: compareSection.querySelector('.swiper-button-next'),
-			prevEl: compareSection.querySelector('.swiper-button-prev'),
-		},
-	});
-	const swiperCompare4 = new Swiper('.sCompare-slider-js', { 
-		slidesPerView: 2,
-		spaceBetween: 10,
-		breakpoints: {
-			768: {
-				spaceBetween: 20,
-				slidesPerView: 3,
-			},
-			992: {
-				slidesPerView: 4,
-			},
-		},
-		navigation: {
-			nextEl: compareSection.querySelector('.swiper-button-next'),
-			prevEl: compareSection.querySelector('.swiper-button-prev'),
-		}, 
-	});
+	
 
-	swiperCompare4.controller.control = swiperCompare5;
-	swiperCompare5.controller.control = swiperCompare4;
+
 	
 	function comparePate() {
 		// get MaxHeight  
@@ -370,7 +336,47 @@ function eventHandler() {
 	}
 
 	if(compareSection) {
+		const swiperCompare5 = new Swiper('.sCompare-slider-thumbs-js', { 
+			slidesPerView: 2,
+			spaceBetween: 10,
+			breakpoints: {
+				768: {
+					slidesPerView: 3,
+					spaceBetween: 20,
+				},
+				992: {
+					slidesPerView: 4,
+				},
+			},
+			navigation: {
+				nextEl: compareSection.querySelector('.swiper-button-next'),
+				prevEl: compareSection.querySelector('.swiper-button-prev'),
+			},
+		});
+		const swiperCompare4 = new Swiper('.sCompare-slider-js', { 
+			slidesPerView: 2,
+			spaceBetween: 10,
+			breakpoints: {
+				768: {
+					spaceBetween: 20,
+					slidesPerView: 3,
+				},
+				992: {
+					slidesPerView: 4,
+				},
+			},
+			navigation: {
+				nextEl: compareSection.querySelector('.swiper-button-next'),
+				prevEl: compareSection.querySelector('.swiper-button-prev'),
+			}, 
+		});
+
+		swiperCompare4.controller.control = swiperCompare5;
+		swiperCompare5.controller.control = swiperCompare4;
+		
 		comparePate()
+
+
 	}
 
 };

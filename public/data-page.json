@@ -1,0 +1,22 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "474",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "44.960784",
+          "34.099833"
+        ]
+      },
+      "properties": {
+        "balloonContentHeader": "Управление Роспотребнадзора (г. Симферополь)",
+        "balloonContentBody": "295034, г. Симферополь, ул. Набережная, д. 67",
+        "clusterCaption": "Управление Роспотребнадзора (г. Симферополь)",
+        "hintContent": "Управление Роспотребнадзора (г. Симферополь)"
+      }
+    }
+  ]
+}

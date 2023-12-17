@@ -2,7 +2,11 @@
 	// start .sContact
 	.sContact {
 	--sPT: #{rem(0)};
-	--asideW: #{rem(550)};
+	@include media-breakpoint-up(xxl){
+
+		--asideW: #{rem(550)};
+	}
+	--asideW: #{rem(300)};
 	// --sPB: #{rem()};
 	// --sTPB: #{rem()};
 	&__row{
@@ -11,26 +15,37 @@
 	}
 	&__wrapper {
 		background-color: $gray-800;
-		height: rem(204);
+		// height: rem(204);
 		.wrapper-container {
 			position: relative;
-			.bg-wrap {
-				height: 100%;
-				margin-right: calc(-50vw + 50% - var(--asideW)*-1/2);
-			}
-			.picture-bg {
-				height: 100%;
-				position: absolute;
-				top: 0;
-				left: 0;
-				max-width: 100%;
-			}
-			.img {
-				overflow: visible;
-				object-fit:cover;
-				height: 100%;
-				max-width: 100%;
-			}
+			z-index: 2;
+			@include media-breakpoint-up(sm) {
+
+				.picture-wrap  { 
+					position: relative;
+					margin-right: calc(-50vw + 50% - var(--asideW) / 2);
+				}
+			} 
+				img{
+					@include media-breakpoint-down(sm){
+						opacity: 0.3;
+					}
+					position: absolute;
+					width: 100%;
+					z-index: -1;
+					height: 100%;
+					left: 0;
+					top: 0;
+					object-position: left;
+					object-fit: cover;
+				}
+				// .picture-bg {
+				// 	height: 100%;
+				// 	position: absolute;
+				// 	top: 0;
+				// 	left: 0;
+				// 	max-width: 100%;
+				// }
 		}
 		.box {
 			width: var(--asideW);
@@ -49,23 +64,7 @@
 				font-weight: 300;
 			}
 		}
-	}
-	@include media-breakpoint-down(xl) {
-		.picture-wrap {
-			position: absolute;
-			height: 100%;
-			opacity: .2;
-		}
-		.bg-wrap {
-			margin-right: 0 !important;
-		}
-		.picture-bg {
-			position: relative;
-		}
-		.box {
-			z-index: 5;
-		}
-	}
+	} 
 	&__slide{
 		height: auto;
 	}
@@ -73,10 +72,12 @@
 	.cards-container {
 		margin-top: rem(30);
 	}
-	&__card:nth-child(-n+4) {
-		margin-bottom: rem(20);
+	&__card:nth-last-child(2),
+	&__card:nth-last-child(1) {
+		margin-bottom: rem(0);
 	}
 	&__card {
+		margin-bottom: rem(20);
 		background-color: $white;
 		border-radius: rem(2);
 		padding: rem(30);
@@ -159,7 +160,14 @@
 	}
 	
 	
-
+	&__map{
+		height: 220px;
+		position: relative;
+		#map{
+			position: absolute;
+			inset: 0;
+		}
+	}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}

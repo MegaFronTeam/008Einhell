@@ -4,14 +4,14 @@ mixin sContact()
 		+e.wrapper
 			.container.wrapper-container
 				.row
-					.box.col-lg-auto
+					.box.col-sm-auto
 						.title-wrapper
 							h1 Контактная информация
 							p Реквизиты и адрес организации
-					.col-lg.picture-wrap
-						.bg-wrap
-							+b.picture-bg
-								img.img(src='img/contacts.png')
+					.col-sm.picture-wrap 
+							img.res-i(src='img/contacts.png')
+		+e.map
+			#map
 		.container.cards-container
 			+e.cards.cards
 				+e.card

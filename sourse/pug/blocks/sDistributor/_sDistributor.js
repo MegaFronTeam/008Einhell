@@ -52,7 +52,7 @@ function initMap() {
   function showBaloon(index, el) {
     
 		var objectState = objectManager.getObjectState(el); 
-		myMap.setCenter(points[0][index].geometry.coordinates, 14);
+		myMap.setCenter(points[0][index].geometry.coordinates, 8);
 
 		myMap.geoObjects.add(objectManager);
         // if (objectState.isClustered) {
