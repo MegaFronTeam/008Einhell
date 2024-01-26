@@ -39,8 +39,9 @@ mixin sDistributor(data)
 							+e.title.d-none.d-lg-block Найти ближайший сервисный центр
 							+e.input-wrap
 								input(type="text" placeholder='Выберите город..' inputmode='search')
-								+e.UL.search-result
-									
+								+e.UL.search-result.active
+									li.search-result__search-item
+										a(href="").search-result__search-link  Управление Роспотребнадзора (г. Барнаул)
 							button.btn.btn-primary
 								+icon("search")
 					+e.view
