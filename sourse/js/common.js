@@ -190,6 +190,10 @@ function eventHandler() {
 					type: 'bullets',
 					clickable: true,
 				},
+				loop: true,
+				autoplay: {
+					delay: 3000,
+				},
 			});
 		});
 	}
@@ -288,27 +292,27 @@ function eventHandler() {
 		touchRatio: 0.2,
 		slideToClickedSlide: true,
 		freeModeMomentum: true,
-		
+
 	});
-	
-	
+
+
 	let compareSection = document.querySelector(".sCompare");
-	
 
 
-	
+
+
 	function comparePate() {
 		// get MaxHeight  
 
 		function getMaxHeight(a, b) {
-			compareSection.querySelectorAll(a).forEach((elA, index) => {  
+			compareSection.querySelectorAll(a).forEach((elA, index) => {
 				let lineHeight = 0;
 				const slides  = compareSection.querySelectorAll(`.swiper-slide--main`);
-				slides.forEach(elB => { 
-					const line = elB.querySelectorAll(b)[index].offsetHeight; 
+				slides.forEach(elB => {
+					const line = elB.querySelectorAll(b)[index].offsetHeight;
 					if(line > lineHeight) lineHeight = line;
 				});
-				elA.style.setProperty('--el-height', `${lineHeight}px`);  
+				elA.style.setProperty('--el-height', `${lineHeight}px`);
 			})
 		}
 		window.addEventListener('resize', () => {
@@ -318,7 +322,7 @@ function eventHandler() {
 		getMaxHeight('.sCompare__main-head', ".compare-card");
 		getMaxHeight('.sCompare__item--text', ".sCompare__item--result");
 
-		let topHead = document.querySelector(".sCompare__main-head").getBoundingClientRect().top; 
+		let topHead = document.querySelector(".sCompare__main-head").getBoundingClientRect().top;
 		function setFixed() {
 			// setTimeout(() => {
 			// 	topHead = document.querySelector(".sCompare__main-head").offsetTop; 
@@ -336,7 +340,7 @@ function eventHandler() {
 	}
 
 	if(compareSection) {
-		const swiperCompare5 = new Swiper('.sCompare-slider-thumbs-js', { 
+		const swiperCompare5 = new Swiper('.sCompare-slider-thumbs-js', {
 			slidesPerView: 2,
 			spaceBetween: 10,
 			breakpoints: {
@@ -353,7 +357,7 @@ function eventHandler() {
 				prevEl: compareSection.querySelector('.swiper-button-prev'),
 			},
 		});
-		const swiperCompare4 = new Swiper('.sCompare-slider-js', { 
+		const swiperCompare4 = new Swiper('.sCompare-slider-js', {
 			slidesPerView: 2,
 			spaceBetween: 10,
 			breakpoints: {
@@ -368,12 +372,12 @@ function eventHandler() {
 			navigation: {
 				nextEl: compareSection.querySelector('.swiper-button-next'),
 				prevEl: compareSection.querySelector('.swiper-button-prev'),
-			}, 
+			},
 		});
 
 		swiperCompare4.controller.control = swiperCompare5;
 		swiperCompare5.controller.control = swiperCompare4;
-		
+
 		comparePate()
 
 
@@ -423,7 +427,7 @@ if (document.readyState !== 'loading') {
 // 			gridSize: 34,
 // 			clusterDisableClickZoom: true
 // 	});
-	
+
 
 // 		// Чтобы задать опции одиночным объектам и кластерам,
 // 		// обратимся к дочерним коллекциям ObjectManager.
