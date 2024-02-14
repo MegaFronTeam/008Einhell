@@ -197,6 +197,9 @@ function eventHandler() {
           type: "bullets",
           clickable: true,
         },
+        autoplay: {
+          delay: 3000,
+        },
       });
     });
   }
