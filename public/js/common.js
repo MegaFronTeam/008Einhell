@@ -197,6 +197,7 @@ function eventHandler() {
           type: "bullets",
           clickable: true,
         },
+        loop: true,
         autoplay: {
           delay: 3000,
         },
