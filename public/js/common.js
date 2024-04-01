@@ -239,6 +239,7 @@ function eventHandler() {
   });
   var mainSlider = new Swiper(".sCard__main-slider", {
     spaceBetween: 10,
+    autoHeight : true,
     thumbs: {
       swiper: thumbsSlider,
     },
