@@ -5,15 +5,17 @@ mixin sCard(data)
 			+e.row.row
 				.col-lg-6
 					+e.images
-						+e.main-slider.swiper
-							.swiper-wrapper
-								.swiper-slide: +e.img-wrap: +img("img/main-card-1.png")
-								.swiper-slide: +e.img-wrap: +img("img/main-card-1.png")
-								.swiper-slide: +e.img-wrap: +img("img/main-card-1.png")
-								.swiper-slide: +e.img-wrap: +img("img/main-card-1.png")
-								.swiper-slide: +e.img-wrap: +img("img/main-card-1.png")
-								.swiper-slide: +e.img-wrap: +img("img/main-card-1.png")
-								.swiper-slide: +e.img-wrap: +img("img/main-card-1.png")
+						+e.main-slider-wrap
+							+e.main-slider.swiper
+								.swiper-wrapper
+									.swiper-slide: +e.img-wrap: +img("img/main-card-1.png")
+									.swiper-slide: +e.img-wrap: +img("img/main-card-1.png")
+									.swiper-slide: +e.img-wrap: +img("img/main-card-1.png")
+									.swiper-slide: +e.img-wrap: +img("img/main-card-1.png")
+									.swiper-slide: +e.img-wrap: +img("img/main-card-1.png")
+									.swiper-slide: +e.img-wrap: +img("img/main-card-1.png")
+									.swiper-slide: +e.img-wrap: +img("img/main-card-1.png")
+							+arrow
 						+e.thumbs-slider.swiper
 							.swiper-wrapper
 								.swiper-slide: +e.img-wrap: +img("img/sm-card-1.png")

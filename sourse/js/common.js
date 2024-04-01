@@ -239,8 +239,17 @@ function eventHandler() {
   });
   var mainSlider = new Swiper(".sCard__main-slider", {
     spaceBetween: 10,
+    autoHeight: true,
     thumbs: {
       swiper: thumbsSlider,
+    },
+    navigation: {
+      nextEl: document.querySelector(
+        ".sCard__main-slider-wrap .swiper-button-next"
+      ),
+      prevEl: document.querySelector(
+        ".sCard__main-slider-wrap .swiper-button-prev"
+      ),
     },
   });
 
