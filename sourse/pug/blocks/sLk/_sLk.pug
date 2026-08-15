@@ -1,0 +1,75 @@
+mixin lkMenu(active)
+	+e.menu
+		+e.menu-link(href="10-lk-orders.html" class= active == 'orders' ? 'active' : null)
+			+icon('bag')
+			| Заказы
+		+e.menu-link(href="12-lk-profile.html" class= active == 'profile' ? 'active' : null)
+			+icon('profile')
+			| Профиль
+		+e.menu-link.sLk__menu-link--out(href="#")
+			+icon('logout')
+			| Выйти
+
+mixin orderHead()
+	+e.order-head
+		+e.order-cell.sLk__order-cell--number Номер заказа
+		+e.order-cell Дата заказа
+		+e.order-cell.sLk__order-cell--pay Способ оплаты
+		+e.order-cell.sLk__order-cell--status Статус
+		+e.order-cell.sLk__order-cell--sum Сумма
+
+//- data: { number, date, pay, statuses: [{text, mod}], sum, imgs: [] }
+mixin orderCard(data)
+	+e.order
+		+e.order-row
+			+e.order-cell.sLk__order-cell--number
+				+e.order-number(href="11-lk-order.html") Заказ № #{data.number}
+			+e.order-cell= data.date
+			+e.order-cell.sLk__order-cell--pay
+				+icon('wallet')
+				= data.pay
+			+e.order-cell.sLk__order-cell--status
+				each st in data.statuses
+					+e.status(class= 'sLk__status--' + st.mod)= st.text
+			+e.order-cell.sLk__order-cell--sum= data.sum
+		if data.imgs
+			+e.order-imgs
+				each img in data.imgs
+					+e.order-img: +img(`img/${img}.png`)
+
+mixin lkProduct(data)
+	+e.product
+		+e.product-img: +img(`img/${data.img}.png`)
+		+e.product-text
+			+e.product-title(href="#")= data.title
+			+e.product-number Артикул: #{data.number}
+		+e.product-price
+			+price(data.price, data.oldPrice)
+		+e.product-count &times; #{data.count}
+
+
+mixin lkRow(title, value)
+	+e.info-row
+		+e.info-title= title
+		+e.info-value
+			if block
+				block
+			else
+				= value
+
+mixin sLk(active)
+	// start sLk
+	+b.SECTION.sLk.section#sLk&attributes(attributes)
+		.container
+			+e.row.row
+				if active
+					+e.menu-col.col-lg-3
+						+lkMenu(active)
+					.col-lg-9
+						if block
+							block
+				else
+					.col-12
+						if block
+							block
+	// end sLk

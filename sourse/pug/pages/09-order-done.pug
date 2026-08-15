@@ -1,0 +1,25 @@
+extends ../layout/main.pug
+
+include ../blocks/sLk/_sLk.pug
+
+block variables
+	- let  mainPage= 'order-page'
+	- let  bg= null
+
+block title
+	- let  title= index.head.title
+	title= 'Order done'
+block pagecontent
+	+parts('header')
+	main
+		+page-head('Оформление','','Корзина','Оформление')
+		+sLk()
+			+e.done-title
+				| Заказ оформлен&nbsp;&mdash;
+				+e.SPAN.done-number  № 2370
+			+orderHead
+			+orderCard({number: '2370', date: '11.06.2025', pay: 'Наличными курьеру', sum: '207 900 ₽', statuses: [{text: 'Не оплачен', mod: 'danger'},{text: 'В обработке', mod: 'wait'}], imgs: ['card-item-1','card-item-4','card-item-6']})
+			+e.foot
+				+e.btn(href="11-lk-order.html") к заказу
+				+e.btn.sLk__btn--primary(href="#") оплатить
+	+parts('footer')

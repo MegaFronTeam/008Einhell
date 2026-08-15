@@ -1,0 +1,18 @@
+extends ../layout/main.pug
+
+include ../blocks/orderAside/_orderAside.pug
+include ../blocks/sOrder/_sOrder.pug
+
+block variables
+	- let  mainPage= 'order-page'
+	- let  bg= null
+
+block title
+	- let  title= index.head.title
+	title= 'Order'
+block pagecontent
+	+parts('header')
+	main
+		+page-head('Оформление','','Корзина','Оформление')
+		+sOrder
+	+parts('footer')

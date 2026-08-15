@@ -1,0 +1,10 @@
+include ../../layout/include.pug
+
++b.modal-win.modal-win--auth
+	+e.FORM.form
+		+e.title Регистрация
+		input.form-control(type="email" name="email" placeholder="E-mail" inputmode="email")
+		input.form-control(type="password" name="password" placeholder="Пароль")
+		input.form-control.is-invalid(type="password" name="password2" placeholder="Повторите пароль")
+		+e.error Пароли не совпадают
+		button.btn.btn-primary.w-100(type="submit") Зарегистрироваться

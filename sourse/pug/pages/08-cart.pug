@@ -1,0 +1,18 @@
+extends ../layout/main.pug
+
+include ../blocks/orderAside/_orderAside.pug
+include ../blocks/sCart/_sCart.pug
+
+block variables
+	- let  mainPage= 'cart-page'
+	- let  bg= null
+
+block title
+	- let  title= index.head.title
+	title= 'Cart'
+block pagecontent
+	+parts('header')
+	main
+		+page-head('Корзина','','Корзина')
+		+sCart
+	+parts('footer')

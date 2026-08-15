@@ -1,0 +1,225 @@
+// start .orderAside
+.orderAside {
+	max-width: rem(300);
+	@include media-breakpoint-up(lg) {
+		margin-left: auto;
+	}
+
+	&__summary {
+		margin-bottom: rem(10);
+		padding: rem(30);
+		background-color: $white;
+		border: 1px solid $gray-200;
+		border-radius: 2px;
+	}
+
+	&__title {
+		margin-bottom: rem(20);
+		font-family: $header-font;
+		font-size: rem(24);
+		font-weight: 700;
+		color: $gray-800;
+		text-transform: uppercase;
+	}
+
+	&__row {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: rem(10);
+		margin-bottom: rem(5);
+		font-size: rem(16);
+		&--accent {
+			color: $primary;
+			.orderAside__row-value {
+				color: $primary;
+			}
+		}
+	}
+
+	&__row-title {
+		font-weight: 300;
+	}
+
+	&__row-value {
+		color: $gray-800;
+		white-space: nowrap;
+	}
+
+	&__promo {
+		display: flex;
+		gap: rem(5);
+		margin-top: rem(20);
+		& + .orderAside__promo {
+			margin-top: rem(5);
+		}
+	}
+
+	&__promo-field,
+	&__promo-input {
+		display: flex;
+		align-items: center;
+		flex-grow: 1;
+		width: 100%;
+		padding: rem(9) rem(15);
+		height: rem(40);
+		font-size: rem(14);
+		font-weight: 300;
+		border: 1px solid $gray-200;
+		border-radius: 2px;
+	}
+
+	&__promo-check {
+		position: relative;
+		flex-shrink: 0;
+		margin-right: rem(10);
+		width: rem(20);
+		height: rem(20);
+		background-color: $gray-800;
+		border-radius: 50%;
+		&::after {
+			position: absolute;
+			content: '';
+			top: 50%;
+			left: 50%;
+			width: rem(10);
+			height: rem(8);
+			transform: translate(-50%, -50%);
+			background-color: $white;
+			mask: url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4L3.8 6.8L9 1.5' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center / contain;
+		}
+	}
+
+	&__promo-code {
+		font-size: rem(14);
+		font-weight: 700;
+		color: $gray-800;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	&__promo-btn {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		padding: 0;
+		width: rem(40);
+		height: rem(40);
+		background-color: $gray-800;
+		@include mt;
+		&:hover {
+			background-color: $gray-900;
+		}
+		.icon {
+			font-size: rem(12);
+			fill: $white;
+		}
+		.icon-enter {
+			font-size: rem(16);
+		}
+	}
+
+	&__total {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: rem(10);
+		margin-top: rem(20);
+		margin-bottom: rem(15);
+		font-family: $header-font;
+		color: $body-color;
+	}
+
+	&__total-title {
+		font-size: rem(24);
+		text-transform: uppercase;
+	}
+
+	&__total-value {
+		font-size: rem(24);
+		font-weight: 700;
+		white-space: nowrap;
+	}
+
+	&__btn {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		padding: rem(8) rem(20) rem(10);
+		color: $white;
+		font-family: $header-font;
+		font-size: rem(16);
+		font-weight: 700;
+		text-transform: uppercase;
+		background-color: $gray-800;
+		@include mt;
+		&:hover {
+			color: $white;
+			background-color: $gray-900;
+		}
+		&--primary {
+			background-color: $primary;
+			&:hover {
+				background-color: $crimson;
+			}
+		}
+	}
+
+	&__note {
+		margin-top: rem(5);
+		font-size: rem(10);
+		line-height: 120%;
+	}
+
+	&__dd-item {
+		margin-bottom: rem(10);
+		border: 1px solid $gray-200;
+		border-radius: 2px;
+		background-color: $white;
+		&.active {
+			.orderAside__dd-head::after {
+				transform: rotate(180deg);
+			}
+		}
+	}
+
+	&__dd-head {
+		display: flex;
+		align-items: center;
+		padding: rem(19) rem(20);
+		font-family: $header-font;
+		font-size: rem(16);
+		font-weight: 700;
+		color: $gray-800;
+		cursor: pointer;
+		.icon {
+			flex-shrink: 0;
+			margin-right: rem(15);
+			fill: $primary;
+		}
+		&::after {
+			content: '';
+			flex-shrink: 0;
+			margin-left: auto;
+			width: rem(14);
+			height: rem(8);
+			background-color: $gray-800;
+			mask: url("data:image/svg+xml,%3Csvg width='14' height='8' viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L7 7L13 1' stroke='black' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center / contain;
+			@include mt;
+		}
+	}
+
+	&__dd-content {
+		display: none;
+		padding: 0 rem(20) rem(19);
+		font-size: rem(14);
+		font-weight: 300;
+		line-height: 130%;
+		p:last-child {
+			margin-bottom: 0;
+		}
+	}
+} // end.orderAside

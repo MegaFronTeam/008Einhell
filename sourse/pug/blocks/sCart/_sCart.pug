@@ -1,0 +1,38 @@
+mixin cartItem(data)
+	+e.item(class= data.active ? 'active' : null)
+		+e.item-check
+			+in-c('checkbox', '', 'cart-item')(checked= data.active)
+		+e.item-img
+			+img(`img/${data.img}.png`)
+		+e.item-text
+			+e.item-title(href="#")= data.title
+			+e.item-number Артикул: #{data.number}
+		+e.item-price
+			+price(data.price, data.oldPrice)
+		+e.item-count
+			+e.count-btn.btn.BUTTON(type="button" aria-label="Убрать один") &minus;
+			+e.INPUT.count-input.form-control(type="text" inputmode="numeric" value=data.count || '1')
+			+e.count-btn.sCart__count-btn--plus.btn.BUTTON(type="button" aria-label="Добавить один") +
+		+e.item-compare(href="#" aria-label="Добавить в сравнение")
+			+icon('compare')
+
+mixin sCart()
+	// start sCart
+	+b.SECTION.sCart.section#sCart&attributes(attributes)
+		.container
+			+e.row.row
+				.col-lg-7.col-xl-8
+					+e.head
+						+e.head-check
+							+in-c('checkbox', 'Выбрать все', 'cart-all')
+						+e.head-remove.BUTTON(type="button")
+							| Удалить выбранные
+							+e.SPAN.head-remove-icon
+								+icon('close')
+					+e.items
+						+cartItem({img: 'card-item-1', title: 'Многофункциональный аккумуляторный инструмент TP-MG 18 Li BL + STARTER KIT 4.0', number: '4465190SET', price: '86 900 ₽', oldPrice: '90 900 ₽', active: true})
+						+cartItem({img: 'card-item-4', title: 'Многофункциональный аккумуляторный инструмент TP-MG 18 Li BL + STARTER KIT 4.0', number: '4465190SET', price: '86 900 ₽', oldPrice: '90 900 ₽'})
+						+cartItem({img: 'card-item-6', title: 'Многофункциональный аккумуляторный инструмент TP-MG 18 Li BL + STARTER KIT 4.0', number: '4465190SET', price: '86 900 ₽', oldPrice: '90 900 ₽'})
+				.col-lg-5.col-xl-4
+					+orderAside({btn: 'оформить', btnPrimary: true, promoInput: true})
+	// end sCart

@@ -27,6 +27,82 @@
 	}
 }
 
+.modal-win--auth {
+	width: rem(300);
+	padding: rem(30);
+	border-radius: 2px;
+
+	.modal-win__title {
+		margin-bottom: rem(20);
+		font-family: $header-font;
+		font-size: rem(20);
+		font-weight: 700;
+		color: $gray-800;
+		text-align: center;
+	}
+
+	.form-control {
+		height: rem(40);
+		margin-bottom: rem(10);
+		padding: rem(9) rem(15);
+		font-size: rem(14);
+		font-weight: 300;
+		border-color: $gray-200;
+		border-radius: 2px;
+		&:focus {
+			border-color: $primary;
+		}
+		&.is-invalid {
+			border-color: $primary;
+			background-image: none;
+		}
+	}
+
+	.modal-win__links {
+		display: flex;
+		justify-content: space-between;
+		gap: rem(10);
+		margin-bottom: rem(20);
+		font-size: rem(12);
+		font-weight: 300;
+		color: $gray-500;
+		a {
+			color: $primary;
+			&:hover {
+				color: $crimson;
+			}
+		}
+	}
+
+	.modal-win__error {
+		margin-bottom: rem(20);
+		font-size: rem(12);
+		font-weight: 300;
+		color: $primary;
+	}
+
+	.btn {
+		padding: rem(8) rem(20) rem(10);
+		font-family: $header-font;
+		font-size: rem(16);
+		font-weight: 700;
+		text-transform: uppercase;
+		& + .btn {
+			margin-top: rem(10);
+		}
+	}
+
+	.modal-win__btn--dark {
+		color: $white;
+		background-color: $gray-800;
+		@include mt;
+		&:hover {
+			color: $white;
+			background-color: $gray-900;
+		}
+	}
+}
+
 a {
 	outline: 0 !important;
 }

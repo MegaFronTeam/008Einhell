@@ -1,0 +1,30 @@
+extends ../layout/main.pug
+
+include ../blocks/sLk/_sLk.pug
+
+block variables
+	- let  mainPage= 'lk-page'
+	- let  bg= null
+
+block title
+	- let  title= index.head.title
+	title= 'Личный кабинет — Профиль'
+block pagecontent
+	+parts('header-lk')
+	main
+		+page-head('Николай','','Личный кабинет')
+		+sLk('profile')
+			+e.card
+				+e.card-row.row
+					.col-lg-5
+						+e.card-name Неретин Николай Игоревич
+					.col-lg-7
+						+lkRow('Телефон', '+7 (916) 176-05-12')
+						+lkRow('Почта', 'nicolomelodini@gmail.com')
+						+lkRow('Пароль', '••••••••••••')
+						+lkRow('Город', 'Москва')
+						+lkRow('Адрес', '117463, Москва, Паустовского, 4, п. 11, кв. 376')
+			+e.foot
+				+e.btn(href="#") редактировать
+				+e.btn.sLk__btn--primary(href="#") удалить
+	+parts('footer')

@@ -1,16 +1,42 @@
-mixin topLine()
+mixin userMenu(name)
+	+e.user
+		+e.login.topLine__login--user(href="#")
+			+icon('user')
+			span= name
+		+e.user-dropdown
+			+e.user-link(href="10-lk-orders.html")
+				+icon('bag')
+				| Заказы
+			+e.user-link(href="12-lk-profile.html")
+				+icon('profile')
+				| Профиль
+			+e.user-link(href="#")
+				+icon('logout')
+				| Выйти
+
+mixin topLine(user)
 	// start topLine
 	+b.topLine.section#topLine&attributes(attributes)
 		.container
 			+e.row.row
-				.col
+				.col-auto.col-lg-4
 					+e.logo(href="#")
 						+img('img/logo.png')
-						+e.logo-caption.SPAN Официальный сайт представительства в России
+						+e.logo-caption.SPAN сайт Einhell
 				.order-last.order-lg-0.col-lg-4
 					+search(false, 'Найти...')
-				.col-auto.col-lg-2
-					+comparedDD('20')
+				.col-auto.ms-lg-auto
+					+e.actions
+						+comparedDD('0')
+						+e.cart(href="#")
+							+icon('cart')
+							+b.counter 99
+						if user
+							+userMenu(user)
+						else
+							+e.login(data-fancybox data-type="ajax" href="modal/auth.html")
+								+icon('user')
+								span Войти
 				.col-auto.d-lg-none.d-flex.justify-content-end
 					+menu-toggle()
 

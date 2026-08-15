@@ -212,6 +212,21 @@
   }
 }
 
+.counter {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: rem(22);
+  height: rem(22);
+  background-color: $primary;
+  color: $white;
+  border-radius: 50%;
+  font-size: rem(12);
+  line-height: 1;
+  font-weight: 600;
+}
+
 .compare-block {
   position: relative;
   z-index: 11;
@@ -230,17 +245,6 @@
         }
       }
     }
-    span {
-      display: none;
-      font-size: rem(14);
-      @include media-breakpoint-up(lg) {
-        display: inline-block;
-        margin-right: rem(5);
-      }
-      @include media-breakpoint-up(xl) {
-        font-size: rem(15);
-      }
-    }
     @include media-breakpoint-up(xl) {
       font-size: rem(16);
     }
@@ -256,26 +260,7 @@
       font-size: rem(22);
       @include mt;
       flex-shrink: 0;
-      @include media-breakpoint-up(xl) {
-        margin-right: rem(10);
-      }
     }
-  }
-  &__counter {
-    display: flex;
-    flex-shrink: 0;
-    align-items: center;
-    justify-content: center;
-    width: rem(22);
-    height: rem(22);
-    background-color: $primary;
-    color: $white;
-    border-radius: 50%;
-    font-size: rem(12);
-    // font-family: $header-font;
-    text-transform: uppercase;
-    line-height: 1;
-    font-weight: 600;
   }
   &__dropdown {
     position: absolute;

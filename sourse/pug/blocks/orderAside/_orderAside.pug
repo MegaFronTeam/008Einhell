@@ -1,0 +1,45 @@
+mixin asideRow(title, value, accent)
+	+e.row(class= accent ? 'orderAside__row--accent' : null)
+		+e.row-title= title
+		+e.row-value= value
+
+mixin asideDD(ico, title)
+	+e.dd-item
+		+e.dd-head.dd-head-js
+			+icon(ico)
+			= title
+		+e.dd-content.dd-content-js
+			if block
+				block
+
+//- data: { btn, btnPrimary, promoInput }
+mixin orderAside(data = {})
+	+b.orderAside&attributes(attributes)
+		+e.summary
+			+e.title Ваш заказ
+			+asideRow('Товары', '99')
+			+asideRow('Вес', '30 кг')
+			+asideRow('Стоимость', '106 900 ₽')
+			+asideRow('Скидка', '-20 000 ₽', true)
+			+asideRow('Промокод:', '-2 000 ₽', true)
+			+e.promo
+				+e.promo-field
+					+e.SPAN.promo-check
+					+e.promo-code ahgrds112
+				+e.promo-btn.btn.BUTTON(type="button" aria-label="Удалить промокод")
+					+icon('close')
+			if data.promoInput
+				+e.promo
+					+e.INPUT.promo-input.form-control(type="text" name="promo" placeholder="Промокод")
+					+e.promo-btn.btn.BUTTON(type="submit" aria-label="Применить промокод")
+						+icon('enter')
+			+e.total
+				+e.total-title Итого:
+				+e.total-value 86 900 ₽
+			+e.btn.btn(href="#" class= data.btnPrimary ? 'orderAside__btn--primary' : null)= data.btn || 'оформить'
+			+e.note Доступные способы и время доставки можно выбрать при оформлении заказа
+		+e.dd.dd-group-js
+			+asideDD('delivery', 'Доставка')
+				p Доставка по Москве&nbsp;— 1-2&nbsp;дня. По&nbsp;России&nbsp;— от&nbsp;1-2&nbsp;дней транспортной компанией.
+			+asideDD('guarantee', 'Гарантия')
+				p Гарантия производителя 24&nbsp;месяца на&nbsp;весь инструмент Einhell.

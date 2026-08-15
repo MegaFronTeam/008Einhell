@@ -1,0 +1,69 @@
+extends ../layout/main.pug
+
+include ../blocks/sLk/_sLk.pug
+
+block variables
+	- let  mainPage= 'lk-page'
+	- let  bg= null
+
+block title
+	- let  title= index.head.title
+	title= 'Личный кабинет — Заказ'
+block pagecontent
+	+parts('header-lk')
+	main
+		+page-head('Николай','','Личный кабинет','Заказы','Заказ № 2370')
+		+sLk('orders')
+			+e.title Заказ № 2370
+			+e.order-info
+				+lkRow('Дата заказа', '11.06.2025')
+				+lkRow('Дата доставки', '13.06.2025')
+				+lkRow('Способ оплаты')
+					+e.pay
+						+icon('wallet')
+						| Наличными
+				+lkRow('Статус')
+					+e.status.sLk__status--wait В обработке
+					+e.status.sLk__status--danger Не оплачен
+				+lkRow('Сумма', '207 900 ₽')
+
+			+e.title Получатель
+			+lkRow('ФИО', 'Неретин Николай Игоревич')
+			+lkRow('Телефон', '+7 (916) 176-05-12')
+			+lkRow('Почта', 'nicolomelodini@gmail.com')
+
+			+e.title Доставка
+			+lkRow('Дата доставки', '13.06.2025')
+			+lkRow('Адрес', '117463, Москва, Паустовского, 4, п. 11, кв. 376')
+			+lkRow('Способ', 'Курьерская доставка')
+			+lkRow('Стоимость', '86 900 ₽')
+
+			+e.title Статус доставки
+			+e.status-list
+				+e.status-item.sLk__status-item--active
+					+e.status-date 02.03.2020
+					+e.status-text Доставлен
+				+e.status-item
+					+e.status-date 02.03.2020
+					+e.status-text Ждёт в магазине
+				+e.status-item
+					+e.status-date 02.03.2020
+					+e.status-text В пути
+				+e.status-item
+					+e.status-date 02.03.2020
+					+e.status-text Отправляем
+				+e.status-item
+					+e.status-date 02.03.2020
+					+e.status-text Собираем
+
+			+e.title Товары в заказе
+			+e.products
+				+lkProduct({img: 'card-item-1', title: 'Многофункциональный аккумуляторный инструмент TP-MG 18Li BL + STARTER KIT 4.0', number: '4465190SET', price: '86 900 ₽', oldPrice: '90 900 ₽', count: '1'})
+				+lkProduct({img: 'card-item-4', title: 'Многофункциональный аккумуляторный инструмент TP-MG 18Li BL + STARTER KIT 4.0', number: '4465190SET', price: '86 900 ₽', oldPrice: '90 900 ₽', count: '1'})
+
+			+e.total
+				+e.total-title Итого:
+				+e.total-value 86 900 ₽
+			+e.foot
+				+e.btn.sLk__btn--primary(href="#") оплатить
+	+parts('footer')

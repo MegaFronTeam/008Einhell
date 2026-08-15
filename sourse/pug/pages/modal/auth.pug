@@ -1,0 +1,12 @@
+include ../../layout/include.pug
+
++b.modal-win.modal-win--auth
+	+e.FORM.form
+		+e.title Авторизация
+		input.form-control(type="email" name="email" placeholder="E-mail" inputmode="email")
+		input.form-control(type="password" name="password" placeholder="Пароль")
+		+e.links
+			span Забыли пароль?
+			a(href="#") Забыли пароль?
+		button.btn.btn-primary.w-100(type="submit") Войти
+		a.btn.modal-win__btn--dark.w-100(data-fancybox data-type="ajax" href="modal/register.html") Регистрация

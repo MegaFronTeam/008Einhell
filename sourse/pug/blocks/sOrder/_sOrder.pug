@@ -1,0 +1,66 @@
+mixin orderField(label, req)
+	+e.field
+		if label
+			+e.field-label
+				= label
+				if req
+					span *
+		+e.field-body
+			if block
+				block
+
+mixin orderOption(data)
+	+e.LABEL.option(class= data.active ? 'active' : null)
+		+e.INPUT.option-input(type="radio" name= data.name checked= data.active)
+		+e.option-view
+			+icon(data.icon)
+			+e.option-title= data.title
+			+e.option-note= data.note
+			+e.option-price= data.price
+
+mixin sOrder()
+	// start sOrder
+	+b.SECTION.sOrder.section#sOrder&attributes(attributes)
+		.container
+			+e.row.row
+				.col-lg-7.col-xl-8
+					+e.FORM.form
+						+e.group-title Контактные данные
+						+orderField('ФИО', true)
+							+e.INPUT.input.form-control(type="text" name="name")
+						+orderField('Телефон', true)
+							+e.INPUT.input.form-control(type="tel" name="phone" inputmode="tel")
+						+orderField('E-mail', true)
+							+e.INPUT.input.form-control(type="email" name="email" inputmode="email")
+
+						+e.group-title Способ получения
+						+orderField('Город', true)
+							+e.INPUT.input.form-control(type="text" name="city" placeholder="Введите название")
+							+e.field-check
+								+in-c('checkbox', 'Моего города нет в списке', 'no-city')
+						+orderField('Варианты доставки')
+							+e.options
+								+orderOption({icon: 'courier', title: 'Курьерская доставка', note: '1-2 дня', price: '500 ₽', name: 'delivery', active: true})
+								+orderOption({icon: 'plane', title: 'Доставка по России', note: 'от 1-2 дней', price: '500 ₽', name: 'delivery'})
+								+orderOption({icon: 'store', title: 'Самовывоз', price: '0 ₽', name: 'delivery'})
+						+orderField('Адрес', true)
+							+e.INPUT.input.form-control(type="text" name="address")
+						+orderField('Ваше сообщение')
+							+e.TEXTAREA.input.form-control(name="message")
+
+						+e.group-title Способ оплаты
+						+orderField('Варианты оплаты')
+							+e.options
+								+orderOption({icon: 'wallet', title: 'Наличными курьеру', note: 'В рублях РФ', name: 'payment'})
+								+orderOption({icon: 'card', title: 'Банковской картой', note: 'Visa, MasterCard, МИР', name: 'payment'})
+								+orderOption({icon: 'online', title: 'Онлайн', note: 'Безопасные платежи', name: 'payment'})
+								+orderOption({icon: 'qr', title: 'QR-код', note: 'Безопасные платежи', name: 'payment'})
+						+e.foot
+							.container
+								+e.policy
+									| Нажимая кнопку «Оформить заказ», вы соглашаетесь
+									|  с #[a(href="#") Политикой конфиденциальности].
+								+e.submit.btn.btn-primary(type="submit") оформить
+				.col-lg-5.col-xl-4
+					+orderAside({btn: 'редактировать'})
+	// end sOrder

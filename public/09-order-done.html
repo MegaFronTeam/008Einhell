@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title>Order done</title>
+		<meta name="description" content="о чем страница">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,  shrink-to-fit=no, viewport-fit=cover">
+		<link type="image/ico" href="img/favicon.ico" rel="shortcut icon"><meta name="format-detection" content="telephone=no"> 
+		<link href="libs/swiper/swiper-bundle.min.css" rel="stylesheet"/>
+		<link href="libs/@fancyapps/ui/fancybox/fancybox.css" rel="stylesheet"/>
+		<link rel="preload" href="fonts/OpenSansRegular.woff2" as="font" type="font/woff2" crossorigin="crossorigin"/>
+		<link rel="preload" href="fonts/OpenSansBold.woff2" as="font" type="font/woff2" crossorigin="crossorigin"/>
+		<link rel="preload" href="fonts/OpenSansLight.woff2" as="font" type="font/woff2" crossorigin="crossorigin"/>
+		<link rel="preload" href="fonts/OpenSansSemiBold.woff2" as="font" type="font/woff2" crossorigin="crossorigin"/>
+		<link rel="preload" href="fonts/OpenSans_CondensedBold.woff2" as="font" type="font/woff2" crossorigin="crossorigin"/>
+		<link href="css/custom-bootstrap.min.css" rel="stylesheet"/>
+		<link href="css/main.min.css" rel="stylesheet"/>
+		<script>
+			function addBlock(elem) {
+				fetch(`parts/${elem}.html`)
+					.then(response => response.text())
+					.then( text => {
+						const wrap = document.querySelector(`#${elem}Wrap`);
+						wrap.insertAdjacentHTML('afterend', text);
+						wrap.previousElementSibling.remove()
+						wrap.remove();
+					});
+			}
+		</script>
+	</head>
+	<body class="order-page">
+		<div class="main-wrapper">
+			<script>addBlock(`header`)</script>
+			<div id="headerWrap"></div>
+			<main>
+				<div class="container">
+					<nav class="swiper breadcrumb-slider--js" aria-label="breadcrumb">
+						<ol class="breadcrumb swiper-wrapper" itemscope="itemscope" itemtype="http://schema.org/BreadcrumbList">
+							<li class="breadcrumb-item swiper-slide" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Главная</span>
+									<meta itemprop="position" content="1"/></a></li>
+							<li class="breadcrumb-item swiper-slide" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="#" itemprop="item"><span itemprop="name">Корзина</span>
+									<meta itemprop="position" content="2"/></a></li>
+							<li class="breadcrumb-item active swiper-slide" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="#" itemprop="item"><span itemprop="name">Оформление</span>
+									<meta itemprop="position" content="3"/></a></li>
+						</ol>
+					</nav>
+					<div class="page-head">
+						<h1>Оформление</h1>
+					</div>
+				</div>
+				<!-- start sLk-->
+				<section class="sLk section" id="sLk">
+					<div class="container">
+						<div class="sLk__row row">
+							<div class="col-12">
+								<div class="sLk__done-title">Заказ оформлен&nbsp;&mdash;<span class="sLk__done-number"> № 2370</span>
+								</div>
+								<div class="sLk__order-head">
+									<div class="sLk__order-cell sLk__order-cell sLk__order-cell--number">Номер заказа
+									</div>
+									<div class="sLk__order-cell">Дата заказа
+									</div>
+									<div class="sLk__order-cell sLk__order-cell sLk__order-cell--pay">Способ оплаты
+									</div>
+									<div class="sLk__order-cell sLk__order-cell sLk__order-cell--status">Статус
+									</div>
+									<div class="sLk__order-cell sLk__order-cell sLk__order-cell--sum">Сумма
+									</div>
+								</div>
+								<div class="sLk__order">
+									<div class="sLk__order-row">
+										<div class="sLk__order-cell sLk__order-cell sLk__order-cell--number">
+											<a class="sLk__order-number" href="11-lk-order.html">Заказ № 2370
+											</a>
+										</div>
+										<div class="sLk__order-cell">11.06.2025
+										</div>
+										<div class="sLk__order-cell sLk__order-cell sLk__order-cell--pay">
+											<svg class="icon icon-wallet ">
+												<use xlink:href="img/svg/sprite.svg#wallet"></use>
+											</svg>Наличными курьеру
+										</div>
+										<div class="sLk__order-cell sLk__order-cell sLk__order-cell--status">
+											<div class="sLk__status sLk__status sLk__status--danger">Не оплачен
+											</div>
+											<div class="sLk__status sLk__status sLk__status--wait">В обработке
+											</div>
+										</div>
+										<div class="sLk__order-cell sLk__order-cell sLk__order-cell--sum">207 900 ₽
+										</div>
+									</div>
+									<div class="sLk__order-imgs">
+										<div class="sLk__order-img"><img src="img/card-item-1.png" alt="" loading="lazy"/>
+										</div>
+										<div class="sLk__order-img"><img src="img/card-item-4.png" alt="" loading="lazy"/>
+										</div>
+										<div class="sLk__order-img"><img src="img/card-item-6.png" alt="" loading="lazy"/>
+										</div>
+									</div>
+								</div>
+								<div class="sLk__foot">
+									<a class="sLk__btn" href="11-lk-order.html">к заказу
+									</a>
+									<a class="sLk__btn sLk__btn sLk__btn--primary" href="#">оплатить
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- end sLk-->
+			</main>
+			<script>addBlock(`footer`)</script>
+			<div id="footerWrap"></div>
+		</div>
+		<script src="libs/jquery/jquery.min.js"></script>
+		<script src="libs/@fancyapps/ui/fancybox/fancybox.umd.js"> </script>
+		<script src="libs/swiper/swiper-bundle.min.js"> </script>
+		<script src="libs/inputmask/inputmask.min.js"> </script>
+		<script src="libs/hc-sticky/hc-sticky.js"> </script>
+		<script src="js/JSCCommon.js"></script>
+		<script src="js/common.js"></script>
+	</body>
+</html>

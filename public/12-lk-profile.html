@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title>Личный кабинет — Профиль</title>
+		<meta name="description" content="о чем страница">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,  shrink-to-fit=no, viewport-fit=cover">
+		<link type="image/ico" href="img/favicon.ico" rel="shortcut icon"><meta name="format-detection" content="telephone=no"> 
+		<link href="libs/swiper/swiper-bundle.min.css" rel="stylesheet"/>
+		<link href="libs/@fancyapps/ui/fancybox/fancybox.css" rel="stylesheet"/>
+		<link rel="preload" href="fonts/OpenSansRegular.woff2" as="font" type="font/woff2" crossorigin="crossorigin"/>
+		<link rel="preload" href="fonts/OpenSansBold.woff2" as="font" type="font/woff2" crossorigin="crossorigin"/>
+		<link rel="preload" href="fonts/OpenSansLight.woff2" as="font" type="font/woff2" crossorigin="crossorigin"/>
+		<link rel="preload" href="fonts/OpenSansSemiBold.woff2" as="font" type="font/woff2" crossorigin="crossorigin"/>
+		<link rel="preload" href="fonts/OpenSans_CondensedBold.woff2" as="font" type="font/woff2" crossorigin="crossorigin"/>
+		<link href="css/custom-bootstrap.min.css" rel="stylesheet"/>
+		<link href="css/main.min.css" rel="stylesheet"/>
+		<script>
+			function addBlock(elem) {
+				fetch(`parts/${elem}.html`)
+					.then(response => response.text())
+					.then( text => {
+						const wrap = document.querySelector(`#${elem}Wrap`);
+						wrap.insertAdjacentHTML('afterend', text);
+						wrap.previousElementSibling.remove()
+						wrap.remove();
+					});
+			}
+		</script>
+	</head>
+	<body class="lk-page">
+		<div class="main-wrapper">
+			<script>addBlock(`header-lk`)</script>
+			<div id="header-lkWrap"></div>
+			<main>
+				<div class="container">
+					<nav class="swiper breadcrumb-slider--js" aria-label="breadcrumb">
+						<ol class="breadcrumb swiper-wrapper" itemscope="itemscope" itemtype="http://schema.org/BreadcrumbList">
+							<li class="breadcrumb-item swiper-slide" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Главная</span>
+									<meta itemprop="position" content="1"/></a></li>
+							<li class="breadcrumb-item active swiper-slide" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="#" itemprop="item"><span itemprop="name">Личный кабинет</span>
+									<meta itemprop="position" content="2"/></a></li>
+						</ol>
+					</nav>
+					<div class="page-head">
+						<h1>Николай</h1>
+					</div>
+				</div>
+				<!-- start sLk-->
+				<section class="sLk section" id="sLk">
+					<div class="container">
+						<div class="sLk__row row">
+							<div class="sLk__menu-col col-lg-3">
+								<div class="sLk__menu">
+									<a class="sLk__menu-link" href="10-lk-orders.html">
+										<svg class="icon icon-bag ">
+											<use xlink:href="img/svg/sprite.svg#bag"></use>
+										</svg>Заказы
+									</a>
+									<a class="sLk__menu-link active" href="12-lk-profile.html">
+										<svg class="icon icon-profile ">
+											<use xlink:href="img/svg/sprite.svg#profile"></use>
+										</svg>Профиль
+									</a>
+									<a class="sLk__menu-link sLk__menu-link sLk__menu-link--out" href="#">
+										<svg class="icon icon-logout ">
+											<use xlink:href="img/svg/sprite.svg#logout"></use>
+										</svg>Выйти
+									</a>
+								</div>
+							</div>
+							<div class="col-lg-9">
+								<div class="sLk__card">
+									<div class="sLk__card-row row">
+										<div class="col-lg-5">
+											<div class="sLk__card-name">Неретин Николай Игоревич
+											</div>
+										</div>
+										<div class="col-lg-7">
+											<div class="sLk__info-row">
+												<div class="sLk__info-title">Телефон
+												</div>
+												<div class="sLk__info-value">+7 (916) 176-05-12
+												</div>
+											</div>
+											<div class="sLk__info-row">
+												<div class="sLk__info-title">Почта
+												</div>
+												<div class="sLk__info-value">nicolomelodini@gmail.com
+												</div>
+											</div>
+											<div class="sLk__info-row">
+												<div class="sLk__info-title">Пароль
+												</div>
+												<div class="sLk__info-value">••••••••••••
+												</div>
+											</div>
+											<div class="sLk__info-row">
+												<div class="sLk__info-title">Город
+												</div>
+												<div class="sLk__info-value">Москва
+												</div>
+											</div>
+											<div class="sLk__info-row">
+												<div class="sLk__info-title">Адрес
+												</div>
+												<div class="sLk__info-value">117463, Москва, Паустовского, 4, п. 11, кв. 376
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="sLk__foot">
+									<a class="sLk__btn" href="#">редактировать
+									</a>
+									<a class="sLk__btn sLk__btn sLk__btn--primary" href="#">удалить
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- end sLk-->
+			</main>
+			<script>addBlock(`footer`)</script>
+			<div id="footerWrap"></div>
+		</div>
+		<script src="libs/jquery/jquery.min.js"></script>
+		<script src="libs/@fancyapps/ui/fancybox/fancybox.umd.js"> </script>
+		<script src="libs/swiper/swiper-bundle.min.js"> </script>
+		<script src="libs/inputmask/inputmask.min.js"> </script>
+		<script src="libs/hc-sticky/hc-sticky.js"> </script>
+		<script src="js/JSCCommon.js"></script>
+		<script src="js/common.js"></script>
+	</body>
+</html>

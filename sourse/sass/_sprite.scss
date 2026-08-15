@@ -12,10 +12,25 @@
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(24 / #{$h} *1em );
 }
+.icon-bag {
+	$h: 20;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(20 / #{$h} *1em );
+}
 .icon-basket {
 	$h: 24;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(22 / #{$h} *1em );
+}
+.icon-card {
+	$h: 17;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(23.801 / #{$h} *1em );
+}
+.icon-cart {
+	$h: 17;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(20.859 / #{$h} *1em );
 }
 .icon-check {
 	$h: 27;
@@ -32,6 +47,16 @@
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(22 / #{$h} *1em );
 }
+.icon-courier {
+	$h: 16;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(23.604 / #{$h} *1em );
+}
+.icon-delivery {
+	$h: 16;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(28 / #{$h} *1em );
+}
 .icon-download {
 	$h: 14;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
@@ -47,6 +72,11 @@
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(20 / #{$h} *1em );
 }
+.icon-enter {
+	$h: 15.523;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(17.864 / #{$h} *1em );
+}
 .icon-fax {
 	$h: 21;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
@@ -56,6 +86,11 @@
 	$h: 24;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(24 / #{$h} *1em );
+}
+.icon-guarantee {
+	$h: 20;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(17.135 / #{$h} *1em );
 }
 .icon-instagram {
 	$h: 24;
@@ -72,10 +107,20 @@
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(24 / #{$h} *1em );
 }
+.icon-logout {
+	$h: 21.5;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(21.734 / #{$h} *1em );
+}
 .icon-metro {
 	$h: 20;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(20 / #{$h} *1em );
+}
+.icon-online {
+	$h: 20;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(22.5 / #{$h} *1em );
 }
 .icon-open {
 	$h: 21;
@@ -92,6 +137,21 @@
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(24 / #{$h} *1em );
 }
+.icon-plane {
+	$h: 21;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(21 / #{$h} *1em );
+}
+.icon-profile {
+	$h: 20;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(18 / #{$h} *1em );
+}
+.icon-qr {
+	$h: 18;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(18 / #{$h} *1em );
+}
 .icon-route {
 	$h: 24;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
@@ -101,6 +161,11 @@
 	$h: 24;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(24 / #{$h} *1em );
+}
+.icon-store {
+	$h: 20;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(19.972 / #{$h} *1em );
 }
 .icon-telegram {
 	$h: 16;
@@ -112,6 +177,11 @@
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(20 / #{$h} *1em );
 }
+.icon-user {
+	$h: 22.007;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(22.008 / #{$h} *1em );
+}
 .icon-viber {
 	$h: 16;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
@@ -121,6 +191,11 @@
 	$h: 24;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(24 / #{$h} *1em );
+}
+.icon-wallet {
+	$h: 20;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(22.5 / #{$h} *1em );
 }
 .icon-web {
 	$h: 20;

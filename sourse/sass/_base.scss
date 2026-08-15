@@ -627,3 +627,11 @@ h1 {
 		// }
 	}
 }
+
+// stroke-иконки: gulp-cheerio срезает stroke из спрайта, без этого они заливаются сплошным
+.icon-bag,
+.icon-profile,
+.icon-logout {
+	fill: none !important;
+	stroke: currentColor;
+}
