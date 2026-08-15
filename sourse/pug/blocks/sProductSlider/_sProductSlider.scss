@@ -110,7 +110,8 @@
 	&__card {
 		position: relative;
 		height: 100%;
-		display: block;
+		display: flex;
+		flex-direction: column;
 		padding: rem(20);
 		&:hover {
 			&::before {
@@ -131,6 +132,24 @@
 			background: $white;
 			z-index: -1;
 			@include mt;
+		}
+	}
+
+	&__card-link {
+		display: block;
+		color: inherit;
+	}
+
+	&__card-bottom {
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+		gap: rem(10);
+		margin-top: auto;
+		padding: rem(15) rem(15) 0;
+
+		@include media-breakpoint-up(sm) {
+			padding: rem(15) rem(10) 0;
 		}
 	}
 

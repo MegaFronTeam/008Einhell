@@ -58,6 +58,19 @@ mixin compareBtn(title)
 		span: +icon('compare')
 		= title
 
+mixin compareIconBtn
+	+b.compare-icon-btn.btn.BUTTON&attributes(attributes)
+		+icon('compare')
+
+mixin buyBtn(title = 'купить')
+	+b.buy-btn.btn.BUTTON&attributes(attributes)= title
+
+mixin price(price, oldPrice)
+	+b.price&attributes(attributes)
+		if oldPrice
+			+e.old= oldPrice
+		+e.current= price
+
 mixin compareList(...items)
 	+e.items-list.custom-scroll.UL
 		for item in items

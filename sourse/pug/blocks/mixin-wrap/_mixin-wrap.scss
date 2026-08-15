@@ -162,6 +162,56 @@
   }
 }
 
+.compare-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: rem(40);
+  height: rem(40);
+  padding: 0;
+  background-color: $primary;
+  @include mt;
+  &:hover {
+    background-color: $crimson;
+  }
+  .icon {
+    fill: $white;
+  }
+}
+
+.buy-btn {
+  min-width: rem(128);
+  padding: rem(8) rem(10) rem(10);
+  color: $white;
+  font-family: $header-font;
+  font-size: rem(16);
+  font-weight: 700;
+  line-height: 130%;
+  text-transform: uppercase;
+  background-color: $gray-800;
+  @include mt;
+  &:hover {
+    color: $white;
+    background-color: $gray-900;
+  }
+}
+
+.price {
+  font-family: $header-font;
+  font-weight: 700;
+  &__old {
+    color: $primary;
+    font-size: rem(12);
+    line-height: 130%;
+    text-decoration: line-through;
+  }
+  &__current {
+    color: $gray-800;
+    font-size: rem(24);
+    line-height: 130%;
+  }
+}
+
 .compare-block {
   position: relative;
   z-index: 11;

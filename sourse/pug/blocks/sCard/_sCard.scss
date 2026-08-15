@@ -133,8 +133,16 @@
     font-size: rem(14);
     font-weight: 300;
   }
-  .compare-btn {
+  &__buy {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: rem(10);
     padding-left: rem(20);
+
+    .price {
+      margin-right: auto;
+    }
   }
 
   &__details {

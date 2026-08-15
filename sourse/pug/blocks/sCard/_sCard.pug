@@ -40,7 +40,10 @@ mixin sCard(data)
 							li Дополнительная ручка уменьшает физическую нагрузку на пользователя
 							li LED подсвета рабочей области
 							li Поставляется без батареи и зарядного устройства (приобретаются отдельно)
-						+compareBtn('добавить в сравнение')
+						+e.buy
+							+price('86 900 ₽','90 900 ₽')
+							+buyBtn
+							+compareIconBtn
 			+e.details.tabs
 				+e.details-caption.tabs__caption.swiper.freemode-slider--js
 					.swiper-wrapper
