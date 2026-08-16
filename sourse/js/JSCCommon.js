@@ -62,6 +62,27 @@ class JSCCommon {
       setValue(data.btn, ".btn");
       setValue(data.order, ".order");
     });
+
+    // переключение между модалками (авторизация <-> регистрация):
+    // вложенный клик по [data-fancybox] внутри открытого окна не срабатывает
+    document.addEventListener("click", (event) => {
+      const switcher = event.target.closest("[data-modal-switch]");
+      if (!switcher) return;
+      event.preventDefault();
+      const src = switcher.getAttribute("href");
+      Fancybox.close(true);
+      // Fancybox.show() с ajax не отрабатывает, поэтому открываем через временный триггер
+      setTimeout(() => {
+        const trigger = document.createElement("a");
+        trigger.setAttribute("data-fancybox", "");
+        trigger.setAttribute("data-type", "ajax");
+        trigger.href = src;
+        trigger.style.display = "none";
+        document.body.appendChild(trigger);
+        trigger.click();
+        trigger.remove();
+      }, 300);
+    });
   }
   // /modalCall
   static toggleMenu() {
