@@ -135,6 +135,13 @@
 		}
 	}
 
+	.compare-card-btn {
+		position: absolute;
+		top: rem(20);
+		right: rem(20);
+		z-index: 2;
+	}
+
 	&__card-link {
 		display: block;
 		color: inherit;

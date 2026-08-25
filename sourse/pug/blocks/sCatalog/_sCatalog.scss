@@ -275,15 +275,6 @@
 	}
 	&:hover {
 		box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.15);
-		.card-item__compare {
-			@include media-breakpoint-up(lg) {
-				z-index: 5;
-				opacity: 1;
-				pointer-events: all;
-				box-shadow: 0px 30px 30px 0px rgba(0, 0, 0, 0.15);
-				transform: scaleY(1);
-			}
-		}
 	}
 	&::before {
 		position: absolute;
@@ -298,8 +289,18 @@
 		background: $white;
 		z-index: -1;
 	}
+	.compare-card-btn {
+		position: absolute;
+		top: rem(16);
+		right: rem(16);
+		z-index: 2;
+		@include media-breakpoint-up(lg) {
+			top: rem(20);
+			right: rem(20);
+		}
+	}
 	&__img-wrap {
-		@include block(210,249);
+		@include block(186,250);
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -332,39 +333,14 @@
 		font-weight: 300;
 		flex-grow: 1;
 	}
-	&__compare {
-		padding-top: 10px;
-		@include media-breakpoint-up(lg) {
-			position: absolute;
-			padding-block: 13px;
-			left: 0;
-			top: calc(100% - 20px);
-			border-left:1px solid $gray-200;
-			border-right:1px solid $gray-200;
-			border-bottom:1px solid $gray-200;
-			z-index: -5;
-			opacity: 0;
-			pointer-events: none;
-			transform: scaleY(0);
-			transform-origin: top;
-		}
-		width: 100%;
-		background-color: $white;
-		@include mt;
+	&__bottom {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: rem(10);
+		margin-top: rem(20);
 	}
-	.compare-btn {
-		margin: 0 auto;
-		font-size: rem(14);
-		@include media-breakpoint-up(lg) {
-			font-size: rem(16);
-		}
-		span {
-			width: rem(28);
-			height: rem(28);
-			@include media-breakpoint-up(lg) {
-				width: rem(38);
-				height: rem(38);
-			}
-		}
+	.buy-btn {
+		min-width: rem(88);
 	}
 }

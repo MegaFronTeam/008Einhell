@@ -179,6 +179,27 @@
   }
 }
 
+.compare-card-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: rem(22);
+  height: rem(22);
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  .icon {
+    fill: $gray-500;
+    @include mt;
+  }
+  &:hover,
+  &.active {
+    .icon {
+      fill: $primary;
+    }
+  }
+}
+
 .buy-btn {
   min-width: rem(128);
   padding: rem(8) rem(10) rem(10);
