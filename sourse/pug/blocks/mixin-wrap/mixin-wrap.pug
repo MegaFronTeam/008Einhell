@@ -62,6 +62,10 @@ mixin compareIconBtn
 	+b.compare-icon-btn.btn.BUTTON&attributes(attributes)
 		+icon('compare')
 
+mixin compareCardBtn
+	+b.compare-card-btn.btn.BUTTON(type="button" aria-label="Сравнить")&attributes(attributes)
+		+icon('compare')
+
 mixin buyBtn(title = 'купить')
 	+b.buy-btn.btn.BUTTON&attributes(attributes)= title
 

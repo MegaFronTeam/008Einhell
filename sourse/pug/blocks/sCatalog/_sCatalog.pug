@@ -16,15 +16,17 @@ mixin catalogItem(img,title)
 		+e.item-img: +img(`img/${img}.jpg`)
 		+e.item-title= title
 
-mixin catalogCard(img,title,number)
+mixin catalogCard(img,title,number,price='86 900 ₽',oldPrice='90 900 ₽')
 	.col-sm-6.col-md-4
 		+b.card-item&attributes(attributes)
+			+compareCardBtn
 			+e.card-link(href="#")
 				+e.img-wrap: +img(`img/${img}.png`)
 				+e.title= title
 			+e.number Артикул: #{number}
-			+e.compare
-				+compareBtn('сравнить')
+			+e.bottom
+				+price(price, oldPrice)
+				+buyBtn
 
 mixin sCatalog(data)
 	// start sCatalog
