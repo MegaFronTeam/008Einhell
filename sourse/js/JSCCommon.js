@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 class JSCCommon {
   static modalCall() {
     const link = '[data-fancybox="modal"], .link-modal-js';
@@ -6,7 +6,7 @@ class JSCCommon {
       autoFocus: false,
       placeFocusBack: false,
     };
-    Fancybox.bind("[data-fancybox]", {
+    Fancybox.bind('[data-fancybox]', {
       autoFocus: false,
       placeFocusBack: false,
     });
@@ -22,29 +22,29 @@ class JSCCommon {
       autoFocus: false,
       groupAll: false,
       groupAttr: false,
-      showClass: "fancybox-throwOutUp",
-      hideClass: "fancybox-throwOutDown",
+      showClass: 'fancybox-throwOutUp',
+      hideClass: 'fancybox-throwOutDown',
       l10n: {
-        CLOSE: "Закрыть",
-        Escape: "Закрыть",
-        NEXT: "Вперед",
-        PREV: "Назад",
-        MODAL: "Вы можете закрыть это модальное окно с помощью клавиши ESC.",
-        ERROR: "Что-то пошло не так. Пожалуйста, повторите попытку позже",
-        IMAGE_ERROR: "Изображение не найдено",
-        ELEMENT_NOT_FOUND: "HTML-элемент не найден",
-        AJAX_NOT_FOUND: "Ошибка при загрузке AJAX: не найдено",
-        AJAX_FORBIDDEN: "Ошибка при загрузке AJAX: запрещено",
-        IFRAME_ERROR: "Ошибка загрузки iframe",
+        CLOSE: 'Закрыть',
+        Escape: 'Закрыть',
+        NEXT: 'Вперед',
+        PREV: 'Назад',
+        MODAL: 'Вы можете закрыть это модальное окно с помощью клавиши ESC.',
+        ERROR: 'Что-то пошло не так. Пожалуйста, повторите попытку позже',
+        IMAGE_ERROR: 'Изображение не найдено',
+        ELEMENT_NOT_FOUND: 'HTML-элемент не найден',
+        AJAX_NOT_FOUND: 'Ошибка при загрузке AJAX: не найдено',
+        AJAX_FORBIDDEN: 'Ошибка при загрузке AJAX: запрещено',
+        IFRAME_ERROR: 'Ошибка загрузки iframe',
       },
     });
-    document.querySelectorAll(".modal-close-js").forEach((el) => {
-      el.addEventListener("click", () => {
+    document.querySelectorAll('.modal-close-js').forEach((el) => {
+      el.addEventListener('click', () => {
         Fancybox.close();
       });
     });
 
-    document.addEventListener("click", (event) => {
+    document.addEventListener('click', (event) => {
       let element = event.target.closest(link);
       if (!element) return;
       let modal = document.querySelector(element.dataset.src);
@@ -53,31 +53,31 @@ class JSCCommon {
       function setValue(val, elem) {
         if (elem && val) {
           const el = modal.querySelector(elem);
-          el.tagName == "INPUT" ? (el.value = val) : (el.innerHTML = val);
+          el.tagName == 'INPUT' ? (el.value = val) : (el.innerHTML = val);
           // console.log(modal.querySelector(elem).tagName)
         }
       }
-      setValue(data.title, ".ttu");
-      setValue(data.text, ".after-headline");
-      setValue(data.btn, ".btn");
-      setValue(data.order, ".order");
+      setValue(data.title, '.ttu');
+      setValue(data.text, '.after-headline');
+      setValue(data.btn, '.btn');
+      setValue(data.order, '.order');
     });
 
     // переключение между модалками (авторизация <-> регистрация):
     // вложенный клик по [data-fancybox] внутри открытого окна не срабатывает
-    document.addEventListener("click", (event) => {
-      const switcher = event.target.closest("[data-modal-switch]");
+    document.addEventListener('click', (event) => {
+      const switcher = event.target.closest('[data-modal-switch]');
       if (!switcher) return;
       event.preventDefault();
-      const src = switcher.getAttribute("href");
+      const src = switcher.getAttribute('href');
       Fancybox.close(true);
       // Fancybox.show() с ajax не отрабатывает, поэтому открываем через временный триггер
       setTimeout(() => {
-        const trigger = document.createElement("a");
-        trigger.setAttribute("data-fancybox", "");
-        trigger.setAttribute("data-type", "ajax");
+        const trigger = document.createElement('a');
+        trigger.setAttribute('data-fancybox', '');
+        trigger.setAttribute('data-type', 'ajax');
         trigger.href = src;
-        trigger.style.display = "none";
+        trigger.style.display = 'none';
         document.body.appendChild(trigger);
         trigger.click();
         trigger.remove();
@@ -86,43 +86,39 @@ class JSCCommon {
   }
   // /modalCall
   static toggleMenu() {
-    const toggle = document.querySelectorAll(".toggle-menu-mobile--js");
-    const menu = document.querySelector(".menu-mobile--js");
-    toggle.forEach((el) => el.classList.toggle("on"));
-    menu.classList.toggle("active");
-    [document.body, document.querySelector("html")].forEach((el) =>
-      el.classList.toggle("fixed")
-    );
+    const toggle = document.querySelectorAll('.toggle-menu-mobile--js');
+    const menu = document.querySelector('.menu-mobile--js');
+    toggle.forEach((el) => el.classList.toggle('on'));
+    menu.classList.toggle('active');
+    [document.body, document.querySelector('html')].forEach((el) => el.classList.toggle('fixed'));
   }
   static closeMenu() {
-    const toggle = document.querySelectorAll(".toggle-menu-mobile--js");
-    const menu = document.querySelector(".menu-mobile--js");
-    toggle.forEach((element) => element.classList.remove("on"));
+    const toggle = document.querySelectorAll('.toggle-menu-mobile--js');
+    const menu = document.querySelector('.menu-mobile--js');
+    toggle.forEach((element) => element.classList.remove('on'));
     if (menu) {
-      menu.classList.remove("active");
-      [document.body, document.querySelector("html")].forEach((el) =>
-        el.classList.remove("fixed")
-      );
+      menu.classList.remove('active');
+      [document.body, document.querySelector('html')].forEach((el) => el.classList.remove('fixed'));
     }
   }
   static mobileMenu() {
     document.addEventListener(
-      "click",
+      'click',
       (event) => {
-        let container = event.target.closest(".menu-mobile--js"); // (1)
-        let toggle = event.target.closest(".toggle-menu-mobile--js"); // (1)
+        let container = event.target.closest('.menu-mobile--js'); // (1)
+        let toggle = event.target.closest('.toggle-menu-mobile--js'); // (1)
         if (toggle) this.toggleMenu();
         if (!container && !toggle) this.closeMenu();
       },
-      { passive: true }
+      { passive: true },
     );
 
     window.addEventListener(
-      "resize",
+      'resize',
       () => {
-        if (window.matchMedia("(min-width: 992px)").matches) this.closeMenu();
+        if (window.matchMedia('(min-width: 992px)').matches) this.closeMenu();
       },
-      { passive: true }
+      { passive: true },
     );
   }
 
@@ -168,40 +164,29 @@ class JSCCommon {
     // 	})
     // })
 
-    $("." + tab + "__caption").on(
-      "click",
-      "." + tab + "__btn:not(.active)",
-      function (e) {
-        $(this)
-          .addClass("active")
-          .siblings()
-          .removeClass("active")
-          .closest("." + tab)
-          .find("." + tab + "__content")
-          .hide()
-          .removeClass("active")
-          .eq($(this).index())
-          .fadeIn()
-          .addClass("active");
-      }
-    );
+    $('.' + tab + '__caption').on('click', '.' + tab + '__btn:not(.active)', function (e) {
+      $(this)
+        .addClass('active')
+        .siblings()
+        .removeClass('active')
+        .closest('.' + tab)
+        .find('.' + tab + '__content')
+        .hide()
+        .removeClass('active')
+        .eq($(this).index())
+        .fadeIn()
+        .addClass('active');
+    });
   }
   // /tabs
 
   static inputMask() {
     // mask for input
-    let InputTel = [].slice.call(
-      document.querySelectorAll('input[type="tel"]')
-    );
+    let InputTel = [].slice.call(document.querySelectorAll('input[type="tel"]'));
     InputTel.forEach((element) =>
-      element.setAttribute(
-        "pattern",
-        "[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}"
-      )
+      element.setAttribute('pattern', '[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}'),
     );
-    Inputmask({ mask: "+9(999)999-99-99", showMaskOnHover: false }).mask(
-      InputTel
-    );
+    Inputmask({ mask: '+9(999)999-99-99', showMaskOnHover: false }).mask(InputTel);
   }
   // /inputMask
   static sendForm() {
@@ -209,36 +194,34 @@ class JSCCommon {
       var a = window.location.search;
       var b = new Object();
       var c;
-      a = a.substring(1).split("&");
+      a = a.substring(1).split('&');
       for (var i = 0; i < a.length; i++) {
-        c = a[i].split("=");
+        c = a[i].split('=');
         b[c[0]] = c[1];
       }
       return b;
     })();
     // form
-    $(document).on("submit", "form", function (e) {
+    $(document).on('submit', 'form', function (e) {
       e.preventDefault();
       const th = $(this);
       var data = th.serialize();
-      th.find(".utm_source").val(decodeURIComponent(gets["utm_source"] || ""));
-      th.find(".utm_term").val(decodeURIComponent(gets["utm_term"] || ""));
-      th.find(".utm_medium").val(decodeURIComponent(gets["utm_medium"] || ""));
-      th.find(".utm_campaign").val(
-        decodeURIComponent(gets["utm_campaign"] || "")
-      );
+      th.find('.utm_source').val(decodeURIComponent(gets['utm_source'] || ''));
+      th.find('.utm_term').val(decodeURIComponent(gets['utm_term'] || ''));
+      th.find('.utm_medium').val(decodeURIComponent(gets['utm_medium'] || ''));
+      th.find('.utm_campaign').val(decodeURIComponent(gets['utm_campaign'] || ''));
       $.ajax({
-        url: "action.php",
-        type: "POST",
+        url: 'action.php',
+        type: 'POST',
         data: data,
       })
         .done(function (data) {
           Fancybox.close();
-          Fancybox.show([{ src: "#modal-thanks", type: "inline" }]);
+          Fancybox.show([{ src: '#modal-thanks', type: 'inline' }]);
           // window.location.replace("/thanks.html");
           setTimeout(function () {
             // Done Functions
-            th.trigger("reset");
+            th.trigger('reset');
             // $.magnificPopup.close();
             // ym(53383120, 'reachGoal', 'zakaz');
             // yaCounter55828534.reachGoal('zakaz');
@@ -281,27 +264,27 @@ class JSCCommon {
     // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
     let vh = window.innerHeight * 0.01;
     // Then we set the value in the --vh custom property to the root of the document
-    document.documentElement.style.setProperty("--vh", `${vh}px`);
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
 
     // We listen to the resize event
     window.addEventListener(
-      "resize",
+      'resize',
       () => {
         // We execute the same script as before
         let vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty("--vh", `${vh}px`);
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
       },
-      { passive: true }
+      { passive: true },
     );
   }
   static animateScroll() {
-    $(document).on("click", " .menu li a, .scroll-link", function () {
-      const elementClick = $(this).attr("href");
+    $(document).on('click', ' .menu li a, .scroll-link', function () {
+      const elementClick = $(this).attr('href');
       if (!document.querySelector(elementClick)) {
-        $(this).attr("href", "/" + elementClick);
+        $(this).attr('href', '/' + elementClick);
       } else {
         let destination = $(elementClick).offset().top;
-        $("html, body").animate({ scrollTop: destination - 80 }, 0);
+        $('html, body').animate({ scrollTop: destination - 80 }, 0);
         return false;
       }
     });
@@ -313,13 +296,13 @@ class JSCCommon {
   }
 
   static makeDDGroup() {
-    $(".dd-head-js").on("click", function () {
+    $('.dd-head-js').on('click', function () {
       let clickedHead = this;
-      $(this).parent().toggleClass("active");
+      $(this).parent().toggleClass('active');
       $(this)
         .next()
         .slideToggle(function () {
-          $(this).toggleClass("active");
+          $(this).toggleClass('active');
         });
     });
     // let parents = document.querySelectorAll('.dd-group-js');
@@ -360,9 +343,7 @@ class JSCCommon {
           .then((res) => res.text())
           .then((data) => {
             const parser = new DOMParser();
-            const svg = parser
-              .parseFromString(data, "image/svg+xml")
-              .querySelector("svg");
+            const svg = parser.parseFromString(data, 'image/svg+xml').querySelector('svg');
 
             if (image.id) svg.id = image.id;
             if (image.className) svg.classList = image.classList;
@@ -374,20 +355,20 @@ class JSCCommon {
       });
     };
 
-    convertImages(".img-svg-js");
+    convertImages('.img-svg-js');
   }
 
   static disabledBtn(
-    input = ".form-wrap__policy input",
-    btn = ".form-wrap__btn",
-    parent = ".form-wrap"
+    input = '.form-wrap__policy input',
+    btn = '.form-wrap__btn',
+    parent = '.form-wrap',
   ) {
-    $(document).on("change", input, function () {
+    $(document).on('change', input, function () {
       let btnDisabled = $(this).parents(parent).find(btn);
       if (this.checked) {
-        btnDisabled.removeAttr("disabled");
+        btnDisabled.removeAttr('disabled');
       } else {
-        btnDisabled.attr("disabled", "disabled");
+        btnDisabled.attr('disabled', 'disabled');
       }
     });
   }
@@ -395,26 +376,24 @@ class JSCCommon {
   static setScreen() {
     var x = window.location.host;
     let screenName;
-    screenName = "screen/" + document.body.dataset.bg;
-    if (screenName && x.includes("localhost:30")) {
+    screenName = 'screen/' + document.body.dataset.bg;
+    if (screenName && x.includes('localhost:30')) {
       document.body.insertAdjacentHTML(
-        "beforeend",
-        `<div class="pixel-perfect" style="background-image: url(${screenName});"></div>`
+        'beforeend',
+        `<div class="pixel-perfect" style="background-image: url(${screenName});"></div>`,
       );
     }
   }
 
   static setFixedNav() {
-    let topNav = document.querySelector(".top-nav  ");
+    let topNav = document.querySelector('.top-nav  ');
     if (!topNav) return;
-    window.scrollY > 0
-      ? topNav.classList.add("fixed")
-      : topNav.classList.remove("fixed");
+    window.scrollY > 0 ? topNav.classList.add('fixed') : topNav.classList.remove('fixed');
   }
 
   static init() {
-    this.modalCall();
-    this.tabscostume("tabs");
+    // this.modalCall();
+    this.tabscostume('tabs');
     this.mobileMenu();
     this.inputMask();
     // this.sendForm();
